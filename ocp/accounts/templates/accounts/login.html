@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block head %}
+    <title>{% trans 'accounts-login' %}</title>
+{% endblock %}
+
+{% block breadcrumb %}
+        <li><a href="{% url 'core:home' %}">{% trans 'Home' %}</a></li>
+        <li><a href="">{% trans 'Login' %}</a></li>
+{% endblock %}
+
+{% block content %}
+    <div class="container-margin">
+        <form class="container-basic" method="post">
+            <h1>{% trans 'Login' %}</h1>
+            {% csrf_token %}
+            <fieldset>
+                {{ form.non_field_errors }}
+                {% for field in form %}
+                    <div>
+                        {{ field.label_tag }}
+                        {{ field }}
+                        {{ field.errors }}
+                    </div>
+                {% endfor %}
+            </fieldset>
+            <div class="container-oneline">
+                <button type="submit" class="btn btn-primary">{% trans 'Log in' %}</button>
+            </div>
+            <br />
+            {% trans 'Would you like to register? ' %}<a href="{% url 'accounts:register' %}" title="">{% trans 'Go to Register' %}</a> <br/>
+            {% trans 'Did you forget your password? ' %} <a href="{% url 'accounts:password_reset' %}" title="">{% trans 'New Password' %}</a> <br/>
+        </form>
+    </div>
+{% endblock %}

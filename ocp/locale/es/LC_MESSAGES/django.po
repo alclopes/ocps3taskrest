@@ -1,0 +1,1131 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-04 19:49+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\ocp\accounts\forms.py:24
+msgid "There isnt user with this email"
+msgstr "No hay usuario con este correo electrónico"
+
+#: .\ocp\accounts\forms.py:32
+#, fuzzy
+#| msgid "Change Password"
+msgid "Change your password"
+msgstr "Cambiar contraseña"
+
+#: .\ocp\accounts\forms.py:42
+#, fuzzy
+#| msgid "New Password"
+msgid "Password"
+msgstr "Nueva contraseña"
+
+#: .\ocp\accounts\forms.py:44
+#, fuzzy
+#| msgid "Did you forget your password? "
+msgid "Confirm your password"
+msgstr "¿Olvidó su contraseña?"
+
+#: .\ocp\accounts\forms.py:53
+msgid "The Confirm is wrong"
+msgstr "La confirmación está mal"
+
+#: .\ocp\accounts\models.py:22
+msgid "User Name"
+msgstr "Nombre de usuario"
+
+#: .\ocp\accounts\models.py:24
+msgid ""
+"Username can only contain letters, digits, or the following characters: @/./"
+"+/-/_"
+msgstr ""
+"El nombre de usuario solo puede contener letras, dígitos o los siguientes "
+"caracteres: @/./+/-/_"
+
+#: .\ocp\accounts\models.py:28 .\ocp\core\forms.py:9
+#: .\ocp\core\templates\core\contact.html:37 .\ocp\courses\forms.py:61
+msgid "Email"
+msgstr "Correo electrónico"
+
+#: .\ocp\accounts\models.py:29 .\ocp\core\forms.py:8
+#: .\ocp\core\templates\core\contact.html:33 .\ocp\courses\forms.py:14
+#: .\ocp\courses\forms.py:28 .\ocp\courses\forms.py:60
+#: .\ocp\courses\models.py:17 .\ocp\courses\models.py:58
+#: .\ocp\courses\models.py:136
+#: .\ocp\courses\templates\courses\lesson_detail.html:24
+msgid "Name"
+msgstr "Nombre"
+
+#: .\ocp\accounts\models.py:32
+msgid "Is Active?"
+msgstr "¿Está activo?"
+
+#: .\ocp\accounts\models.py:34
+msgid "Is Staff?"
+msgstr "¿Es el personal?"
+
+#: .\ocp\accounts\models.py:36
+msgid "Date Joined"
+msgstr "Fecha de incorporación"
+
+#: .\ocp\accounts\models.py:49 .\ocp\accounts\models.py:70
+#: .\ocp\courses\models.py:121 .\ocp\courses\models.py:196
+#: .\ocp\courses\models.py:255
+msgid "User"
+msgstr "Usuario"
+
+#: .\ocp\accounts\models.py:50
+msgid "Users"
+msgstr "Usuarios"
+
+#: .\ocp\accounts\models.py:73
+msgid "Key"
+msgstr "Clave"
+
+#: .\ocp\accounts\models.py:74 .\ocp\courses\models.py:21
+#: .\ocp\courses\models.py:143 .\ocp\courses\models.py:208
+#: .\ocp\courses\models.py:236 .\ocp\courses\models.py:257
+#: .\ocp\forum\models.py:22 .\ocp\forum\models.py:52
+msgid "Create at"
+msgstr "Crear en"
+
+#: .\ocp\accounts\models.py:75
+msgid "Confirm?"
+msgstr "¿Confirmar?"
+
+#: .\ocp\accounts\models.py:78 .\ocp\accounts\templates\accounts\login.html:33
+msgid "New Password"
+msgstr "Nueva contraseña"
+
+#: .\ocp\accounts\models.py:79
+msgid "New Passords"
+msgstr "Nuevos pasaportes"
+
+#: .\ocp\accounts\templates\accounts\account_dashboard.html:7
+msgid "accounts-dashboard"
+msgstr "panel de cuentas"
+
+#: .\ocp\accounts\templates\accounts\account_dashboard.html:11
+#: .\ocp\accounts\templates\accounts\login.html:9
+#: .\ocp\accounts\templates\accounts\password_reset.html:9
+#: .\ocp\accounts\templates\accounts\password_reset_confirm.html:9
+#: .\ocp\accounts\templates\accounts\register.html:9
+#: .\ocp\core\templates\base.html:37 .\ocp\core\templates\core\contact.html:9
+#: .\ocp\core\templates\home.html:5
+#: .\ocp\courses\templates\courses\category_add.html:9
+#: .\ocp\courses\templates\courses\category_list.html:10
+#: .\ocp\courses\templates\courses\course_add.html:9
+#: .\ocp\courses\templates\courses\course_details.html:10
+#: .\ocp\courses\templates\courses\index.html:10
+#: .\ocp\forum\templates\forum\index.html:10
+#: .\ocp\languages\templates\languages\index.html:9
+msgid "Home"
+msgstr "Inicio"
+
+#: .\ocp\accounts\templates\accounts\account_dashboard.html:12
+#: .\ocp\core\templates\base.html:41
+msgid "My Panel"
+msgstr "Mi panel"
+
+#: .\ocp\accounts\templates\accounts\account_dashboard.html:20
+#: .\ocp\accounts\templates\accounts\account_dashboard.html:40
+#: .\ocp\courses\templates\courses\templatetags\my_courses.html:3
+msgid "My Courses"
+msgstr "Mis cursos"
+
+#: .\ocp\accounts\templates\accounts\account_dashboard.html:26
+msgid "No Course"
+msgstr "Sin curso"
+
+#: .\ocp\accounts\templates\accounts\account_dashboard.html:28
+msgid "Settings Account"
+msgstr "Cuenta de configuración"
+
+#: .\ocp\accounts\templates\accounts\account_dashboard.html:29
+#: .\ocp\accounts\templates\accounts\edit_account.html:10
+#: .\ocp\accounts\templates\accounts\edit_account.html:26
+msgid "Edit Account"
+msgstr "Editar cuenta"
+
+#: .\ocp\accounts\templates\accounts\account_dashboard.html:30
+#: .\ocp\accounts\templates\accounts\edit_password.html:10
+#: .\ocp\accounts\templates\accounts\edit_password.html:31
+msgid "Edit Password"
+msgstr "Editar contraseña"
+
+#: .\ocp\accounts\templates\accounts\account_dashboard.html:45
+msgid "Without Date"
+msgstr "Sin fecha"
+
+#: .\ocp\accounts\templates\accounts\account_dashboard.html:49
+#: .\ocp\courses\templates\courses\lesson_detail.html:34
+#: .\ocp\courses\templates\courses\lesson_detail.html:39
+msgid "Access"
+msgstr "Acceso"
+
+#: .\ocp\accounts\templates\accounts\account_dashboard.html:50
+msgid "Cancel Enrollment"
+msgstr "Cancelar inscripción"
+
+#: .\ocp\accounts\templates\accounts\account_dashboard.html:55
+msgid "No enrollment course"
+msgstr "Sin curso de inscripción"
+
+#: .\ocp\accounts\templates\accounts\edit_account.html:5
+msgid "accounts-edit"
+msgstr "cuentas-editar"
+
+#: .\ocp\accounts\templates\accounts\edit_password.html:5
+msgid "accounts-password"
+msgstr "cuentas-contraseña"
+
+#: .\ocp\accounts\templates\accounts\edit_password.html:19
+msgid "Your Password was updated with success"
+msgstr "Su contraseña se actualizó con éxito"
+
+#: .\ocp\accounts\templates\accounts\login.html:5
+msgid "accounts-login"
+msgstr "cuentas-inicio de sesión"
+
+#: .\ocp\accounts\templates\accounts\login.html:10
+#: .\ocp\accounts\templates\accounts\login.html:16
+msgid "Login"
+msgstr "Iniciar sesión"
+
+#: .\ocp\accounts\templates\accounts\login.html:29
+msgid "Log in"
+msgstr "Iniciar sesión"
+
+#: .\ocp\accounts\templates\accounts\login.html:32
+msgid "Would you like to register? "
+msgstr "¿Te gustarIa registrarte?"
+
+#: .\ocp\accounts\templates\accounts\login.html:32
+msgid "Go to Register"
+msgstr "Ir al registro"
+
+#: .\ocp\accounts\templates\accounts\login.html:33
+msgid "Did you forget your password? "
+msgstr "¿Olvidó su contraseña?"
+
+#: .\ocp\accounts\templates\accounts\password_reset.html:5
+msgid "accounts-password_reset"
+msgstr "cuentas-contraseña_reset"
+
+#: .\ocp\accounts\templates\accounts\password_reset.html:10
+msgid "Change Password"
+msgstr "Cambiar contraseña"
+
+#: .\ocp\accounts\templates\accounts\password_reset.html:16
+msgid ""
+"An email was sent to you with more details on how to create a new password."
+msgstr ""
+"Se le envió un correo electrónico con más detalles sobre cómo crear una "
+"nueva contraseña"
+
+#: .\ocp\accounts\templates\accounts\password_reset.html:31
+#: .\ocp\accounts\templates\accounts\password_reset_confirm.html:32
+#: .\ocp\core\templates\core\contact.html:46
+#: .\ocp\courses\templates\courses\announcement_detail.html:57
+#: .\ocp\courses\templates\courses\course_details.html:114
+#: .\ocp\forum\templates\forum\thread.html:64
+msgid "Send"
+msgstr "Enviar"
+
+#: .\ocp\accounts\templates\accounts\password_reset_confirm.html:5
+msgid "accounts-password_reset_ok"
+msgstr "accounts-password_reset_ok"
+
+#: .\ocp\accounts\templates\accounts\password_reset_confirm.html:10
+msgid "Password Reset"
+msgstr "Restablecimiento de contraseña"
+
+#: .\ocp\accounts\templates\accounts\password_reset_confirm.html:17
+msgid "A new password was created with success"
+msgstr "Se creó una nueva contraseña con éxito"
+
+#: .\ocp\accounts\templates\accounts\password_reset_confirm.html:19
+msgid "Fill a new password"
+msgstr "Rellene una nueva contraseña"
+
+#: .\ocp\accounts\templates\accounts\register.html:5
+#: .\ocp\accounts\templates\accounts\register.html:28
+#: .\ocp\core\templates\base.html:64
+msgid "Register"
+msgstr "Registrarse"
+
+#: .\ocp\accounts\templates\accounts\register.html:10
+msgid "Your Informations"
+msgstr "Sus informaciones"
+
+#: .\ocp\accounts\views.py:88
+msgid "Your datas was updated with success"
+msgstr "Sus datos se actualizaron con éxito"
+
+#: .\ocp\core\forms.py:10 .\ocp\courses\forms.py:62
+msgid "Message/Questions"
+msgstr "Mensaje / Preguntas"
+
+#: .\ocp\core\templates\base.html:33
+#, fuzzy
+#| msgid "Welcome to Course Platform!"
+msgid "Online Course Platform ( OCP+ )  "
+msgstr "¡Bienvenido a Course Platform!"
+
+#: .\ocp\core\templates\base.html:38 .\ocp\courses\models.py:25
+msgid "Category"
+msgstr "Categoria"
+
+#: .\ocp\core\templates\base.html:39 .\ocp\courses\models.py:88
+#: .\ocp\courses\templates\courses\index.html:17
+msgid "Courses"
+msgstr "Cursos"
+
+#: .\ocp\core\templates\base.html:43 .\ocp\core\templates\home.html:40
+#: .\ocp\courses\templates\courses\course_dashboard.html:20
+#: .\ocp\forum\templates\forum\index.html:11
+#: .\ocp\forum\templates\forum\thread.html:10
+msgid "Forum"
+msgstr "Foro"
+
+#: .\ocp\core\templates\base.html:44 .\ocp\core\templates\core\contact.html:10
+#: .\ocp\core\templates\core\contact.html:27
+#: .\ocp\courses\templates\courses\course_details.html:34
+msgid "Speak with us"
+msgstr "Habla con nosotros"
+
+#: .\ocp\core\templates\base.html:47
+msgid "Administration"
+msgstr "Administración"
+
+#: .\ocp\core\templates\base.html:49
+#: .\ocp\courses\templates\courses\course_details.html:81
+msgid "Add Teacher"
+msgstr "Agregar profesor"
+
+#: .\ocp\core\templates\base.html:50
+msgid "Add Entities"
+msgstr "Agregar entidades"
+
+#: .\ocp\core\templates\base.html:51
+msgid "Edit Banners"
+msgstr "Editar pancartas"
+
+#: .\ocp\core\templates\base.html:52
+msgid "View Calendar"
+msgstr "Ver calendario"
+
+#: .\ocp\core\templates\base.html:61
+msgid "Log out"
+msgstr "Cerrar sesión"
+
+#: .\ocp\core\templates\base.html:63
+msgid "Log in "
+msgstr "Iniciar sesión"
+
+#: .\ocp\core\templates\base.html:66
+msgid " Language"
+msgstr "Idioma"
+
+#: .\ocp\core\templates\base.html:126
+msgid "OCP+"
+msgstr "OCP+"
+
+#: .\ocp\core\templates\core\contact.html:5
+msgid "Contact"
+msgstr "Contacto"
+
+#: .\ocp\core\templates\core\contact.html:15
+msgid "Contact us and we'll get back to you within 24 hours."
+msgstr "Contáctanos y te responderemos en 24 horas."
+
+#: .\ocp\core\templates\core\contact.html:43 .\ocp\forum\models.py:11
+msgid "Message"
+msgstr "Mensaje"
+
+#: .\ocp\core\templates\error.html:5
+msgid "Error"
+msgstr "Error"
+
+#: .\ocp\core\templates\home.html:14
+msgid "Course Platform is read!"
+msgstr "¡Se lee la plataforma del curso!"
+
+#: .\ocp\core\templates\home.html:16
+msgid "Welcome to Course Platform!"
+msgstr "¡Bienvenido a Course Platform!"
+
+#: .\ocp\core\templates\home.html:20
+msgid "Hello Nice to Meet You!"
+msgstr "¡Hola mucho gusto!"
+
+#: .\ocp\core\templates\home.html:21
+#, fuzzy
+#| msgid " Do your logging in here"
+msgid "Do your logging in here"
+msgstr "Inicia sesión aquí"
+
+#: .\ocp\core\templates\home.html:25
+msgid "What we offer"
+msgstr "Lo que ofrecemos"
+
+#: .\ocp\core\templates\home.html:30
+msgid "Online classes"
+msgstr "Clases en lInea"
+
+#: .\ocp\core\templates\home.html:31 .\ocp\core\templates\home.html:36
+#: .\ocp\core\templates\home.html:41 .\ocp\core\templates\home.html:49
+#: .\ocp\core\templates\home.html:54 .\ocp\core\templates\home.html:59
+msgid "Lorem ipsum dolor sit amet.."
+msgstr ""
+
+#: .\ocp\core\templates\home.html:35
+msgid "Online Resources"
+msgstr "Recursos en linea"
+
+#: .\ocp\core\templates\home.html:48
+msgid "Flexible Hours"
+msgstr "Horario flexible"
+
+#: .\ocp\core\templates\home.html:53
+msgid "Certified"
+msgstr "Certificado"
+
+#: .\ocp\core\templates\home.html:58
+msgid "Experienced Teachers"
+msgstr "Profesores experimentados"
+
+#: .\ocp\core\views.py:18
+msgid "Speak with Us"
+msgstr "Habla con nosotros"
+
+#: .\ocp\core\views.py:21
+msgid "Your messsage was sended with success"
+msgstr "Su mensaje se envió con éxito"
+
+#: .\ocp\core\views.py:24
+msgid ""
+"Sorry your message not be sended. Please, Try again or choice other type of "
+"contact"
+msgstr ""
+"Lo sentimos, su mensaje no se ha enviado. Por favor, intente nuevamente o "
+"elija otro tipo decontacto"
+
+#: .\ocp\courses\forms.py:14
+msgid "Please enter the category name."
+msgstr "Ingrese el nombre de la categoria"
+
+#: .\ocp\courses\forms.py:15 .\ocp\courses\forms.py:30
+#: .\ocp\courses\models.py:18 .\ocp\courses\models.py:62
+#: .\ocp\courses\models.py:137
+msgid "Description"
+msgstr "Descripción"
+
+#: .\ocp\courses\forms.py:15
+msgid "Please enter the description of the category."
+msgstr "Ingrese la descripción de la categoria"
+
+#: .\ocp\courses\forms.py:16 .\ocp\courses\models.py:79
+#: .\ocp\forum\models.py:17
+msgid "Views"
+msgstr "Vistas"
+
+#: .\ocp\courses\forms.py:17 .\ocp\courses\forms.py:41
+#: .\ocp\courses\models.py:20 .\ocp\courses\models.py:78
+msgid "Status"
+msgstr "Estado"
+
+#: .\ocp\courses\forms.py:19 .\ocp\courses\forms.py:43
+msgid "Is this category still active?"
+msgstr "¿Esta categoria sigue activa?"
+
+#: .\ocp\courses\forms.py:29
+msgid "Course Title"
+msgstr "TItulo del curso"
+
+#: .\ocp\courses\forms.py:31
+msgid "Course Summary"
+msgstr "Resumen del curso"
+
+#: .\ocp\courses\forms.py:32 .\ocp\courses\models.py:63
+msgid "About"
+msgstr "Acerca de"
+
+#: .\ocp\courses\forms.py:34
+#, fuzzy
+#| msgid "Course Title"
+msgid "Course About"
+msgstr "TItulo del curso"
+
+#: .\ocp\courses\forms.py:35
+#, fuzzy
+#| msgid "URL: "
+msgid "URL"
+msgstr "URL:"
+
+#: .\ocp\courses\forms.py:36
+msgid "Course URL"
+msgstr "URL del curso"
+
+#: .\ocp\courses\forms.py:37
+msgid "Phone"
+msgstr "Fone"
+
+#: .\ocp\courses\forms.py:39 .\ocp\courses\models.py:68
+msgid "Start Date"
+msgstr "Fecha de inicio"
+
+#: .\ocp\courses\forms.py:39
+msgid "MM/DD/YYYY"
+msgstr "DD/MM/YYYY"
+
+#: .\ocp\courses\forms.py:44
+msgid "Has Certification Test? "
+msgstr "¿Tiene prueba de certificación?"
+
+#: .\ocp\courses\forms.py:46
+msgid "Please check here if the course offers certification test."
+msgstr "Marque aquI si el curso ofrece una prueba de certificación"
+
+#: .\ocp\courses\forms.py:84
+msgid ""
+"Not allow the fill to embedded and file fields in the same Material, please "
+"choice only one for fill"
+msgstr ""
+"No permitir el relleno de campos incrustados y de archivo en el mismo material, por favor"
+"elige solo uno para llenar"
+
+#: .\ocp\courses\forms.py:86
+msgid "Please choice and fill one material to lesson: embedded or file"
+msgstr "Elija y complete un material para la lección: incrustado o archivo"
+
+#: .\ocp\courses\models.py:19 .\ocp\courses\models.py:59
+#: .\ocp\forum\models.py:10
+msgid "Slug"
+msgstr "Babosa"
+
+#: .\ocp\courses\models.py:22 .\ocp\courses\models.py:144
+#: .\ocp\courses\models.py:237 .\ocp\forum\models.py:23
+msgid "Update at"
+msgstr "Actualizar en"
+
+#: .\ocp\courses\models.py:26
+#: .\ocp\courses\templates\courses\category_list.html:11
+#: .\ocp\courses\templates\courses\category_list.html:17
+msgid "Categories"
+msgstr "Categorias"
+
+#: .\ocp\courses\models.py:70
+msgid "Image"
+msgstr "Imagen"
+
+#: .\ocp\courses\models.py:74
+msgid "Created at"
+msgstr "Creado en"
+
+#: .\ocp\courses\models.py:76 .\ocp\courses\models.py:209
+#: .\ocp\courses\models.py:258 .\ocp\forum\models.py:53
+msgid "Updated at"
+msgstr "Actualizar"
+
+#: .\ocp\courses\models.py:77
+msgid "Has Certification"
+msgstr "Tiene certificación"
+
+#: .\ocp\courses\models.py:80
+msgid "Qualification"
+msgstr "Calificación"
+
+#: .\ocp\courses\models.py:87 .\ocp\courses\models.py:142
+#: .\ocp\courses\models.py:201 .\ocp\courses\models.py:231
+msgid "Course"
+msgstr "Curso"
+
+#: .\ocp\courses\models.py:127
+#: .\ocp\courses\templates\courses\course_details.html:54
+msgid "Teacher"
+msgstr "Profesor"
+
+#: .\ocp\courses\models.py:128
+#: .\ocp\courses\templates\courses\course_details.html:52
+msgid "Teachers"
+msgstr "Maestros"
+
+#: .\ocp\courses\models.py:138
+msgid "Number"
+msgstr "Número"
+
+#: .\ocp\courses\models.py:140
+msgid "Releasing Date"
+msgstr "Fecha de lanzamiento"
+
+#: .\ocp\courses\models.py:147 .\ocp\courses\models.py:174
+msgid "Lesson"
+msgstr "Lección"
+
+#: .\ocp\courses\models.py:148
+#: .\ocp\courses\templates\courses\show_embedded.html:11
+msgid "Lessons"
+msgstr "Lecciones"
+
+#: .\ocp\courses\models.py:169
+msgid "name"
+msgstr "nombre"
+
+#: .\ocp\courses\models.py:171
+#, fuzzy
+#| msgid "VIdeo embedded"
+msgid "Text Embedded"
+msgstr "VIdeo incrustado"
+
+#: .\ocp\courses\models.py:177
+msgid "Material"
+msgstr "Material"
+
+#: .\ocp\courses\models.py:178
+msgid "Materials"
+msgstr "Materiales"
+
+#: .\ocp\courses\models.py:189
+msgid "Pending Approval"
+msgstr "Pendiente de aprobación"
+
+#: .\ocp\courses\models.py:190
+msgid "Approved to take the course"
+msgstr "Aprobado para tomar el curso"
+
+#: .\ocp\courses\models.py:191
+msgid "Canceled"
+msgstr "Cancelado"
+
+#: .\ocp\courses\models.py:192
+msgid "Awaiting Course Release"
+msgstr "En espera del lanzamiento del curso"
+
+#: .\ocp\courses\models.py:206
+msgid "Situation"
+msgstr "Situación"
+
+#: .\ocp\courses\models.py:212
+msgid "Enrollment"
+msgstr "Inscripción"
+
+#: .\ocp\courses\models.py:213
+msgid "Enrollments"
+msgstr "Inscripciones"
+
+#: .\ocp\courses\models.py:234 .\ocp\forum\models.py:9
+msgid "Title"
+msgstr "TItulo"
+
+#: .\ocp\courses\models.py:235
+msgid "Content"
+msgstr "Contenido"
+
+#: .\ocp\courses\models.py:243 .\ocp\courses\models.py:251
+msgid "Advertisement"
+msgstr "Publicidad"
+
+#: .\ocp\courses\models.py:244
+msgid "Advertisements"
+msgstr "Anuncios"
+
+#: .\ocp\courses\models.py:256 .\ocp\courses\models.py:264
+#: .\ocp\courses\templates\courses\announcement_detail.html:26
+#: .\ocp\courses\templates\courses\announcements.html:27
+#, fuzzy
+#| msgid "Comments"
+msgid "Comment"
+msgstr "Comentário"
+
+#: .\ocp\courses\models.py:265
+#: .\ocp\courses\templates\courses\announcement_detail.html:24
+msgid "Comments"
+msgstr "Comentários"
+
+#: .\ocp\courses\templates\courses\announcement_detail.html:5
+msgid "Courses-Announcement_detail"
+msgstr "Cursos-Anuncio_detalle"
+
+#: .\ocp\courses\templates\courses\announcement_detail.html:17
+#: .\ocp\courses\templates\courses\announcement_detail.html:44
+msgid "Comments Add"
+msgstr "Comentarios Agregar"
+
+#: .\ocp\courses\templates\courses\announcement_detail.html:32
+msgid "said at "
+msgstr "dijo en"
+
+#: .\ocp\courses\templates\courses\announcement_detail.html:32
+msgid "ago: "
+msgstr "hace:"
+
+#: .\ocp\courses\templates\courses\announcement_detail.html:38
+msgid "No comments to that course."
+msgstr "No hay comentarios para ese curso"
+
+#: .\ocp\courses\templates\courses\announcements.html:5
+msgid "Courses-Announcements"
+msgstr "Cursos-Anuncios"
+
+#: .\ocp\courses\templates\courses\announcements.html:10
+#: .\ocp\courses\templates\courses\course_dashboard.html:18
+msgid "Advertise"
+msgstr "Publicidad"
+
+#: .\ocp\courses\templates\courses\announcements.html:34
+msgid "No announcement for that course"
+msgstr "No hay anuncio para ese curso"
+
+#: .\ocp\courses\templates\courses\category_add.html:5
+msgid "Course-AddCategory"
+msgstr "Curso-Agregar categoria"
+
+#: .\ocp\courses\templates\courses\category_add.html:10
+#: .\ocp\courses\templates\courses\course_add.html:10
+msgid "Categories List"
+msgstr "Lista de categorias"
+
+#: .\ocp\courses\templates\courses\category_add.html:11
+msgid "Add Category"
+msgstr "Agregar categoria"
+
+#: .\ocp\courses\templates\courses\category_add.html:15
+#, fuzzy
+#| msgid "Add Category"
+msgid "Add a category"
+msgstr "Agregar categoria"
+
+#: .\ocp\courses\templates\courses\category_add.html:21
+#, fuzzy
+#| msgid "Create at"
+msgid "Create Category"
+msgstr "Crear categoria"
+
+#: .\ocp\courses\templates\courses\category_list.html:6
+msgid "Course-CategoryList"
+msgstr "Curso-CategoryList"
+
+#: .\ocp\courses\templates\courses\category_list.html:35
+#: .\ocp\courses\templates\courses\category_list.html:80
+msgid "There are no category present."
+msgstr "No hay ninguna categoria presente"
+
+#: .\ocp\courses\templates\courses\category_list.html:38
+msgid "Add a New Category"
+msgstr "Agregar una nueva categoria"
+
+#: .\ocp\courses\templates\courses\category_list.html:46
+#, fuzzy
+#| msgid "Add Course to Category "
+msgid "Courses in the Category"
+msgstr "Agregar curso a la categoria"
+
+#: .\ocp\courses\templates\courses\category_list.html:67
+#: .\ocp\courses\templates\courses\index.html:36
+msgid "See more details"
+msgstr "Ver más detalles"
+
+#: .\ocp\courses\templates\courses\category_list.html:74
+msgid "There are not curses currently in category."
+msgstr "No hay maldiciones actualmente en la categoria"
+
+#: .\ocp\courses\templates\courses\course_add.html:5
+msgid "Course-AddCourse"
+msgstr "Curso-AddCourse"
+
+#: .\ocp\courses\templates\courses\course_add.html:11
+msgid "Add Course to Category "
+msgstr "Agregar curso a la categoria"
+
+#: .\ocp\courses\templates\courses\course_add.html:16
+msgid "Add a course"
+msgstr "Agregar Curso"
+
+#: .\ocp\courses\templates\courses\course_add.html:22
+msgid "Create Course"
+msgstr "Crear Curso"
+
+#: .\ocp\courses\templates\courses\course_dashboard.html:5
+msgid "Courses-DashboardCourse"
+msgstr "Cursos-Tablero de instrumentos"
+
+#: .\ocp\courses\templates\courses\course_dashboard.html:19
+msgid "Lessons and Materials"
+msgstr "Lecciones y materiales"
+
+#: .\ocp\courses\templates\courses\course_details.html:6
+msgid "Courses-Detail"
+msgstr "Cursos-Detalle"
+
+#: .\ocp\courses\templates\courses\course_details.html:35
+#, fuzzy
+#| msgid "Cancel Enrollment"
+msgid "Make your enrollment"
+msgstr "Cancelar inscripción"
+
+#: .\ocp\courses\templates\courses\course_details.html:43
+msgid "About the course"
+msgstr "Sobre el curso"
+
+#: .\ocp\courses\templates\courses\course_details.html:63
+msgid "No teacher"
+msgstr "Sin profesor"
+
+#: .\ocp\courses\templates\courses\course_details.html:73
+msgid "Add a teacher:"
+msgstr "Añadir un profesor:"
+
+#: .\ocp\courses\templates\courses\course_details.html:85
+msgid "No teachers to add."
+msgstr "No hay maestros para agregar"
+
+#: .\ocp\courses\templates\courses\course_details.html:88
+msgid "Back to Courses List."
+msgstr "Volver a la lista de cursos"
+
+#: .\ocp\courses\templates\courses\course_details.html:93
+msgid "Questions about the course"
+msgstr "Preguntas sobre el curso"
+
+#: .\ocp\courses\templates\courses\course_details.html:95
+msgid "You sent your message with success"
+msgstr "Has enviado tu mensaje con éxito"
+
+#: .\ocp\courses\templates\courses\enrollment_undo.html:10
+msgid "Courses-UndoEnrollment"
+msgstr "Cursos-Deshacer inscripción"
+
+#: .\ocp\courses\templates\courses\enrollment_undo.html:16
+msgid "Do you really wish to cancel you enrollment in that course?"
+msgstr "¿Realmente desea cancelar su inscripción en ese curso?"
+
+#: .\ocp\courses\templates\courses\enrollment_undo.html:17
+msgid "Confirm"
+msgstr "Confirmar"
+
+#: .\ocp\courses\templates\courses\enrollment_undo.html:18
+msgid "Go Back"
+msgstr "Volver"
+
+#: .\ocp\courses\templates\courses\index.html:6
+msgid "Courses-Index"
+msgstr "Cursos-Indice"
+
+#: .\ocp\courses\templates\courses\index.html:11
+msgid "Courses List"
+msgstr "Lista de cursos"
+
+#: .\ocp\courses\templates\courses\index.html:42
+msgid "There are not curses"
+msgstr "No hay maldiciones"
+
+#: .\ocp\courses\templates\courses\lesson_detail.html:5
+#, fuzzy
+#| msgid "Courses-Lesson"
+msgid "Courses-Lesson_detail"
+msgstr "Cursos-Lección"
+
+#: .\ocp\courses\templates\courses\lesson_detail.html:11
+#: .\ocp\courses\templates\courses\lesson_list.html:10
+msgid "lessons"
+msgstr "lecciones"
+
+#: .\ocp\courses\templates\courses\lesson_detail.html:21
+msgid "Material to lesson"
+msgstr "Material para la lección"
+
+#: .\ocp\courses\templates\courses\lesson_detail.html:25
+msgid "Action"
+msgstr "Acción"
+
+#: .\ocp\courses\templates\courses\lesson_detail.html:46
+#, fuzzy
+#| msgid "Este material não está disponIvel"
+msgid "There is no material available for this lesson."
+msgstr "Este material no está disponible"
+
+#: .\ocp\courses\templates\courses\lesson_list.html:5
+msgid "Courses-LessonsList"
+msgstr "Cursos-Lista de lecciones"
+
+#: .\ocp\courses\templates\courses\lesson_list.html:21
+msgid "Got to lesson"
+msgstr "Llegué a la lección"
+
+#: .\ocp\courses\templates\courses\lesson_list.html:28
+msgid "No Lesson"
+msgstr "Sin lección"
+
+#: .\ocp\courses\templates\courses\menu_lateral.html:7
+msgid "More Rencently"
+msgstr "Más recientemente"
+
+#: .\ocp\courses\templates\courses\menu_lateral.html:8
+#: .\ocp\forum\templates\forum\menu_lateral.html:8
+msgid "More Views"
+msgstr "Más vistas"
+
+#: .\ocp\courses\templates\courses\menu_lateral.html:9
+msgid "More Pontuation"
+msgstr "Más Pontuation"
+
+#: .\ocp\courses\templates\courses\menu_lateral.html:10
+msgid "Remove Filter"
+msgstr "Eliminar filtro"
+
+#: .\ocp\courses\templates\courses\show_embedded.html:6
+msgid "Courses-MaterialDetail"
+msgstr "Cursos-Detalles del material"
+
+#: .\ocp\courses\templates\courses\show_embedded.html:21
+msgid "Return"
+msgstr "Retorno"
+
+#: .\ocp\courses\templates\courses\templatetags\my_courses.html:7
+#, fuzzy
+#| msgid "No course."
+msgid "No courses found"
+msgstr "No hay curso"
+
+#: .\ocp\courses\views.py:26
+msgid "No selection."
+msgstr "Sin selección"
+
+#: .\ocp\courses\views.py:29
+msgid "No course."
+msgstr "No hay curso"
+
+#: .\ocp\courses\views.py:32
+msgid "No teacher."
+msgstr "Sin profesor"
+
+#: .\ocp\courses\views.py:46
+msgid "You was enrolled in course with success"
+msgstr "Te inscribiste en el curso con éxito"
+
+#: .\ocp\courses\views.py:48
+msgid "You have been enrolled in course"
+msgstr "Te has matriculado en el curso"
+
+#: .\ocp\courses\views.py:60
+msgid "Your subscription was successfully canceled"
+msgstr "Sua inscrição foi cancelada com sucesso"
+
+#: .\ocp\courses\views.py:96
+msgid "Your comment was sended with success"
+msgstr "Su comentario se envió con éxito"
+
+#: .\ocp\courses\views.py:129
+#, fuzzy
+#| msgid "Esta aula não está disponIvel"
+msgid "This class is not available"
+msgstr "Esta página no está disponible"
+
+#: .\ocp\courses\views.py:147
+#, fuzzy
+#| msgid "Este material não está disponIvel"
+msgid "This material is not available."
+msgstr "Este material no está disponible"
+
+#: .\ocp\courses\views.py:168
+msgid "No Video."
+msgstr "No hay video".
+
+#: .\ocp\courses\views.py:173
+msgid "Id doesnt exists."
+msgstr "Id no existe".
+
+#: .\ocp\courses\views.py:245
+#, fuzzy
+#| msgid "There are no category present."
+msgid "That category not exist"
+msgstr "No hay ninguna categoria presente"
+
+#: .\ocp\courses\views.py:256
+#, fuzzy
+#| msgid "Answer updated with success"
+msgid "Course created with success"
+msgstr "Respuesta actualizada con éxito"
+
+#: .\ocp\forum\models.py:15 .\ocp\forum\models.py:47
+msgid "Author"
+msgstr "Autor"
+
+#: .\ocp\forum\models.py:19 .\ocp\forum\models.py:58
+msgid "Anwers"
+msgstr "Respuestas"
+
+#: .\ocp\forum\models.py:27 .\ocp\forum\models.py:28 .\ocp\forum\models.py:41
+msgid "Topic"
+msgstr "Tema"
+
+#: .\ocp\forum\models.py:44 .\ocp\forum\models.py:57
+#: .\ocp\forum\templates\forum\index.html:24
+msgid "Answer"
+msgstr "Respuesta"
+
+#: .\ocp\forum\models.py:51
+msgid "Correct?"
+msgstr "¿Correcto?"
+
+#: .\ocp\forum\templates\forum\index.html:6
+msgid "Forum-Index"
+msgstr "Indice del foro"
+
+#: .\ocp\forum\templates\forum\index.html:17
+msgid "Forum of Questions"
+msgstr "Foro de preguntas"
+
+#: .\ocp\forum\templates\forum\index.html:24
+#: .\ocp\forum\templates\forum\thread.html:19
+msgid "Create by"
+msgstr "Crear por"
+
+#: .\ocp\forum\templates\forum\index.html:27
+msgid "Tags"
+msgstr "Etiquetas"
+
+#: .\ocp\forum\templates\forum\index.html:32
+msgid "Update at "
+msgstr "Actualizar en"
+
+#: .\ocp\forum\templates\forum\index.html:32
+#: .\ocp\forum\templates\forum\thread.html:20
+#: .\ocp\forum\templates\forum\thread.html:34
+msgid "ago"
+msgstr "hace"
+
+#: .\ocp\forum\templates\forum\index.html:36
+#, fuzzy
+#| msgid "Questions about the course"
+msgid "No Questions at moment"
+msgstr "Preguntas sobre el curso"
+
+#: .\ocp\forum\templates\forum\index.html:45
+msgid "Previous"
+msgstr "Anterior"
+
+#: .\ocp\forum\templates\forum\index.html:55
+msgid "Next"
+msgstr "Siguiente"
+
+#: .\ocp\forum\templates\forum\menu_lateral.html:7
+msgid "More Recently"
+msgstr "Más recientemente"
+
+#: .\ocp\forum\templates\forum\menu_lateral.html:9
+#, fuzzy
+#| msgid "More Coments"
+msgid "More Comments"
+msgstr "Más comentarios"
+
+#: .\ocp\forum\templates\forum\menu_lateral.html:10
+msgid "Remove Filters"
+msgstr "Eliminar filtros"
+
+#: .\ocp\forum\templates\forum\thread.html:5
+msgid "Forum-Thread"
+msgstr "Foro-Hilo"
+
+#: .\ocp\forum\templates\forum\thread.html:20
+msgid "Create at "
+msgstr "Crear en"
+
+#: .\ocp\forum\templates\forum\thread.html:23
+msgid "Give Your Answer"
+msgstr "Da tu respuesta"
+
+#: .\ocp\forum\templates\forum\thread.html:25
+#, fuzzy
+#| msgid "Give Your Answer"
+msgid "Login to Give Your Answer"
+msgstr "Da tu respuesta"
+
+#: .\ocp\forum\templates\forum\thread.html:34
+msgid "answered at "
+msgstr "respondió a las"
+
+#: .\ocp\forum\templates\forum\thread.html:39
+msgid "Cancel Right Answer"
+msgstr "Cancelar respuesta correcta"
+
+#: .\ocp\forum\templates\forum\thread.html:40
+msgid "Right Answer"
+msgstr "Respuesta correcta"
+
+#: .\ocp\forum\templates\forum\thread.html:41
+#: .\ocp\forum\templates\forum\thread.html:44
+msgid "Answer flagged by the owner"
+msgstr "Respuesta marcada por el propietario"
+
+#: .\ocp\forum\views.py:73
+msgid "To reply to the topic you must be logged in"
+msgstr "Para responder ao tópico es necesario estar logado"
+
+#: .\ocp\forum\views.py:88
+msgid "Your answer was sended with success"
+msgstr "Su respuesta se envió con éxito"
+
+#: .\ocp\forum\views.py:105
+msgid "Answer updated with success"
+msgstr "Respuesta actualizada con éxito"
+
+#: .\ocp\languages\templates\languages\index.html:5
+msgid "Languages-Index"
+msgstr "Indice de idiomas"
+
+#: .\ocp\languages\templates\languages\index.html:10
+msgid "Language"
+msgstr "Idioma"
+
+#: .\ocp\languages\templates\languages\index.html:16
+msgid "Choose your language"
+msgstr "Elige tu idioma"
+
+#: .\ocp\languages\templates\languages\index.html:17
+#: .\ocp\settings\common.py:112
+msgid "English"
+msgstr "inglés"
+
+#: .\ocp\languages\templates\languages\index.html:18
+#: .\ocp\settings\common.py:113
+msgid "Portuguese"
+msgstr "portugués"
+
+#: .\ocp\languages\templates\languages\index.html:19
+#: .\ocp\settings\common.py:114
+msgid "Spanish"
+msgstr "español"
+
+#: .\ocp\languages\templates\languages\index.html:27
+msgid "Your Current Language Settings:"
+msgstr "Su configuración de idioma actual:"
+
+#~ msgid "Fill your informations"
+#~ msgstr "Rellene sus informaciones"
+
+#~ msgid "accounts-register"
+#~ msgstr "registro de cuentas"
+
+#~ msgid "Download"
+#~ msgstr "Descargar"
+
+#~ msgid "Inglês"
+#~ msgstr "Inglés"
+
+#~ msgid "Brasil"
+#~ msgstr "Brasil"

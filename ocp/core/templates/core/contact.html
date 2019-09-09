@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block head %}
+    <title>{% trans 'Contact' %}</title>
+{% endblock %}
+
+{% block breadcrumb %}
+        <li><a href="{% url 'core:home' %}">{% trans 'Home' %}</a></li>
+        <li><a href="">{% trans 'Speak with us' %}</a></li>
+{% endblock %}
+
+{% block col_one %}
+	<br /><br />
+    {% trans "Contact us and we'll get back to you within 24 hours." %}
+    <br /><br />
+    <p><span class="glyphicon glyphicon-map-marker"></span> London, UK</p>
+    <p><span class="glyphicon glyphicon-phone"></span> +00 01234567890</p>
+    <p><span class="glyphicon glyphicon-envelope"></span> myemail@ocpplus.com</p>
+    <p><span class="glyphicon glyphicon-envelope"></span> newemail@ocpplus.com</p>
+{% endblock %}
+
+{% block col_two %}
+    <div class="row">
+        <div class="col-12">
+            <div class="container-basic">
+                <h1>{% trans 'Speak with us' %}</h1>
+                <br />
+                <form action="{% url 'core:contact' %}" method="post">
+                    {% csrf_token %}
+                    <div>
+                        <div class="col-sm-6">
+                            <label for="fname"><i class="fa fa-user"></i>{% trans 'Name' %}</label>
+                            <input class="form-control" id="name" name="name"  type="text" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="fname"><i class="fa fa-user"></i>{% trans 'Email' %}</label>
+                            <input class="form-control" id="email" name="email" type="email" required>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="col-sm-12">
+                            <label for="fname"><i class="fa fa-user"></i>{% trans 'Message' %}</label>
+                            <textarea class="form-control" id="message" name="message"  rows="5"></textarea>
+                            <div class="container-oneline">
+                                <button type="submit" class="btn btn-primary">{% trans 'Send' %}</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

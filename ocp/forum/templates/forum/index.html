@@ -1,0 +1,62 @@
+{% extends "forum/menu_lateral.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block head %}
+    <title>{% trans 'Forum-Index' %}</title>
+{% endblock %}
+
+{% block breadcrumb %}
+    <li><a href="{% url 'core:home' %}">{% trans 'Home' %}</a></li>
+    <li><a href="{% url 'forum:index' %}">{% trans 'Forum' %}</a></li>
+{% endblock %}
+
+{% block col_two %}
+    <div class="container-basic">
+        {% block dashboard_content %}
+            <h1>{% trans 'Forum of Questions' %} </h1>
+            {% for thread in object_list %}
+                <div class="well">
+                    <h3><a href="{{ thread.get_absolute_url }}" title="">{{ thread.title }}</a></h3>
+                    <h5>
+                        <!-- O filtro pluralize coloca plural quando tiver mais de uma ocorrencia...}-->
+                        {% with answers_count=thread.answers %}
+                            {% trans 'Create by' %} {{ thread.author }} | {{ answers_count }} {% trans 'Answer' %}{{ answers_count|pluralize }}
+                        {% endwith %}
+                    </h5>
+                    {% trans 'Tags' %}:
+                    {% for tag in thread.tags.all %}
+                        <a href="{% url 'forum:index_tagged' tag.slug %}" title="">{{ tag }}</a>{% if not forloop.last %},{% endif %}
+                    {% endfor %}
+                    <!-- O filtro timesince coloca dias/horas atrás... -->
+                    <span class="right"><a href="{{ thread.get_absolute_url }}" title="">{% trans 'Update at ' %} {{ thread.modified|timesince }} {% trans 'ago' %}</a></span>
+                </div>
+            {% empty %}
+                <aside >
+                    <p>{% trans 'No Questions at moment' %}</p>
+                </aside>
+            {% endfor %}
+            {% if object_list %}
+                <div class="pagination pagination-centered">
+                    {% if page_obj.has_previous %}
+                        <!- Foi incluido o if request.GET.order ... para garantir que a paginação e a URL estejam
+                            sincronizadas e tambem foi feita a inclusão das variaveis do request no template -->
+                        <li>
+                            <a href="?page={{ page_obj.previous_page_number }}{% if request.GET.order %}&order={{ request.GET.order }}{% endif %}" title="">{% trans 'Previous' %}</a>
+                        </li>
+                    {% endif %}
+                    {% for page in paginator.page_range %}
+                        <li {% if page == page_obj.number %} class="active"{% endif %}>
+                            <a href="?page={{ page }}{% if request.GET.order %}&order={{ request.GET.order }}{% endif %}" title="">{{ page }}</a>
+                        </li>
+                    {% endfor %}
+                    {% if page_obj.has_next %}
+                        <li>
+                            <a href="?page={{ page_obj.next_page_number }}{% if request.GET.order %}&order={{ request.GET.order }}{% endif %}" title="">{% trans 'Next' %}</a>
+                        </li>
+                    {% endif %}
+                </div>
+            {% endif %}
+        {% endblock %}
+    </div>
+{% endblock %}

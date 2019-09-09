@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+{% load i18n %}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <!-- Carga do css -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/ocp.css' %}">
+
+    <!-- Permitir UTF8 para acentuação oriunda do Latim,
+    lembrando que o editor tem que estar salvando os arquivos em UTF8  -->
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+    {% block head %}
+    {% endblock %}
+
+</head>
+<body id="toTop">
+
+<nav class="navbar navbar-inverse id">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">{% trans "Online Course Platform ( OCP+ )  " %}</a>
+    </div>
+    <ul class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+          <li class="active"><a href="{% url 'core:home' %}">{% trans "Home" %}</a></li>
+          <li><a href="{% url 'courses:category_list' %}">{% trans "Category" %}</a></li>
+          <li><a href="{% url 'courses:index' %}">{% trans "Courses" %}</a></li>
+          {% if user.is_authenticated %}
+                <li><a href="{% url 'accounts:dashboard' %}">{% trans "My Panel" %}</a></li>
+          {% endif %}
+          <li><a href="{% url 'forum:index' %}">{% trans "Forum" %}</a></li>
+          <li><a href="{% url 'core:contact' %}">{% trans 'Speak with us' %}</a></li>
+          <li class="dropdown">
+              {% if user.is_authenticated and False %}
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">{% trans "Administration" %}<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">{% trans "Add Teacher" %}</a></li>
+                        <li><a href="">{% trans "Add Entities" %}</a></li>
+                        <li><a href="">{% trans "Edit Banners" %}</a></li>
+                        <li><a href="">{% trans "View Calendar" %}</a></li>
+                    </ul>
+               {% else %}
+              {% endif %}
+          </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'accounts:dashboard' %}"><span class="glyphicon glyphicon-log-out"></span> {{ user.username }}</a></li>
+        <li><a href="{% url 'accounts:logout' %}"><span class="glyphicon glyphicon-log-out"></span> {% trans "Log out" %}</a></li>
+        {% else %}
+        <li><a href="{% url 'accounts:login' %}"><span class="glyphicon glyphicon-log-in"></span> {% trans "Log in " %}</a></li>
+        <li><a href="{% url 'accounts:register' %}"><span class="glyphicon glyphicon-user"></span> {% trans "Register" %}</a></li>
+        {% endif %}
+        <li><a href="{% url 'languages:index' %}"><span class="glyphicon glyphicon-flag"></span>{% trans ' Language' %}</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <!--Os blocos abaixo serão substituidos pelas aplicações -->
+
+<div class="container">
+    <div class="coll-xs-12">
+        {% if messages %}
+        {% for message in messages %}
+             <div class="alert alert-danger">
+                <strong>{{ message }}</strong>
+             </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+
+<div class="container" >
+    <div class="breadcrumb">
+        {% block breadcrumb %}
+        {% endblock  %}
+    </div>
+</div>
+
+<div class="container" >
+    {% block content %}
+    {% endblock  %}
+</div>
+
+<div>
+    <div class="container" >
+            <div class="col-sm-4">
+                <div class="container-basic" >
+                    {% block col_one %}
+                    {% endblock %}
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="container-basic">
+                    {% block col_two %}
+                    {% endblock %}
+                </div>
+            </div>
+
+    </div>
+</div>
+
+<div class="container" padding=50px>
+    {% block contact %}
+    {% endblock  %}
+</div>
+
+<footer class="text-center">
+    <br>
+    <a class="up-arrow" href="#toTop" data-toggle="tooltip" title="TO TOP">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+    </a>
+    <p><strong>{% trans 'OCP+' %}</strong></p>
+</footer>
+
+</body>
+
+
+<!-- ######################################################################################################### -->
+<!-- JS -->
+<script>
+$(document).ready(function(){
+  // Initialize Tooltip
+  $('[data-toggle="tooltip"]').tooltip();
+})
+</script>
+
+</html>
+

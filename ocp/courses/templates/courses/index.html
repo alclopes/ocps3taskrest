@@ -1,0 +1,47 @@
+{% extends "courses/menu_lateral.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block head %}
+    <title>{% trans 'Courses-Index' %}</title>
+{% endblock %}
+
+{% block breadcrumb %}
+    <li><a href="{% url 'core:home' %}">{% trans 'Home' %}</a></li>
+    <li><a href="{% url 'courses:index' %}">{% trans 'Courses List' %}</a></li>
+{% endblock %}
+
+{% block col_two %}
+    <div class="container-basic">
+        <div class="container-fluid">
+            <h1>{% trans 'Courses' %} </h1>
+            {% for course in object_list %}
+                <br>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="container-oneline">
+                            <a href="{{ courses.get_absolute_url }}">
+                            {% if course.image %}
+                                 <img src="{{ course.image.url }}" alt="{{ course.name }}" width="100%" />
+                            {% else %}
+                                 <img src="{% static 'img/ocp_plus.gif' %}" alt="{{ course.name }}" width="100%" />
+                            {% endif %}
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="container-basic">
+                            <h4><a href="{% url 'courses:course_details' course.slug %}" title="">{{ course.name }}</a></h4>
+                            {{ course.description|truncatewords:'20' }}
+                            <a href="{% url 'courses:course_details' course.slug %}" title="">{% trans 'See more details' %}</a>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="container-basic">
+                    <p>{% trans 'There are not curses' %}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

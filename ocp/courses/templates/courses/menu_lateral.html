@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block col_one %}
+    <div class="columns">
+        <ul class="column_topic">
+            <li><a href="?order=created_at"><span class="glyphicon glyphicon-plane" aria-hidden="true"></span> {% trans 'More Rencently' %}</a></li>
+            <li><a href="?order=views"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> {% trans 'More Views' %}</a></li>
+            <li><a href="?order=qualification"><span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span> {% trans 'More Pontuation' %}</a></li>
+            <li><a href="{% url 'courses:index' %}"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> {% trans 'Remove Filter' %}</a></li>
+            <li class="grey"></li>
+        </ul>
+    </div>
+{% endblock %}
+
+

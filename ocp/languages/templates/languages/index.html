@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block head %}
+    <title>{% trans 'Languages-Index' %}</title>
+{% endblock %}
+
+{% block breadcrumb %}
+    <li><a href="{% url 'core:home' %}">{% trans 'Home' %}</a></li>
+    <li><a href="">{% trans 'Language' %}</a></li>
+{% endblock  %}
+
+{% block col_one %}
+    <div class="container-basic">
+        <ul class="column_topic" >
+            <li class="header">{% trans 'Choose your language' %}</li>
+            <li><a href="{% url 'languages:set_language_from_url' user_language='en' %}"><i class="fa fa-refresh"></i>{% trans 'English' %}</a></li>
+            <li><a href="{% url 'languages:set_language_from_url' user_language='pt' %}"><i class="fa fa-refresh"></i>{% trans 'Portuguese' %}</a></li>
+            <li><a href="{% url 'languages:set_language_from_url' user_language='es' %}"><i class="fa fa-refresh"></i>{% trans 'Spanish' %}</a></li>
+            </li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block col_two %}
+    <ul>
+        <h5>{% trans 'Your Current Language Settings:' %}</h5>
+        {% get_language_info for LANGUAGE_CODE as lang %}
+        <ul>
+            <li><span style="margin-left:1em">Language code: {{ lang.code }}</span></li>
+            <li><span style="margin-left:1em">Name of language: {{ lang.name_local }}</span></li>
+            <li><span style="margin-left:1em">Name in English: {{ lang.name }}</span></li>
+        </ul>
+    </ul>
+{% endblock %}

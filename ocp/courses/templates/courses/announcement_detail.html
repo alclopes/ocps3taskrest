@@ -1,0 +1,61 @@
+{% extends "courses/course_dashboard.html" %}
+{% load i18n %}
+
+{% block head %}
+    <title>{% trans 'Courses-Announcement_detail' %}</title>
+{% endblock %}
+
+{% block breadcrumb %}
+        {{ block.super }}
+        <li><a href="{% url 'courses:announcement_detail' course.slug announcement.pk %}">{{ announcement }}</a></li>
+{% endblock  %}
+
+{% block dashboard_content %}
+    <div class="well">
+        <h2>{{ announcement.title }}</h2>
+        {{ announcement.content|linebreaks }}
+        <span class="right"><a href="#add_comment">{% trans 'Comments Add' %}</a></span>
+    </div>
+
+    <div class="well">
+        {% with total=announcement.comments.count %}
+        <!-- pluralize -->
+            {%  if total > 1 %}
+                <h4>{% trans 'Comments' %}</h4>
+            {% else %}
+                <h4>{% trans 'Comment' %}</h4>
+            {% endif %}
+        {% endwith %}
+        <hr />
+        {% for comment in announcement.comments.all %}
+            <p>
+                <strong>{{ comment.user }}</strong> {% trans 'said at ' %}{{ comment.created_at|timesince }} {% trans 'ago: ' %}<br/>
+                {{ comment.comment|linebreaksbr }}
+            </p>
+            <hr>
+        {% empty %}
+            <p>
+                {% trans 'No comments to that course.' %}
+            </p>
+        {% endfor %}
+    </div>
+
+    <div class="well">
+        <h4 id="comments">{% trans 'Comments Add' %}</h4>
+        <br />
+        <form method="post" class="form-horizontal" id="add_comment">
+            {% csrf_token %}
+            <fieldset>
+                {{ form.non_field_errors }}
+                {% for field in form %}
+                <div class="form-group">
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {{ field.errors }}
+                </div>
+                {% endfor %}
+                <button type="submit" class="btn btn-primary">{% trans 'Send' %}</button>
+            </fieldset>
+        </form>
+    </div>
+{% endblock %}

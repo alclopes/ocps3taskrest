@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block head %}
+    <title>{% trans 'Course-AddCategory' %}</title>
+{% endblock %}
+
+{% block breadcrumb %}
+        <li><a href="{% url 'core:home' %}">{% trans 'Home' %}</a></li>
+        <li><a href="{% url 'courses:category_list' %}">{% trans 'Categories List' %}</a></li>
+        <li><a href="">{% trans 'Add Category' %}</a></li>
+{% endblock  %}
+
+{% block content %}
+   	<h1>{% trans 'Add a category' %}</h1>
+
+   <form id="category_form" method="post" action="/course/category_add/">
+       {% csrf_token %}
+       {{ form.as_p }}
+       <br/>
+       <input type="submit" name="submit" value="{% trans 'Create Category' %}" />
+   </form>
+{% endblock %}

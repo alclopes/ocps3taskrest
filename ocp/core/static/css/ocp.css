@@ -1,0 +1,233 @@
+/* ######################################################################################################### */
+/* Gerais  */
+
+html, body {
+    background-color:#d3d3d3;
+	margin-top: 0px;
+	height:100%;
+}
+
+body{
+    background-color:#d3d3d3;
+}
+
+.sidebar-nav {
+    margin-top: 5px;
+    padding: 0;
+    list-style: none;
+}
+
+.breadcrumb{
+    background-color:#d3d3d3;
+    padding-left: 5px;
+    padding-bottom: 3px;
+}
+
+
+/* ######################################################################################################### */
+/* Incluido para column_topic usado nos menus a esquerda */
+
+/* Create three columns of equal width */
+.columns {
+  float: left;
+  width: 80%;
+  padding-left: 0px;
+  padding-top: 10px;
+}
+
+/* Style the list */
+.column_topic {
+  list-style-type: none;
+  border: 1px solid #eee;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+/* Add shadows on hover */
+.column_topic:hover {
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+
+.column_topic .header {
+  background-color: #6E6E6E;
+  color: white;
+  font-size: 20px;
+}
+
+/* List items */
+.column_topic li {
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Grey list item */
+.column_topic .grey {
+  background-color: #eee;
+  font-size: 15px;
+}
+
+.column_topic .bottom {
+  background-color: #d3d3d3;
+  color: white;
+  font-size: 15px;
+}
+
+/* The "Sign Up" button */
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 5px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+/* ######################################################################################################### */
+/* Incluido para o footer  */
+
+
+/* Add a dark background color to the footer */
+footer {
+    background-color: #d3d3d3;
+    color: #585858;
+    padding: 5px;
+    margin-bottom:0px
+    weight: bold;
+}
+
+footer a {
+  color: #f5f5f5;
+}
+
+footer a:hover {
+  color: #777;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* ######################################################################################################### */
+/* Incluido para form contact */
+
+
+ /* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 5px;
+  background-color: bg-grey
+  padding: 5px;
+}
+
+
+/* ######################################################################################################### */
+/* Containers */
+
+.container-home {
+  padding: 0px 70px;
+  background-color: bg-grey
+  width: 95%;
+}
+
+.container-basic {
+  padding: 0px 0px;
+  background-color: bg-grey
+  width: 95%;
+}
+
+.container-margin {
+  padding: 0px 20px;
+  background-color: bg-grey
+  width: 95%;
+}
+
+.container-oneline {
+  padding: 15px 0px;
+  background-color: bg-grey
+  width: 95%;
+}
+
+.container-banner {
+  padding: 0px 0px 5px 5px;
+  background-color: white
+  width: 95%;
+}
+
+.well {
+  padding: 0px 15px 15px 15px;
+}
+
+/* ######################################################################################################### */
+/* Usado em tabelas */
+
+
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+.table,
+th {
+  background-color: #D8D8D8
+}
+
+th, td {
+  padding: 5px;
+  font-family: Open Sans;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2
+}
+
+/* ######################################################################################################### */
+/* New */
+
+/* ######################################################################################################### */
+/* New */

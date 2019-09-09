@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block head %}
+    <title>{% trans 'Courses-Detail' %}</title>
+{% endblock %}
+
+{% block breadcrumb %}
+        <li><a href="{% url 'core:home' %}">{% trans 'Home' %}</a></li>
+        <li><a href="">{{ course }}</a></li>
+{% endblock  %}
+
+
+{% block content %}
+    <div class="container-margin">
+        <h2> {{ course }}</h2>
+        <h4> {{ course.description }}</h4>
+    </div>
+{% endblock  %}
+
+
+{% block col_one %}
+    <br>
+    <div align='center'>
+        {% if course.image %}
+             <img src="{{ course.image.url }}" alt="{{ course.name }}" width="80%" />
+        {% else %}
+             <img src="{% static 'img/ocp_plus.gif' %}" alt="{{ course.name }}" width="80%" />
+        {% endif %}
+    </div>
+
+    <div class="container-oneline" align='middle'>
+        <a href='#question' class="btn btn-primary">{% trans 'Speak with us' %}</a>
+        <a href="{% url 'courses:enrollment' course.slug %}" class="btn btn-primary">{% trans 'Make your enrollment' %}</a>
+    </div>
+
+{% endblock %}
+
+{% block col_two %}
+    <br />
+    <div>
+        <h4>{% trans 'About the course' %}</h4>
+        {{ course.about|linebreaks }}
+
+        {% if teachers %}
+            <div>
+                <strong>
+                    {% with total=course.teachers.count %}
+                        <!-- pluralize -->
+                        {%  if total > 1 %}
+                            {% trans 'Teachers' %}
+                        {% else %}
+                            {% trans 'Teacher' %}
+                        {% endif %}
+                    {% endwith %}
+                </strong>
+
+                <ul>
+                    {% for teacher in teachers %}
+                        <li>{{ teacher }}</li>
+                    {% empty %}
+                        <li>{% trans 'No teacher' %}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+        {% if request.user.is_staff %}
+            {% if non_teachers %}
+                <br />
+                <div>
+                    <h4>{% trans 'Add a teacher:' %}</h4>
+                    <form action="{% url 'courses:incharge' course.slug %}" method="post">
+                        {% csrf_token %}
+                        <select name="teacher">
+                            {% for teacher in non_teachers %}
+                                <option value="{{ teacher.id }}">{{ teacher }}</option>
+                            {% endfor %}
+                        </select>
+                        <input type="submit" value={% trans 'Add Teacher' %} />
+                    </form>
+                </div>
+            {% else %}
+                <div>{% trans 'No teachers to add.' %}</div>
+            {% endif %}
+        {% endif %}
+        <span class="right"><a href="{% url 'courses:index' %}">{% trans 'Back to Courses List.' %}</a></span>
+    </div>
+{% endblock %}
+
+{% block contact %}
+    <h3>{% trans 'Questions about the course' %}</h3>
+    {% if is_valid %}
+         <p>{% trans 'You sent your message with success' %}</p>
+    {% endif %}
+    <form id="question" method="post">
+        {% csrf_token %}
+        <fieldset>
+            {% for field in form %}
+            <div class="form-group">
+                {{ field.label_tag }}
+                {{ field }}
+                {% if field.errors %}
+                <ul class="errorlist">
+                    {% for error in field.errors %}
+                    <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+            {% endfor %}
+            <div>
+                <button type="submit" class="btn btn-primary">{% trans 'Send' %}</button>
+            </div>
+        </fieldset>
+    </form>
+
+{% endblock  %}

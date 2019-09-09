@@ -1,0 +1,30 @@
+{% extends "accounts/account_dashboard.html" %}
+{% load i18n %}
+
+{% block head %}
+    <title>{% trans 'accounts-edit' %}</title>
+{% endblock %}
+
+{% block breadcrumb %}
+        {{ block.super }}
+        <li><a href="">{% trans 'Edit Account' %}</a></li>
+{% endblock  %}
+
+{% block dashboard_content %}
+    <div class="container-basic">
+        <form class="container-basic" method="post">
+            {% csrf_token %}
+            <fieldset>
+                {{ form.non_field_errors }}
+                {% for field in form %}
+                <div class="class="form-group"">
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {{ field.errors }}
+                </div>
+                {% endfor %}
+                <button type="submit" class="btn btn-primary">{% trans 'Edit Account' %}</button>
+            </fieldset>
+        </form>
+    </div>
+{% endblock %}

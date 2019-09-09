@@ -1,0 +1,53 @@
+{% extends "courses/course_dashboard.html" %}
+{% load i18n %}
+
+{% block head %}
+    <title>{% trans 'Courses-Lesson_detail' %}</title>
+{% endblock %}
+
+
+{% block breadcrumb %}
+        {{ block.super }}
+        <li><a href="{% url 'courses:lesson_list' course.slug %}">{% trans 'lessons' %}</a></li>
+        <li><a href="{% url 'courses:lesson_detail' course.slug lesson.pk %}">{{ lesson }}</a></li>
+{% endblock %}
+
+{% block dashboard_content %}
+<div class="well">
+    <h2><a href="{% url 'courses:lesson_detail' course.slug lesson.pk %}">{{ lesson }}</a></h2>
+    {{ lesson.description|linebreaks }}
+    <p>
+        <br />
+        <h4>{% trans 'Material to lesson' %}</h4>
+        <table>
+            <tr>
+                <th>{% trans 'Name' %}</th>
+                <th>{% trans 'Action' %}</th>
+            </tr>
+            {% for material in lesson.materials.all %}
+                <tr>
+                    <td>{{ material }}</td>
+                    <td>
+                        <span class="center">
+                        {% if material.is_embedded %}
+                            <!-- O material está embedded quando foi digitado algo no campo embedded -->
+                            <a href="{% url 'courses:material_detail' course.slug material.pk %}">{% trans 'Access' %}</a>
+                        {% else %}
+                            <!-- Else acontece quando um documento foi anexado -->
+                            <span class="glyphicon glyphicon-folder-open"></span>
+                            <!-- /Importante quando colocamos target="_blank" para um link ele irá renderizar/criar uma nova pagina -->
+                            <a target="_blank" href="{{ material.file.url }}">{% trans 'Access' %}</a>
+                        {% endif %}
+                        </span>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td>{% trans 'There is no material available for this lesson.' %}</td>
+                    <td> </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </p>
+</div>
+{% endblock %}

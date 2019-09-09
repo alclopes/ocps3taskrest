@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block head %}
+    <title>{% trans 'Course-CategoryList' %}</title>
+{% endblock %}
+
+{% block breadcrumb %}
+    <li><a href="{% url 'core:home' %}">{% trans 'Home' %}</a></li>
+    <li><a href="{% url 'courses:category_list' %}">{% trans 'Categories' %}</a></li>
+{% endblock  %}
+
+{% block col_one %}
+    <div class="columns">
+        <ul class="column_topic">
+            <li class="header">{% trans 'Categories' %}</li>
+            {% if cats %}
+                {% for c in cats %}
+                    {% if c == act_cat %}
+                        <li>
+                            <a href="{% url 'courses:category_details' c.slug %}">{{ c.name }}</a>
+                            <a class="right" href="{% url 'courses:course_add' c.slug %}"><span class="glyphicon glyphicon-plus" title="Add Course" aria-hidden="true"></span></a>
+                        </li>
+                    {% else  %}
+                        <li>
+                            <a href="{% url 'courses:category_details' c.slug %}">{{ c.name }}</a>
+                            {% if user.is_staff %}
+                                <a class="right" href="{% url 'courses:course_add' c.slug %}"><span class="glyphicon glyphicon-plus" title="Add Course" aria-hidden="true"></span></a>
+                            {% endif %}
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                <li>{% trans 'There are no category present.' %}</li>
+            {% endif %}
+            {% if user.is_staff %}
+                <li class="button"><a href="{% url 'courses:category_add' %}" class="button">{% trans "Add a New Category"%}</a></li>           {% else %}
+            {% endif %}
+        </ul>
+    </div>
+{% endblock %}
+
+{% block col_two %}
+    <div class="container-basic">
+        <h1>{% trans 'Courses in the Category' %} {{ category.name }}</h1>
+        {% if cats %}
+            <div class="container-fluid">
+                {% for course in courses_category %}
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="container-oneline">
+                                <a href="{{ courses.get_absolute_url }}">
+                                {% if course.image %}
+                                     <img src="{{ course.image.url }}" alt="{{ course.name }}" width="100%" />
+                                {% else %}
+                                     <img src="{% static 'img/ocp_plus.gif' %}" alt="{{ course.name }}" width="100%" />
+                                {% endif %}
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="container-basic">
+                                <h4><a href="{% url 'courses:course_details' course.slug %}" title="">{{ course.name }}</a></h4>
+                                {{ course.description|truncatewords:'20' }}
+                                <a href="{% url 'courses:course_details' course.slug %}" title="">{% trans 'See more details' %}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                {% empty %}
+                    <div class="container-basic">
+                        <p>{% trans 'There are not curses currently in category.' %}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="container-basic">
+                <p>{% trans 'There are no category present.' %}</p>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

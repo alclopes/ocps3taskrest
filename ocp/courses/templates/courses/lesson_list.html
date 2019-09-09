@@ -1,0 +1,32 @@
+{% extends "courses/course_dashboard.html" %}
+{% load i18n %}
+
+{% block head %}
+    <title>{% trans 'Courses-LessonsList' %}</title>
+{% endblock %}
+
+{% block breadcrumb %}
+        {{ block.super }}
+        <li><a href="{% url 'courses:lesson_list' course.slug %}">{% trans 'lessons' %}</a></li>
+{% endblock  %}
+
+{% block dashboard_content %}
+    {% for lesson in lessons %}
+        <div class="well">
+            <h2><a href="{% url 'courses:lesson_detail' course.slug lesson.pk %}">{{ lesson }}</a></h2>
+            <p>
+                {{ lesson.description|truncatewords:'20' }}
+                <br/>
+                <a href="{% url 'courses:lesson_detail' course.slug lesson.pk %}" title="">
+                    <i class="fa fa-eye"></i> {% trans 'Got to lesson' %}
+                </a>
+            </p>
+        </div>
+    {% empty %}
+        <div class="well">
+            <h2>
+                {% trans 'No Lesson' %}
+            </h2>
+        </div>
+    {% endfor %}
+{% endblock %}

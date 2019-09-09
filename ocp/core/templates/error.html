@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block breadcrumb %}
+    {{ block.super }}
+    <li><a href="">{% trans 'Error' %}</a></li>
+{% endblock  %}
+
+{% block head %}
+    Error
+{% endblock %}
+
+{% block content %}
+    <h1>Error</h1>
+
+    {{ message }}
+
+    <hr>
+
+    <a href="{% url 'core:home' %}">Return to home.</a>
+
+{% endblock %}

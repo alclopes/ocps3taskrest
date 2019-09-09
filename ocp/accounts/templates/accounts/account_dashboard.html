@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% load courses_tags %}
+
+{% block head %}
+    <title>{% trans 'accounts-dashboard' %}</title>
+{% endblock %}
+
+{% block breadcrumb %}
+    <li><a href="{% url 'core:home' %}">{% trans 'Home' %}</a></li>
+    <li><a href="{% url 'accounts:dashboard' %}">{% trans 'My Panel' %}</a></li>
+{% endblock  %}
+
+{% block col_one %}
+    <div class="container-basic">
+        {% load_my_courses user as enrollments %}
+        <div class="columns">
+            <ul class="column_topic">
+                <li class="header">{% trans 'My Courses' %}</li>
+                {% for enrollment in enrollments %}
+                    <li>
+                        <a href="{% url 'courses:announcements' enrollment.course.slug %}">{{ enrollment.course }}</a>
+                    </li>
+                {% empty %}
+                    <li>{% trans 'No Course' %}</li>
+                {% endfor %}
+                <li class="header">{% trans 'Settings Account' %}</li>
+                <li><a href="{% url 'accounts:edit' %}">{% trans 'Edit Account' %}</a></li>
+                <li><a href="{% url 'accounts:edit_password' %}">{% trans 'Edit Password' %}</a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+
+{% block col_two %}
+    <div class="container-basic">
+        {% load_my_courses user as enrollments %}
+        {% block dashboard_content %}
+            <h1>{% trans 'My Courses' %}</h1>
+            {% for enrollment in enrollments %}
+                <div class="well">
+                    <h3>{{ enrollment.course }}
+                        <!-- esta sendo recuperada  a data se não existir aparecerá escrito "Sem data" -->
+                        ({{ enrollment.course.start_date|date:'d/m/Y'|default:_('Without Date') }})
+                    </h3>
+                    {{ enrollment.course.description|linebreaks }}
+                    <div>
+                        <a href="{% url 'courses:announcements' enrollment.course.slug %}" class="btn btn-primary">{% trans 'Access' %}</a>
+                        <span class="right"><a href="{% url 'courses:enrollment_undo' enrollment.course.slug %}" class="btn btn-warning">{% trans 'Cancel Enrollment' %}</a></span>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="container-basic">
+                    <p>{% trans 'No enrollment course' %}</p>
+                </div>
+            {% endfor %}
+        {% endblock %}
+    </div>
+{% endblock %}

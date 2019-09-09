@@ -1,0 +1,23 @@
+{% extends "courses/course_dashboard.html" %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block head %}
+    <title>{% trans 'Courses-MaterialDetail' %}</title>
+{% endblock %}
+
+{% block breadcrumb %}
+        {{ block.super }}
+        <li><a href="{% url 'courses:lesson_list' course.slug %}">{% trans 'Lessons' %}</a></li>
+        <li><a href="{% url 'courses:lesson_detail' course.slug lesson.pk %}">{{ lesson }}</a></li>
+        <li><a href="{% url 'courses:material_detail' course.slug material.pk %}">{{ material }}</a></li>
+{% endblock  %}
+
+{% block dashboard_content %}
+    <div>
+        <h2><a href="{% url 'courses:material_detail' course.slug material.pk %}">{{ material }}</a></h2>
+        {{ material.embedded|safe }}
+        <br /> <br />
+        <p><a href="{% url 'courses:lesson_detail' course.slug lesson.pk %}">{% trans 'Return' %}</a></p>
+    </div>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block head %}
+    <title>{% trans 'Home' %}</title>
+{% endblock %}
+
+
+{% block content %}
+  <div class="container-home text-center">
+    <h2>Portal OCP+ - Distance Learning</h2>
+
+      {% if user.is_authenticated %}
+          <h2>{% trans "Course Platform is read!"%}</h2>
+      {% else %}
+          <h2>{% trans "Welcome to Course Platform!"%}</h2>
+      {% endif %}
+      {% if not user.is_authenticated %}
+        <br />
+        <h4>{% trans "Hello Nice to Meet You!"%}</h4>
+        <a href="{% url 'accounts:login' %}">{% trans 'Do your logging in here' %}</a>
+        <br />
+      {% endif %}
+      </br> </br>
+      <h4>{% trans 'What we offer' %}</h4>
+      <br>
+      <div class="row">
+        <div class="col-sm-4">
+          <span class="glyphicon glyphicon-off logo-small"></span>
+          <h4>{% trans 'Online classes' %}</h4>
+          <p>{% trans 'Lorem ipsum dolor sit amet..' %}</p>
+        </div>
+        <div class="col-sm-4">
+          <span class="glyphicon glyphicon-heart logo-small"></span>
+          <h4>{% trans 'Online Resources' %}</h4>
+          <p>{% trans 'Lorem ipsum dolor sit amet..' %}</p>
+        </div>
+        <div class="col-sm-4">
+          <span class="glyphicon glyphicon-lock logo-small"></span>
+          <h4>{% trans 'Forum' %}</h4>
+          <p>{% trans 'Lorem ipsum dolor sit amet..' %}</p>
+        </div>
+      </div>
+      <br><br>
+      <div class="row">
+        <div class="col-sm-4">
+          <span class="glyphicon glyphicon-leaf logo-small"></span>
+          <h4>{% trans 'Flexible Hours' %}</h4>
+          <p>{% trans 'Lorem ipsum dolor sit amet..' %}</p>
+        </div>
+        <div class="col-sm-4">
+          <span class="glyphicon glyphicon-certificate logo-small"></span>
+          <h4>{% trans 'Certified' %}</h4>
+          <p>{% trans 'Lorem ipsum dolor sit amet..' %}</p>
+        </div>
+        <div class="col-sm-4">
+          <span class="glyphicon glyphicon-wrench logo-small"></span>
+          <h4 style="color:#303030;">{% trans 'Experienced Teachers' %}</h4>
+          <p>{% trans 'Lorem ipsum dolor sit amet..' %}</p>
+        </div>
+      </div>
+  </div>
+{% endblock %}

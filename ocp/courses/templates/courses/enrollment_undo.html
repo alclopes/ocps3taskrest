@@ -1,0 +1,20 @@
+{% extends 'courses/course_dashboard.html' %}
+{% load i18n %}
+
+{% block head %}
+    <title></title>
+{% endblock %}
+
+{% block breadcrumb %}
+        {{ block.super }}
+        <li><a href="">{% trans 'Courses-UndoEnrollment' %}</a></li>
+{% endblock  %}
+
+{% block dashboard_content %}
+    <form action="" method="post">
+        {% csrf_token %}
+        <h3>{% trans 'Do you really wish to cancel you enrollment in that course?' %}</h3>
+        <button type="submit" class="btn btn-primary">{% trans 'Confirm' %}</button>
+        <a href="{% url 'courses:announcements' course.slug %}" class="btn btn-info">{% trans 'Go Back' %}</a>
+    </form>
+{% endblock %}

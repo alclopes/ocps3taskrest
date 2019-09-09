@@ -1,0 +1,24 @@
+{% extends "accounts/account_dashboard.html" %}
+{% load i18n %}
+
+{% block head %}
+    <title>{% trans 'Courses-DashboardCourse' %}</title>
+{% endblock %}
+
+{% block breadcrumb %}
+        {{ block.super }}
+        <li>{{ course }}</a></li>
+{% endblock  %}
+
+{% block menu_options %}
+    {% block col_one %}
+        <div class="columns">
+            <ul class="column_topic">
+                <li class="header">{{ course }}</li>
+                <li><a href="{% url 'courses:announcements' course.slug %}"><i class="fa fa-eye"></i>{% trans 'Advertise' %}</a></li>
+                <li><a href="{% url 'courses:lesson_list' course.slug %}"><i class="fa fa-refresh"></i>{% trans 'Lessons and Materials' %}</a></li>
+                <li><a href="{% url 'forum:index' %}"><i class="fa fa-comments-o"></i>{% trans 'Forum' %}</a></li>
+            </ul>
+        </div>
+    {% endblock %}
+{% endblock %}

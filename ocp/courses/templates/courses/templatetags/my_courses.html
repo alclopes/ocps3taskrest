@@ -1,0 +1,8 @@
+{% load i18n %}
+<!-- Obtem uma lista de cursos em que o usuário esta registrado -->
+<li>{% trans 'My Courses' %}</li>
+{% for enrollment in enrollments %}
+    <li><a href="#">{{ enrollment.course }}</a></li>
+{% empty %}
+    <li><strong >{% trans 'No courses found' %}</strong></li>
+{% endfor %}
