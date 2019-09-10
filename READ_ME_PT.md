@@ -20,8 +20,11 @@
 1. Encaminhar emails de inclusão no forum via tarefa assincrona. (substituir oi cron)
 2. Apos 3 anos da data de vencimento de um curso propor apagagar os dadios do curso
 
+### Melhorar processo de Testes do Sistema 
+* Aguardando
+
 ### Importação de dados referentes a cursos de parceiros 
-* Utilizar JSON para migrar dados referentes a cursos de parceiros 
+* Utilizar JSON/Rest para migrar dados referentes a cursos de parceiros 
 * Aguardando
 
 ### Deploy - AWS (Cloud IAAS)
@@ -33,6 +36,9 @@
 * Travis (gerenciador de tarefas) util para realizar a Automatização dos testes)
 * Aguardando
 
+### Tradução do README
+* Disponibilizar README em Inglês e Português
+
 
 [Voltar ao topo](#top)
 
@@ -40,7 +46,13 @@
 <div id='done'/>
 
 
-## Atividades Concluidas - Done
+## Atividades Concluídas - Done
+
+
+
+### Reestruturar Static Files após a inclusão do Rest Framework
+* Mellhor estrutura dos diretorios para facilitar a migração para o servidor
+* DONE - by Andre Carvalho
 
 ### API / Rest Framework
 * Disponibilizar APIs para uso de serviços
@@ -237,8 +249,9 @@ Além de boas práticas e cuidados apontados em outros projetos, lembrar que:
 
 ## Conheça o projeto
 
-
 Meet this application on [Heroku] (https://ocps3task.herokuapp.com/).
+Meet API of the application on [Heroku] https://ocps3task.herokuapp.com/api/
+
 Perfis de login:
  
 | User | Password |

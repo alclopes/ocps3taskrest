@@ -11,9 +11,6 @@ DEBUG = config('DEBUG_DESENV', default=True, cast=bool)
 ALLOWED_HOSTS = config('ALLOWED_HOSTS_DESENV', cast=Csv())
 
 # ############## Application definition
-# INSTALLED_APPS += 
-#
-# ]
 
 # ############## MIDDLEWARE
 
@@ -48,7 +45,6 @@ DATABASES = {
 
 # ########################## AWS S3
 
-
 # # ########################## AWS S3 Private Media Upload
 if USE_S3:
     # # ########################## AWS S3 - Settings Variable
@@ -56,29 +52,21 @@ if USE_S3:
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
     # # ########################## AWS S3 Static files (CSS, JavaScript, Images)
-    # # Amazon S3/myBucketName/static/myimage/files
     STATICFILES_LOCATION = 'static'
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
-    # STATIC_ROOT = [os.path.join(BASE_DIR, 'mypage/static'), ]  # Não usar com S3
     STATICFILES_STORAGE = config('AWS_STATICFILES_STORAGE')
 
     # # ########################## AWS S3 Private Media Upload
-    # # Amazon S3/myBucketName/media/myimage/files
     MEDIAFILES_LOCATION = 'media'
-
-    # https://testheroku-assets.s3.amazonaws.com/media/myimage/images/Course_6.png
     AWS_S3_PATH = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'  # 20190822/0724
     MEDIA_URL = f'https://{AWS_S3_PATH}/{MEDIAFILES_LOCATION}/'
-
-    # MEDIA_ROOT = os.path.join(BASE_DIR, 'mypage/media') # Não usar com S3
     DEFAULT_FILE_STORAGE = config('AWS_DEFAULT_FILE_STORAGE')
 else:
-    # # ########################## Static files (CSS, JavaScript, Images)
-    STATIC_URL = '/static/'  # aponta para dentro de cada app core
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') # Heroku pode servir desde que seja nesta pasta
-    STATIC_ROOT = (
-        os.path.join(BASE_DIR, 'static'),
-    )
+    # ########################### Static files (CSS, JavaScript, Images)
+    STATIC_URL = '/static/'
+    # # STATIC_URL=> aponta para dentro de cada app core
+    STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+    # # STATIC_ROOT=> defines the single folder you want to collect all your static files into
 
     # # ########################## Media
     # Media files are for user-uploaded content.
@@ -89,7 +77,6 @@ else:
 # ########################### Caches
 
 # ########################### envolvidos (Login, Logout)
-
 
 # ########################## REDIS
 

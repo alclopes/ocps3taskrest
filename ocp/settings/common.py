@@ -141,26 +141,12 @@ if USE_S3:
     AWS_S3_REGION_NAME = 'us-west-2'
     AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
     AWS_DEFAULT_ACL = None
-else:
-
-    # ########################### Media
-    # Media files are for user-uploaded content.
-    MEDIA_URL = '/media/'
-    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-# ########################### Static files (CSS, JavaScript, Images)
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = '/static/'  # aponta para dentro de cada app core
-# STATIC_ROOT = 'staticfiles'  # Heroku pode servir desde que seja nesta pasta
-
 
 # ########################## REDIS
 CELERY_BROKER_URL = config('REDIS_URL')
 
 # Configurando Celery para rodar em paralelo (True => para testes)
 CELERY_TASK_ALWAYS_EAGER = config('CELERY_TASK_ALWAYS_EAGER_DESENV', default=False, cast=bool)
-# CELERY_TASK_ALWAYS_EAGER = config('CELERY_TASK_ALWAYS_EAGER', default=False, cast=bool)
-
 
 # ########################## django-celery-results
 CELERY_RESULT_BACKEND = 'django-db'
@@ -171,19 +157,6 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
 }
-
-###########################Email
-#### How to Allow Users to Reset Password in Django 2/2 (Django Tutorial) | Part 22
-#Setando E-mails p/ "CONSOLE" OU "SMTP"
-#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
-EMAIL_USE_TLS = True
-#EMAIL_HOST = config('EMAIL_HOST_DESENV', default='localhost')
-#EMAIL_HOST_USER = config('EMAIL_HOST_USER_DESENV', default='')
-#EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD_DESENV', default='')
-# EMAIL_PORT = 587
-CONTACT_EMAIL = 'contato@sender.com'
 
 # ########################## Email
 CONTACT_EMAIL = config('CONTACT_EMAIL')
@@ -200,9 +173,5 @@ RECEIVE_EMAIL = config('RECEIVE_EMAIL', default='')
 LOGIN_URL = 'accounts:login'
 LOGIN_REDIRECT_URL = 'core:home'
 LOGOUT_URL = 'accounts:logout'
-# AUTH_USER_MODEL muda do modelUserAdmin para o configurado
-AUTH_USER_MODEL = 'accounts.User'
+AUTH_USER_MODEL = 'accounts.User'  # AUTH_USER_MODEL muda do modelUserAdmin para o configurado
 
-# # ########################## ????
-# # Honor the 'X-Forwarded-Proto' header for request.is_secure()
-# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
