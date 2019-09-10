@@ -277,8 +277,8 @@ In addition to best practices and care pointed out in other projects, remember t
 
 ## Know the project
 
-Meet this application on [Heroku] (https://ocps3task.herokuapp.com/).
-Meet API of the application on [Heroku] https://ocps3task.herokuapp.com/api/
+* Meet this application on [Heroku] (https://ocps3task.herokuapp.com/).
+* Meet API of the application on [Heroku] https://ocps3task.herokuapp.com/api/
 
 Login Profiles:
  
