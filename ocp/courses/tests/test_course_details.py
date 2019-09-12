@@ -7,16 +7,16 @@ class CourseDetailsTestCase(TestCase):
 
     def setUp(self):
         self.response = self.client.get(
-            r('courses:details', 'curso-de-python'))
+            r('courses:course_details', 'slugcourse01'))
 
     def test_url(self):
         self.assertEqual(200, self.response.status_code)
 
     def test_template(self):
-        self.assertTemplateUsed(self.response, 'courses/details.html')
+        self.assertTemplateUsed(self.response, 'courses/course_details.html')
 
     def test_contents(self):
-        contents = ['Curso de Python']
+        contents = ['slugcourse01', 'NameCourse01']
 
         with self.subTest():
             for c in contents:

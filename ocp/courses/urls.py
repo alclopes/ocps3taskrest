@@ -27,7 +27,7 @@ urlpatterns = [
 #
 # app_name = 'courses'
 #
-# urlpatterns = patterns('ead.courses.views',
+# urlpatterns = patterns('ocp.courses.views',
 #     url(r'^$', 'index', name='index'),
 #     url(r'^category_list/$', 'category_list', name='category_list'),
 #     url(r'^course_list/$', 'course_list', name='course_list'),

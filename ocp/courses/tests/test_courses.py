@@ -12,9 +12,10 @@ class CoursesTestCase(TestCase):
     def test_template(self):
         self.assertTemplateUsed(self.response, 'courses/index.html')
 
+    # Check some words exist in the template
     def test_contents(self):
-        contents = ['Listagem de Cursos do ead',
-                    'Abaixo a lista de cursos disponíveis na plataforma']
+        contents = ['Courses',
+                    'Courses List']
 
         with self.subTest():
             for c in contents:

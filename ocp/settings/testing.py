@@ -27,15 +27,6 @@ TEMPLATE_DIRS = (
 # TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
 ###########################Email
-CONTACT_EMAIL = config('CONTACT_EMAIL_TEST')
-EMAIL_BACKEND = config('EMAIL_BACKEND_TEST')
-EMAIL_USE_TLS = config('EMAIL_USE_TLS_TEST', default='True')
-DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL_TEST', default='')
-EMAIL_HOST = config('EMAIL_HOST_TEST', default='')
-EMAIL_HOST_USER = config('EMAIL_HOST_USER_TEST', default='')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD_TEST', default='')
-EMAIL_PORT = config('EMAIL_PORT_TEST', default='')
-RECEIVE_EMAIL = config('RECEIVE_EMAIL_TEST', default='')
 
 # BROKER_BACKEND = 'memory'
 

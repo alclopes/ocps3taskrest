@@ -39,6 +39,9 @@
 ## Completed Activities - Done
 
 
+### Fix Tests
+* DONE - by Andre Carvalho
+
 ### README Translation
 * Provide README in English and Portuguese
 * DONE - by Andre Carvalho
@@ -268,7 +271,7 @@ So Django will stop using its default user auth, and will use the USER Accounts 
 In addition to best practices and care pointed out in other projects, remember that:
 
 1. When using S3 to store static files we must remember to include their update to the automatic continuous update process.
-
+2. Docker using Hyper-V not work in Win10 Home, you can install Docker Toolbox, which uses Oracle Virtual Box.
 
 [Back to top](#top)
 

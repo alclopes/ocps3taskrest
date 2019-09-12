@@ -3,7 +3,6 @@ from django.conf import settings
 from ocp.core.mail import send_mail_template
 from .models import Comment, Course, Category, Material
 from functools import partial
-from autoslug import AutoSlugField
 from django.utils.translation import ugettext as _
 from django.core.exceptions import ValidationError
 
@@ -27,9 +26,9 @@ class CategoryForm(forms.ModelForm):
 class CourseForm(forms.ModelForm):
     name = forms.CharField(label=_('Name'), max_length=128, widget=forms.TextInput(attrs={"class": "form-control",
                                                                           'placeholder': _('Course Title')}))
-    description = forms.CharField(label=_('Description'), max_length=128, required=False, widget=forms.TextInput(attrs={"class": "form-control",
+    description = forms.CharField(label=_('Description'), max_length=128, required=True, widget=forms.TextInput(attrs={"class": "form-control",
                                                                           'placeholder': _('Course Summary')}))
-    about = forms.CharField(label=_('About'), max_length=600, required=False,
+    about = forms.CharField(label=_('About'), max_length=600, required=True,
                                   widget=forms.TextInput(attrs={"class": "form-control",
                                                                 'placeholder': _('Course About')}))
     url = forms.URLField(label=_('URL'), max_length=200, widget=forms.URLInput(attrs={"class": "form-control validate-url",
@@ -57,9 +56,9 @@ class CommentForm(forms.ModelForm):
 
 
 class ContactCourseForm(forms.Form):
-    name = forms.CharField(label=_('Name'), max_length=100)
-    email = forms.EmailField(label=_('Email'))
-    message = forms.CharField(label=_('Message/Questions'), widget=forms.Textarea)
+    name = forms.CharField(label=_('Name'), required=True, max_length=100)
+    email = forms.EmailField(label=_('Email'), required=True)
+    message = forms.CharField(label=_('Message/Questions'), required=True, widget=forms.Textarea)
 
     def send_mail(self, course):
         subject = '[%s] Contact' % course

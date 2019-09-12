@@ -1,0 +1,64 @@
+[
+  {
+    "model": "courses.category",
+    "id": 1,
+    "fields": {
+      "name": "NameCategory01",
+      "description": "DescriptionCategory01",
+      "slug": "slugcategory01",
+      "status": true,
+      "created_at": "2019-09-05T15:19:47.098723",
+      "updated_at": "2019-09-05T15:19:47.098750"
+    }
+  },
+  {
+    "model": "courses.category",
+    "id": 2,
+    "fields": {
+      "name": "NameCategory02",
+      "description": "DescriptionCategory02",
+      "slug": "slugcategory02",
+      "status": true,
+      "created_at": "2019-09-05T15:19:47.098723",
+      "updated_at": "2019-09-05T15:19:47.098750"
+    }
+  },
+  {
+    "model": "courses.course",
+    "id": 1,
+    "fields": {
+      "name": "NameCourse01",
+      "slug": "slugcourse01",
+      "category_id": 1,
+      "phone": "34544444",
+      "url": "http: //127.0.0.1:8000/admin/courses",
+      "start_date": "2019-10-01",
+      "image": "https: //ocp-s3-prod.s3.amazonaws.com/media/courses/images/Course_1.png",
+      "hascertification": true,
+      "status": true,
+      "views": 0,
+      "qualification": 0,
+      "created_at": "2019-10-05T15:19:47.098723",
+      "updated_at": "2019-10-05T15:19:47.098750"
+    }
+  },
+  {
+    "model": "courses.course",
+    "id": 2,
+    "fields": {
+      "name": "NameCourse02",
+      "slug": "slugcourse02",
+      "category_id": 1,
+      "phone": "344432344",
+      "url": "http: //127.0.0.1:8000/admin/courses",
+      "start_date": "2019-10-01",
+      "image": "https: //ocp-s3-prod.s3.amazonaws.com/media/courses/images/Course_1.png",
+      "hascertification": true,
+      "status": true,
+      "views": 0,
+      "qualification": 0,
+      "created_at": "2019-10-05T15:19:47.098723",
+      "updated_at": "2019-10-05T15:19:47.098750"
+    }
+  }
+]

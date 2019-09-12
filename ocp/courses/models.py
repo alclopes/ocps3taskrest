@@ -10,14 +10,12 @@ from autoslug import AutoSlugField
 from django.urls import reverse
 from decouple import config
 
-# /Importante Blank = True => em formularios o campo não é obrigatorio
-
 
 class Category(models.Model):
     name = models.CharField(_('Name'), max_length=128, unique=True)
     description = models.CharField(_('Description'), max_length=256, blank=True)
     slug = AutoSlugField(_('Slug'), populate_from='name', unique=True)
-    status = models.BooleanField(_('Status'),default=True)
+    status = models.BooleanField(_('Status'), default=True)
     created_at = models.DateTimeField(_('Create at'), null=True, auto_now_add=True)
     updated_at = models.DateTimeField(_('Update at'), null=True, auto_now=True)
 
@@ -39,10 +37,6 @@ def category_post_create_handler(sender, **kwargs):
         category_delete_set_task.apply_async(([1]))
 
 
-#Vamos criar uma classe para facilitar as consultas aos  cursos
-#No caso abaixo quando mandarmos o parametro query do search ele irá
-#procurar o parametro na tabela de course nos campos nome ou desccrição
-# A barra | significa: OU
 class CourseManager(models.Manager):
     def search(self, query):
         return self.get_queryset().filter(
@@ -57,13 +51,10 @@ class Course(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='category_of_course')
     name = models.CharField(_('Name'), max_length=100, unique=True)
     slug = AutoSlugField(_('Slug'), populate_from='name', unique=True)
-    # description: o banco não vai aceitar o valor nulo, logo o preenchimento
-    # deve vir obrigadoriamente pelo menos o valor em branco.
     description = models.TextField(_('Description'), blank=True)
     about = models.TextField(_('About'), blank=True)
     phone = models.CharField(max_length=15, blank=True)
     url = models.URLField(help_text="Example: '/about/contact/'. Make sure to have leading and trailing slashes.")
-    # start_date: o banco aceita o valor nulo, e o preenchimento pode vir em branco.
     start_date = models.DateField(
         _('Start Date'), null=True, blank=True)
     image = models.ImageField(
@@ -79,8 +70,6 @@ class Course(models.Model):
     views = models.IntegerField(_('Views'), default=0)
     qualification = models.IntegerField(_('Qualification'), default=0)
 
-    #Atraves do comando abaixo informo que o objects agora não é mais o padrão
-    # O objets esta customizado conforme a classe CourseManager acima.
     objects = CourseManager()
 
     class Meta:
@@ -92,9 +81,8 @@ class Course(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('courses:details', kwargs={'slug': self.slug})
+        return reverse('courses:course_details', kwargs={'slug': self.slug})
 
-    # Consulta para obter todas as lessons que estão liberadas na data atual.
     def release_lessons(self):
         # Evite usar o datetime pois ele usa a data do micro que pode estar em qualquer timezone
         # from datetime import datetime
@@ -136,9 +124,7 @@ class Lesson(models.Model):
     name = models.CharField(_('Name'), max_length=100, unique=True)
     description = models.TextField(_('Description'), blank=True)
     number = models.IntegerField(_('Number'), blank=True, default=0)
-    # Data de liberação da aula para os alunos
     release_date = models.DateField(_('Releasing Date'), blank=True, null=True)
-    # Dentro de curso terá um atributo chamado aula que tera as lessons relaciondas ao curso
     course = models.ForeignKey(Course, on_delete=models.CASCADE, verbose_name=_('Course'), related_name='lessons')
     created_at = models.DateTimeField(_('Create at'), auto_now_add=True)
     updated_at = models.DateTimeField(_('Update at'), auto_now=True)
@@ -151,26 +137,20 @@ class Lesson(models.Model):
     def __str__(self):
         return 'Lesson: {0} '.format(self.name)
 
-    # Incluiremos a validação abaixo para garantir que o usuario não tentara acessar manipulando a URL
     def is_available(self):
         if self.release_date:
-            # Evite usar o datetime pois ele usa a data do micro que pode estar em qualquer timezone
-            # from datetime import datetime
-            # datetime.now()
-            # /Importante para datas usar o time zone que é uma data com referencia internacional
             today = timezone.now().date()
             # O release_date é uma data, não é um datetime
             return self.release_date >= today
         return False
 
 
-# Materiais digitais: videos, pdfs, flash...
+# Material: videos, pdfs, flash...
 class Material(models.Model):
     name = models.CharField(_('name'), max_length=100, unique=True)
 
     embedded = models.TextField(_('Text Embedded'), blank=True)
     file = models.FileField(upload_to="lessons/materials", blank=True, null=True)
-    # Dentro de aula terá um atributo chamado materials que tera as materiais relaciondas a aula
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE, verbose_name=_('Lesson'), related_name='materials')
 
     class Meta:
@@ -191,17 +171,14 @@ class Enrollment(models.Model):
         (2, _('Canceled')),
         (3, _('Awaiting Course Release'))
     )
-    # Dentro de user terá um atributo chamado matricula que tera as matriculas relaciondas ao usuario
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL, verbose_name=_('User'),
         on_delete=models.CASCADE, related_name='enrollments'
     )
-    # Dentro de curso terá um atributo chamado matricula que tera as matriculas relaciondas ao curso
     course = models.ForeignKey(
         Course, verbose_name=_('Course'),
         on_delete=models.CASCADE, related_name='Enrollments'
     )
-    # colocando o default como 1 a inscrição ao ser criada entrara como aprovada.
     status = models.IntegerField(
         _('Situation'), choices=STATUS_CHOICES, default=1, blank=True
     )
@@ -211,7 +188,6 @@ class Enrollment(models.Model):
     class Meta:
         verbose_name = _('Enrollment')
         verbose_name_plural = _('Enrollments')
-        # Importante unique_together não pedrmite duas ocorrencias de um mesmo usuario cadastrado em um determinado curso
         unique_together = (('user', 'course'),)
 
     def __str__(self):
@@ -226,7 +202,6 @@ class Enrollment(models.Model):
 
 
 class Announcement(models.Model):
-    # Dentro de curso terá um atributo chamado anuncio que tera os anuncios relaciondas ao curso
     course = models.ForeignKey(
         Course, verbose_name=_('Course'),
         on_delete=models.CASCADE, related_name='announcements'
@@ -246,12 +221,10 @@ class Announcement(models.Model):
 
 
 class Comment(models.Model):
-    # Dentro de anuncio terá um atributo chamado comentario que tera as comentarios relaciondas ao anuncio
     announcement = models.ForeignKey(
         Announcement, verbose_name=_('Advertisement'),
         on_delete=models.CASCADE, related_name='comments'
     )
-    # Dentro de usuario terá um atributo chamado comentario que tera as comentarios relaciondas ao usuario
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name=_('User'))
     comment = models.TextField(_('Comment'))
     created_at = models.DateTimeField(_('Create at'), auto_now_add=True)

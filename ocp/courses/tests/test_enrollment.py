@@ -7,7 +7,7 @@ class EnrollmentTestCase(TestCase):
 
     def setUp(self):
         self.response = self.client.get(
-            r('courses:enrollment', 'curso-de-python'))
+            r('courses:enrollment', 'NameCourse01'))
 
     def test_url(self):
         self.assertEqual(302, self.response.status_code)
