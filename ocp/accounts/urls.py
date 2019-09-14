@@ -6,8 +6,8 @@ app_name = 'accounts'
 
 urlpatterns = [
     path('', views.dashboard, name='dashboard'),
-    path('accounts/login/', auth_views.LoginView.as_view(template_name='accounts/login.html'), name='login'),
-    path('accounts/logout/', views.logout_view, name='logout'),
+    path('login/', auth_views.LoginView.as_view(template_name='accounts/login.html'), name='login'),
+    path('logout/', views.logout_view, name='logout'),
     path('cadastre-se/', views.register, name='register'),
     path('nova-senha/', views.password_reset, name='password_reset'),
     path('confirmar-nova-senha/<key>/', views.password_reset_confirm, name='password_reset_confirm'),

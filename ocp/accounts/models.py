@@ -42,7 +42,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     # variáveis que também serão exigidas durante a criação do superuser
     REQUIRED_FIELDS = ['email']
     # string para identificar o usuário
-    # Neste caso se tiver nome irá  mostrar o nome (como nã é obrigatorio), senão mostrará o email.
+    # Neste caso se tiver nome irá  mostrar o nome (como não é obrigatorio), senão mostrará o email.
 
 
     class Meta:

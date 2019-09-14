@@ -15,11 +15,11 @@ urlpatterns = [
     path('<slug>/enrollment/', views.enrollment, name='enrollment'),
     path('<slug>/enrollment_undo/', views.enrollment_undo, name='enrollment_undo'),
     path('<slug>/announcements/', views.announcements, name='announcements'),
-    path('<slug>/announcement_detail/<pk>)/', views.announcement_detail, name='announcement_detail'),
+    path('<slug>/announcement_detail/<pk>/', views.announcement_detail, name='announcement_detail'),
     path('<slug>/list_lessons/', views.lesson_list, name='lesson_list'),
-    path('<slug>/lesson/<pk>)/', views.lesson_detail, name='lesson_detail'),
-    path('<slug>/material/<pk>)/', views.material_detail, name='material_detail'),
-    path('video/<vid>)/', views.video_show, name='video_show'),
+    path('<slug>/lesson/<pk>/', views.lesson_detail, name='lesson_detail'),
+    path('<slug>/material/<pk>/', views.material_detail, name='material_detail'),
+    path('video/<vid>/', views.video_show, name='video_show'),
 ]
 
 

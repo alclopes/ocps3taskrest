@@ -9,7 +9,7 @@ from django.utils.translation import ugettext_lazy as _
 from autoslug import AutoSlugField
 from django.urls import reverse
 from decouple import config
-
+import datetime
 
 class Category(models.Model):
     name = models.CharField(_('Name'), max_length=128, unique=True)
@@ -66,7 +66,7 @@ class Course(models.Model):
     # toda vez que altera este registro esta data é atualizada com a data atual.
     updated_at = models.DateTimeField(_('Updated at'), auto_now=True)
     hascertification = models.BooleanField(_('Has Certification'), default=False)
-    status = models.BooleanField(_('Status'), default=True)
+    status = models.BooleanField(_('Status'), default=True)  # (0, _('Active')),(1, _('Inative'))
     views = models.IntegerField(_('Views'), default=0)
     qualification = models.IntegerField(_('Qualification'), default=0)
 
@@ -79,6 +79,9 @@ class Course(models.Model):
 
     def __str__(self):
         return self.name
+
+    def is_active_course(self):
+        return (self.status == 0) and (self.start_date <= datetime.datetime.now().date())
 
     def get_absolute_url(self):
         return reverse('courses:course_details', kwargs={'slug': self.slug})

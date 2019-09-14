@@ -34,6 +34,7 @@ def incharge(request, slug):
     teacher.course.add(course)
     return HttpResponseRedirect(reverse('courses:course_details', args=(slug,)))
 
+
 # Faz a inscrição no curso referente ao usuário da sessão.
 @login_required
 def enrollment(request, slug):
@@ -47,6 +48,7 @@ def enrollment(request, slug):
     else:
         messages.info(request, _('You have been enrolled in course'))
     return redirect('accounts:dashboard')
+
 
 # Cancela a inscrição no curso referente ao usuário da sessão.
 @login_required
@@ -238,6 +240,7 @@ def category_add(request):
     # Render the form with error messages (if any).
     return render(request, 'courses/category_add.html', {'form': form})
 
+
 def course_add(request, pkSlug):
     try:
         category = Category.objects.get(slug=pkSlug)
@@ -280,7 +283,7 @@ def course_details(request, pkSlug):
 
     course = get_object_or_404(Course, slug=pkSlug)
 
-    #Soma um a views baseado na sessão
+    # Soma um a views baseado na sessão
     if request.session.get(course.slug, False) == False:
         course.views = course.views + 1
         course.save()
@@ -331,5 +334,6 @@ class CourseFilter(ListView):
     def get_context_data(self, **kwargs):
         context = super(CourseFilter, self).get_context_data(**kwargs)
         return context
+
 
 index = CourseFilter.as_view()
