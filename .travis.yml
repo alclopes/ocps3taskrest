@@ -10,5 +10,4 @@ before_script:
 script:
   - python manage.py test --settings=ocp.settings.testing
   - python contrib/populate_ocp
-  - cp contrib/.env.prod .env
 sudo: false

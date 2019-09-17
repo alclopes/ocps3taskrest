@@ -6,23 +6,12 @@ import dj_database_url
 # ##############  Databases
 DATABASES = {'default': dj_database_url.config(default=config('DATABASE_URL_PROD'))}
 
+# ########################### Password validation
+
+# ##########################  Internationalization
+
 # # ########################## AWS S3 Private Media Upload
-if USE_S3:
-    # # ########################## AWS S3 - Settings Variable
-    AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
-    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-
-    # # ########################## AWS S3 Static files (CSS, JavaScript, Images)
-    STATICFILES_LOCATION = 'static'
-    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
-    STATICFILES_STORAGE = config('AWS_STATICFILES_STORAGE')
-
-    # # ########################## AWS S3 Private Media Upload
-    MEDIAFILES_LOCATION = 'media'
-    AWS_S3_PATH = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'  # 20190822/0724
-    MEDIA_URL = f'https://{AWS_S3_PATH}/{MEDIAFILES_LOCATION}/'
-    DEFAULT_FILE_STORAGE = config('AWS_DEFAULT_FILE_STORAGE')
-else:
+if not USE_S3:
     # ########################### Static files (CSS, JavaScript, Images)
     STATIC_URL = '/static/'
     # # STATIC_URL=> aponta para dentro de cada app core

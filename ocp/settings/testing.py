@@ -9,7 +9,7 @@ DEBUG = True
 TEMPLATE_DEBUG = True
 
 # ############## Servidores autorizados
-ALLOWED_HOSTS = config('ALLOWED_HOSTS_DESENV', cast=Csv())
+ALLOWED_HOSTS = '*'
 
 # ############## Application definition
 
@@ -30,22 +30,7 @@ DATABASES = {'default': dj_database_url.config(default=config('DATABASE_URL_TEST
 # ########################## AWS S3
 
 # # ########################## AWS S3 Private Media Upload
-if USE_S3:
-    # # ########################## AWS S3 - Settings Variable
-    AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME_DESENV')
-    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-
-    # # ########################## AWS S3 Static files (CSS, JavaScript, Images)
-    STATICFILES_LOCATION = 'static'
-    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
-    STATICFILES_STORAGE = config('AWS_STATICFILES_STORAGE')
-
-    # # ########################## AWS S3 Private Media Upload
-    MEDIAFILES_LOCATION = 'media'
-    AWS_S3_PATH = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'  # 20190822/0724
-    MEDIA_URL = f'https://{AWS_S3_PATH}/{MEDIAFILES_LOCATION}/'
-    DEFAULT_FILE_STORAGE = config('AWS_DEFAULT_FILE_STORAGE')
-else:
+if not USE_S3:
     # ########################### Static files (CSS, JavaScript, Images)
     STATIC_URL = '/static/'
     # # STATIC_URL=> aponta para dentro de cada app core
@@ -57,20 +42,18 @@ else:
     MEDIA_URL = '/media/'
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-
 # ########################### Caches
 
 # ########################### envolvidos (Login, Logout)
 
-
 # ##########################Email
-EMAIL_BACKEND = config('EMAIL_BACKEND_console')
-EMAIL_USE_TLS = config('EMAIL_USE_TLS_DESENV', default='True')
-EMAIL_HOST = config('EMAIL_HOST_DESENV', default='')
-EMAIL_PORT = config('EMAIL_PORT_DESENV', default='')
-EMAIL_HOST_USER = config('EMAIL_HOST_USER_DESENV', default='')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD_DESENV', default='')
-RECEIVE_EMAIL = config('RECEIVE_EMAIL_DESENV', default='')
+EMAIL_BACKEND = config('EMAIL_BACKEND', default='django.core.mail.backends.console.EmailBackend')
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', default='True')
+EMAIL_HOST = config('EMAIL_HOST', default='')
+EMAIL_PORT = config('EMAIL_PORT', default='')
+EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
+RECEIVE_EMAIL = config('RECEIVE_EMAIL', default='')
 
 # ########################## REDIS
 
