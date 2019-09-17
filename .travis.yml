@@ -9,5 +9,4 @@ before_script:
   - python manage.py migrate
 script:
   - python manage.py test --settings=ocp.settings.testing
-  - python contrib/populate_ocp
 sudo: false
