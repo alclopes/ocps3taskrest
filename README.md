@@ -16,28 +16,32 @@
 
 ## Next Steps - Plan
 
-
-### Importing Partner Course Data
-* Use JSON/Rest to import partner course data to application
+### Deploy - Puppet + Docker + Git + Travis + AWS (IAAS Cloud)
 * Awaiting
 
-### Deploy - AWS (IAAS Cloud)
-* Awaiting
-
-### Deploy - Puppet / Docker / Travis
-* Puppet / Ansible (machine provisioning server preparation scripts, machine provisioning).
+### Deploy - Puppet + Docker + Git + Travis + Heroku 
 * Docker (Container Virtualization) running the application locally with the exact configuration of the production environment)
-* Travis (task manager) useful for testing automation)
 * Awaiting
+
+### Deploy - Puppet + Git + Travis + Heroku
+* Puppet / Ansible (machine provisioning server preparation scripts, machine provisioning).
+* Awaiting
+
 
 [Back to top](#top)
 
 
 <div id = 'done' />
 
-
 ## Completed Activities - Done
 
+### Deploy - Git + Travis + Heroku
+* Travis (task manager) using for testing automation to start deploy
+* DONE - by Andre Carvalho
+
+### Importing Partner Course Data
+* Use JSON to import partner's course data to application
+* DONE - by Andre Carvalho
 
 ### Fix Tests
 * DONE - by Andre Carvalho

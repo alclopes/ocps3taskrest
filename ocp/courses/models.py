@@ -98,6 +98,22 @@ class Course(models.Model):
         return self.lessons.filter(release_date__gte=today)
 
 
+class CourseUpload(models.Model):
+    description = models.CharField('Name', max_length=80)
+    file = models.FileField(
+        upload_to='courses/json', verbose_name='File',
+        null=False, blank=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = 'Upload'
+        verbose_name_plural = 'Uploads'
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return self.description
+
+
 # Set task to delete image more later.
 @receiver(post_save, sender=Course)
 def course_post_create_handler(sender, **kwargs):

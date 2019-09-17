@@ -14,8 +14,8 @@ class CourseSerializer(ModelSerializer):
     class Meta:
         model = Course
         depth = 1  # Nível de profundidade que você quer exibir no JSON
-        fields = ('id', 'name', 'slug', 'category', 'phone', 'url', 'start_date', 'image', 'hascertification', 'status')
-
+        fields = ('id', 'name', 'slug', 'category', 'phone', 'url', 'description', 'about',
+                  'start_date', 'hascertification', 'status')
 
 # Serializers define the API representation.
 class TeacherSerializer(ModelSerializer):

@@ -2,7 +2,7 @@ from django.urls import reverse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .models import Category, Course, Enrollment, Announcement, Lesson, Material, Teacher
+from .models import Category, Course, Enrollment, Lesson, Material, Teacher
 from .forms import ContactCourseForm, CommentForm
 from .decorators import enrollment_required
 from django.utils.translation import ugettext as _
@@ -11,10 +11,54 @@ from django.http import HttpResponseRedirect
 from django.views.generic import (TemplateView, View, ListView, DetailView)
 # from django.views.decorators.http import last_modified
 # from django.views.i18n import javascript_catalog
-
 from django.conf import settings
 from django.contrib.sessions.backends.db import SessionStore
-import datetime
+from datetime import datetime
+from .loadcourses import load_courses_Json
+from .models import CourseUpload
+import json
+
+
+def course_load(request):
+
+    if request.method == 'POST':
+        # recover JSON
+        description_param = request.POST.get('description_file')
+        file_up = request.FILES['file_up']
+        # save json file
+        fileJSON = CourseUpload()
+        fileJSON.description = description_param
+        fileJSON.file = file_up
+        fileJSON.save()
+        # load JSON
+        pathJSON = f'{settings.MEDIA_ROOT}/courses/json/{file_up}'
+        with open(pathJSON) as file_handler:
+            data = json.load(file_handler)
+            for course in data['results']:
+                Course(id=course['id'],
+                    name=course['name'],
+                    phone=course['phone'],
+                    url=course['url'],
+                    description=course['description'],
+                    about=course['about'],
+                    start_date=course['start_date'],
+                    image='courses/images/None/no-img.jpg',
+                    created_at=datetime.now(),
+                    updated_at=datetime.now(),
+                    hascertification=course['hascertification'],
+                    status=course['status'],
+                    views=0,
+                    category_id=course['category'],
+                    qualification=0,
+                    slug=course['slug']).save()
+        if load_courses_Json:
+            message = _('JSON load was success.')
+            messages.success(request, message)
+        else:
+            message = _('Sorry fail importation. Please, check your JSON for fix some error')
+            messages.success(request, message)
+    template = 'courses/course_load.html'
+    return render(request, template)
 
 
 def incharge(request, slug):
@@ -268,7 +312,7 @@ def course_add(request, pkSlug):
     return render(request, 'courses/course_add.html', context)
 
 
-# Carrega o template com uma lista com todos os cursos no botão do menu "Course"
+# Template show course's list
 def course_list(request):
     courses = Course.objects.all()
     template_name = 'courses/index.html'
@@ -278,24 +322,27 @@ def course_list(request):
     return render(request, template_name, context)
 
 
-# Este template mostra os "detalhes do curso" e no final da pagina tem um "fale conosco"
+# Template show course's detail and one way to contact by message.
 def course_details(request, pkSlug):
-
     course = get_object_or_404(Course, slug=pkSlug)
 
-    # Soma um a views baseado na sessão
-    if request.session.get(course.slug, False) == False:
+    # increase one to the counter of views
+    if not request.session.get(course.slug, False):
         course.views = course.views + 1
         course.save()
-        request.session[course.slug] = str(datetime.date.today())
-
+        request.session[course.slug] = str(datetime.today())
     context = {}
     if request.method == 'POST':
         form = ContactCourseForm(request.POST)
         if form.is_valid():
             context['is_valid'] = True
             form.send_mail(course)
+            message = _('Your messsage was sended with success')
+            messages.success(request, message)
             form = ContactCourseForm()
+        else:
+            message = _('Sorry your message not be sended. Please, Try again or choice other type of contact')
+            messages.error(request, message)
     else:
         form = ContactCourseForm()
     context['form'] = form
@@ -306,8 +353,7 @@ def course_details(request, pkSlug):
     return render(request, template_name, context)
 
 
-# A ListView nos fornece a variavel object_list para ser
-# recuperada no html
+# A ListView nos fornece a variavel object_list para ser recuperada no html
 class CourseFilter(ListView):
     template_name = 'courses/index.html'
 

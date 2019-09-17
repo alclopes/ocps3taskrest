@@ -1,7 +1,7 @@
 from django import forms
 from django.conf import settings
 from ocp.core.mail import send_mail_template
-from .models import Comment, Course, Category, Material
+from .models import Comment, Course, Category, Material, CourseUpload
 from functools import partial
 from django.utils.translation import ugettext as _
 from django.core.exceptions import ValidationError
@@ -68,7 +68,7 @@ class ContactCourseForm(forms.Form):
             'message': self.cleaned_data['message'],
         }
         template_name = 'courses/contact_email.html'
-        send_mail_template(subject, template_name, context, [settings.CONTACT_EMAIL]
+        send_mail_template(subject, template_name, context, [settings.EMAIL_HOST_USER]
         )
 
 
@@ -83,3 +83,5 @@ class MaterialForm(forms.ModelForm):
             raise ValidationError(_('Not allow the fill to embedded and file fields in the same Material, please choice only one for fill'))
         elif self.cleaned_data['embedded'] == "" and self.cleaned_data['file'] == None:
             raise ValidationError(_('Please choice and fill one material to lesson: embedded or file'))
+
+

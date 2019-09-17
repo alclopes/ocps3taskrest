@@ -1,0 +1,11 @@
+{% if mail_list %}
+  <ul>
+  {% for msg in mail_list %}
+    <li>
+      <a href="{{ MEDIA_URL }}email_out/{{msg}}">{{ msg }}</a>
+    </li>
+  {% endfor %}
+  </ul>
+{% else %}
+  No messages found.
+{% endif %}

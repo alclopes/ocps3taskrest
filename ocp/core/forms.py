@@ -17,6 +17,6 @@ class ContactSite(forms.Form):
             'message': self.cleaned_data['message'],
         }
         template_name = 'core/contact_email.html'
-        send_mail_template(subject, template_name, context, [settings.CONTACT_EMAIL]
+        send_mail_template(subject, template_name, context, [settings.EMAIL_HOST_USER]
         )
 

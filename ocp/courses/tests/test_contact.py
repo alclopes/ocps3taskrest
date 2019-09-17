@@ -16,17 +16,13 @@ class ContactTestCase(TestCase):
         self.course.delete()
 
     def test_contact_form_error(self):
-        data = {'name': 'Nome Contato 01', 'email': '', 'message': ''}
+        data = {'name': '', 'email': '', 'message': ''}
         client = Client()
-
-        path = reverse('courses:course_details', args=[self.course.slug])
+        path = reverse('core:contact')
         response = client.post(path, data)
-
-        self.assertFormError(
-            response, 'form', 'email', 'This field is required.')
-
-        self.assertFormError(
-            response, 'form', 'message', 'This field is required.')
+        self.assertFormError(response, 'form', 'name', 'This field is required.')
+        self.assertFormError(response, 'form', 'email', 'This field is required.')
+        self.assertFormError(response, 'form', 'message', 'This field is required.')
 
     def test_contact_form_success(self):
         data = {
@@ -41,4 +37,4 @@ class ContactTestCase(TestCase):
         response = client.post(path, data)
 
         self.assertEqual(len(mail.outbox), 1)
-        self.assertEqual(mail.outbox[0].to, [settings.CONTACT_EMAIL])
+        self.assertEqual(mail.outbox[0].to, [settings.EMAIL_HOST_USER])

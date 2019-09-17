@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
-# from __future__ import absolute_import, unicode_literals
+from __future__ import absolute_import, unicode_literals
 import os
-import sys
 from django.utils.translation import ugettext_lazy as _
 from decouple import config, Csv
-from django.conf import settings
 
 
 # ############## BASE_DIR (manage.py)
@@ -20,7 +18,6 @@ TEMPLATE_DEBUG = config('TEMPLATE_DEBUG', default=False, cast=bool)
 
 # ############## Servidores autorizados
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
-
 
 # ############## Application definition
 INSTALLED_APPS = [
@@ -88,7 +85,6 @@ WSGI_APPLICATION = 'ocp.wsgi.application'
 
 # ############## DATABASE
 
-
 # ########################### Password validation
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -143,7 +139,7 @@ if USE_S3:
     AWS_DEFAULT_ACL = None
 
 # ########################## REDIS
-CELERY_BROKER_URL = config('REDIS_URL')
+CELERY_BROKER_URL = config('CELERY_BROKER_URL')
 
 # Configurando Celery para rodar em paralelo (True => para testes)
 CELERY_TASK_ALWAYS_EAGER = config('CELERY_TASK_ALWAYS_EAGER_DESENV', default=False, cast=bool)
@@ -157,17 +153,6 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
 }
-
-# ########################## Email
-CONTACT_EMAIL = config('CONTACT_EMAIL')
-EMAIL_BACKEND = config('EMAIL_BACKEND')
-EMAIL_USE_TLS = config('EMAIL_USE_TLS', default='True')
-DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', default='')
-EMAIL_HOST = config('EMAIL_HOST', default='')
-EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
-EMAIL_PORT = config('EMAIL_PORT', default='')
-RECEIVE_EMAIL = config('RECEIVE_EMAIL', default='')
 
 # ########################## Auth
 LOGIN_URL = 'accounts:login'

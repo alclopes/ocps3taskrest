@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block head %}
+    <title>{% trans 'Course-Import' %}</title>
+{% endblock %}
+
+{% block breadcrumb %}
+        <li><a href="{% url 'core:home' %}">{% trans 'Home' %}</a></li>
+        <li><a href="{% url 'courses:course_load' %}">{% trans 'Course Upload' %}</a></li>
+{% endblock  %}
+
+{% block content %}
+   	<h1>{% trans 'Import Courses of JSON file' %}</h1>
+
+    <form action="{% url 'courses:course_load' %}" method="post" enctype="multipart/form-data" class="form">
+        {% csrf_token %}
+
+        <span class="file-label">{% trans 'Description to identify the file...' %}</span><br />
+            <input type="text" id="description_file" name="description_file" required minlength="4" maxlength="80" size="80"><br />
+        <br />
+
+        <span class="file-label">{% trans 'Choose a file:' %}</span>
+        <label class="file-label">
+              <input class="file-input" type="file" name="file_up">
+              <span class="file-cta"> </span>
+        </label><br />
+        <br /><input type="submit" value={% trans 'Upload' %} class="button is-primary" />
+    </form>
+
+{% endblock %}
+

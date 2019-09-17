@@ -1,8 +1,10 @@
+import os
+from django.conf import settings
 from django.shortcuts import render
+
 from .forms import ContactSite
 from django.contrib import messages
 from django.utils.translation import ugettext as _
-
 
 def home(request):
     return render(request, 'home.html')
@@ -28,3 +30,9 @@ def contact(request):
     context['form'] = form
     template_name = 'core/contact.html'
     return render(request, template_name, context)
+
+
+def mailTemplate(request):
+    path = f"{settings.MEDIA_ROOT}/email_out"
+    mail_list = os.listdir(path)
+    return render(request, "core/mailTemplate.html", context={"mail_list": mail_list})

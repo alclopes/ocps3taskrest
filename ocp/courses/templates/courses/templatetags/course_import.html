@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block head %}
+    <title>{% trans 'Course-Import' %}</title>
+{% endblock %}
+
+{% block breadcrumb %}
+        <li><a href="{% url 'core:home' %}">{% trans 'Home' %}</a></li>
+        <li><a href="{% url 'courses:course_load' %}">{% trans 'Course Import' %}</a></li>
+{% endblock  %}
+
+{% block content %}
+   	<h1>{% trans 'Import courses' %}</h1>
+    <form id="course_form" method="post" enctype="multipart/form-data" action="/course/course_add/{{category.slug}}/">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br/>
+        <input type="submit" name="submit" value="{% trans 'Create Course' %}" />
+    </form>
+{% endblock %}
+

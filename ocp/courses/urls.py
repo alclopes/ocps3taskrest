@@ -5,6 +5,7 @@ app_name = 'courses'
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('load/', views.course_load, name='course_load'),
     path('category_list/', views.category_list, name='category_list'),
     path('course_list/', views.course_list, name='course_list'),
     path('category_details/<pkSlug>/', views.category_details, name='category_details'),

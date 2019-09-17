@@ -1,19 +1,12 @@
-'''
-Para rodar testes em ambiente de desenvolvimento:
-python manage.py test --settings=ocp.settings_testing
-'''
 #coding: utf-8
-import os
-import logging
-from decouple import config
+from .common import *
 
-from .development import *
-
+# ############## Debug
 # logging.disable(logging.INFO)
 DEBUG = True
 TEMPLATE_DEBUG = True
 
-# BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+# ############## DATABASE
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -21,17 +14,12 @@ DATABASES = {
     }
 }
 
-TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'templates'),
-)
-# TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+# ############## TEMPLATES
 
-###########################Email
+# ##########################Email
 
-# BROKER_BACKEND = 'memory'
+# ########################## Celery
+BROKER_BACKEND = 'memory'
+CELERY_TASK_ALWAYS_EAGER = True
+CELERY_TASK_EAGER_PROPAGATES = True
 
-# SOUTH_TESTS_MIGRATE = False
-
-# SKIP_SLOW_TESTS = True
-
-# RUN_SLOW_TESTS = False

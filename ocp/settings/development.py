@@ -81,15 +81,14 @@ else:
 # ########################## REDIS
 
 # ########################## Email
-#### How to Allow Users to Reset Password in Django 2/2 (Django Tutorial) | Part 22
-CONTACT_EMAIL = config('CONTACT_EMAIL_DESENV')
 EMAIL_BACKEND = config('EMAIL_BACKEND_DESENV')
 EMAIL_USE_TLS = config('EMAIL_USE_TLS_DESENV', default='True')
-DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL_DESENV', default='')
 EMAIL_HOST = config('EMAIL_HOST_DESENV', default='')
+EMAIL_PORT = config('EMAIL_PORT_DESENV', default='')
 EMAIL_HOST_USER = config('EMAIL_HOST_USER_DESENV', default='')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD_DESENV', default='')
-EMAIL_PORT = config('EMAIL_PORT_DESENV', default='')
 RECEIVE_EMAIL = config('RECEIVE_EMAIL_DESENV', default='')
+
+
 
 
