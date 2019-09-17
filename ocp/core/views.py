@@ -20,7 +20,7 @@ def contact(request):
             title = _("Speak with Us")
             form.send_mail(title)
             form = ContactSite()
-            message = _('Your messsage was sended with success')
+            message = _('Your message was sended with success')
             messages.success(request, message)
         else:
             message = _('Sorry your message not be sended. Please, Try again or choice other type of contact')

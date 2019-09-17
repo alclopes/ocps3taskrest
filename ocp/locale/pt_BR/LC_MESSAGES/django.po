@@ -413,7 +413,7 @@ msgid "Speak with Us"
 msgstr "Fale Conosco"
 
 #: .\ocp\core\views.py:21
-msgid "Your messsage was sended with success"
+msgid "Your message was sended with success"
 msgstr "Sua mensagem foi enviada com sucesso"
 
 #: .\ocp\core\views.py:24

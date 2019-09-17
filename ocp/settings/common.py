@@ -17,9 +17,6 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 TEMPLATE_DEBUG = config('TEMPLATE_DEBUG', default=False, cast=bool)
 
-# ############## Servidores autorizados
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
-
 # ############## Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -176,3 +173,11 @@ LOGIN_REDIRECT_URL = 'core:home'
 LOGOUT_URL = 'accounts:logout'
 AUTH_USER_MODEL = 'accounts.User'  # AUTH_USER_MODEL muda do modelUserAdmin para o configurado
 
+# ########################## Email
+EMAIL_BACKEND = config('EMAIL_BACKEND')
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', default='True')
+EMAIL_HOST = config('EMAIL_HOST', default='')
+EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
+EMAIL_PORT = config('EMAIL_PORT', default='')
+RECEIVE_EMAIL = config('RECEIVE_EMAIL', default='')

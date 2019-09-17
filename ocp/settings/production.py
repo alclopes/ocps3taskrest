@@ -3,6 +3,9 @@ from .common import *
 # Heroku
 import dj_database_url
 
+# ############## Servidores autorizados
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+
 # ##############  Databases
 DATABASES = {'default': dj_database_url.config(default=config('DATABASE_URL_PROD'))}
 
@@ -24,14 +27,7 @@ if not USE_S3:
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-# ########################## Email
-EMAIL_BACKEND = config('EMAIL_BACKEND')
-EMAIL_USE_TLS = config('EMAIL_USE_TLS', default='True')
-EMAIL_HOST = config('EMAIL_HOST', default='')
-EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
-EMAIL_PORT = config('EMAIL_PORT', default='')
-RECEIVE_EMAIL = config('RECEIVE_EMAIL', default='')
+
 
 
 

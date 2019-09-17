@@ -399,7 +399,7 @@ msgid "Speak with Us"
 msgstr ""
 
 #: .\ocp\core\views.py:21
-msgid "Your messsage was sended with success"
+msgid "Your message was sended with success"
 msgstr ""
 
 #: .\ocp\core\views.py:24

@@ -337,7 +337,7 @@ def course_details(request, pkSlug):
         if form.is_valid():
             context['is_valid'] = True
             form.send_mail(course)
-            message = _('Your messsage was sended with success')
+            message = _('Your message was sended with success')
             messages.success(request, message)
             form = ContactCourseForm()
         else:
