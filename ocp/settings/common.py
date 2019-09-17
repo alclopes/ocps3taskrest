@@ -3,6 +3,7 @@ from __future__ import absolute_import, unicode_literals
 import os
 from django.utils.translation import ugettext_lazy as _
 from decouple import config, Csv
+import dj_database_url
 
 
 # ############## BASE_DIR (manage.py)

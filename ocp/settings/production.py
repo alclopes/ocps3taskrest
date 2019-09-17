@@ -3,11 +3,8 @@ from .common import *
 # Heroku
 import dj_database_url
 
-# ##############  DATABASES
-# Heroku settings
-DATABASES = {
-    'default':  dj_database_url.config(),
-}
+# ##############  Databases
+DATABASES = {'default': dj_database_url.config(default=config('DATABASE_URL_PROD'))}
 
 # # ########################## AWS S3 Private Media Upload
 if USE_S3:
