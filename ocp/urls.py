@@ -46,9 +46,8 @@ urlpatterns += [
 # ##########################Media/Static
 USE_S3 = config('USE_S3', default=True, cast=bool)
 if settings.DEBUG and not USE_S3:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # ################### Django 1.X
 # from django.contrib import admin

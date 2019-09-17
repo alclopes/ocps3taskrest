@@ -5,7 +5,8 @@ from .common import *
 # ############## Secret Key
 
 # ############## Debug
-DEBUG = config('DEBUG_DESENV', default=True, cast=bool)
+DEBUG = True
+TEMPLATE_DEBUG = True
 
 # ############## Servidores autorizados
 ALLOWED_HOSTS = config('ALLOWED_HOSTS_DESENV', cast=Csv())
@@ -61,7 +62,6 @@ else:
 
 # ########################### envolvidos (Login, Logout)
 
-# ########################## REDIS
 
 # ########################## Email
 EMAIL_BACKEND = config('EMAIL_BACKEND_DESENV')
@@ -72,6 +72,6 @@ EMAIL_HOST_USER = config('EMAIL_HOST_USER_DESENV', default='')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD_DESENV', default='')
 RECEIVE_EMAIL = config('RECEIVE_EMAIL_DESENV', default='')
 
+# ########################## REDIS
 
-
-
+# ########################## Celery
