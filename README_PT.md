@@ -27,7 +27,6 @@
 ### Deploy - Puppet/Docker/Travis
 * Puppet/Ansible (provisionamento de maquina scripts de preparação do servidor, provisionamento da maquina.
 * Docker (Virtualização por containeres)rodar a aplicação localmente com a exata configuração do ambiente de produção) 
-* Travis (gerenciador de tarefas) útil para realizar a Automatização dos testes)
 * Aguardando
 
 [Voltar ao topo](#top)
@@ -38,6 +37,16 @@
 
 ## Atividades Concluídas - Done
 
+### Deploy - Git + Travis + Heroku
+* Travis (gerenciador de tarefas) usado fazer testes automatizados da aplicação antes do deploy
+* DONE - by Andre Carvalho
+
+### Importando cursos de parceiros
+* Usar JSON para importar cursos de parceiros para a aplicação.
+* DONE - by Andre Carvalho
+
+### Ajustes nos testes
+* DONE - by Andre Carvalho
 
 ### Tradução do README
 * Disponibilizar README em Inglês e Português
