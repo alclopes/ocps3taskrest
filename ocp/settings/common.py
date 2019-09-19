@@ -31,8 +31,6 @@ INSTALLED_APPS = [
     'rest_framework',
     ##### libs
     'taggit',
-    ##### Json
-    'import_export',
     ##### apps
     'ocp',
     'ocp.accounts',

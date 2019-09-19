@@ -5,7 +5,6 @@ install:
   - pip install -r requirements.txt
 before_script:
   - cp envs/.env.travis .env
-  - python manage.py makemigrations
   - python manage.py migrate
 script:
   - python manage.py test --settings=ocp.settings.testing
