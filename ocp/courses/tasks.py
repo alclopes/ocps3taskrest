@@ -14,7 +14,7 @@ from datetime import datetime
 def course_delete_set_task(one_ago):
     # Started task, after 900 seconds / 15 min...
     time.sleep(5)
-    populate_date = config('POPULATE_DATE')
+    populate_date = config('POPULATE_DATE').strip()
     if populate_date == "":
         time_finish = timezone.now() - timezone.timedelta(seconds=3)
         Course.objects.filter(Q(created_at__lte=time_finish)).delete()
@@ -32,7 +32,7 @@ def course_delete_set_task(one_ago):
 def category_delete_set_task(one_ago):
     # Started task, after 900 seconds / 15 min...
     time.sleep(5)
-    populate_date = config('POPULATE_DATE')
+    populate_date = config('POPULATE_DATE').strip()
     if populate_date == "":
         time_finish = timezone.now() - timezone.timedelta(seconds=3)
         Category.objects.filter(Q(created_at__lte=time_finish)).delete()

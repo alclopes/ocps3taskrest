@@ -29,9 +29,10 @@ INSTALLED_APPS = [
     'django_celery_results',
     ##### Rest
     'rest_framework',
-    # 'rest_framework.authtoken',
     ##### libs
     'taggit',
+    ##### Json
+    'import_export',
     ##### apps
     'ocp',
     'ocp.accounts',
@@ -181,3 +182,6 @@ EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
 EMAIL_PORT = config('EMAIL_PORT', default='')
 RECEIVE_EMAIL = config('RECEIVE_EMAIL', default='')
+
+# ########################## IMPORT_EXPORT
+IMPORT_EXPORT_USE_TRANSACTIONS = True

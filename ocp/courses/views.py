@@ -9,18 +9,37 @@ from django.utils.translation import ugettext as _
 from .forms import CategoryForm, CourseForm
 from django.http import HttpResponseRedirect
 from django.views.generic import (TemplateView, View, ListView, DetailView)
-# from django.views.decorators.http import last_modified
-# from django.views.i18n import javascript_catalog
 from django.conf import settings
-from django.contrib.sessions.backends.db import SessionStore
 from datetime import datetime
 from .loadcourses import load_courses_Json
-from .models import CourseUpload
+from .models import CourseUpload, Course
+import os
 import json
+
+from jsonschema import validate, exceptions
+schema = {
+        "title": "Course",
+        "type": "object",
+        "required": ['id', 'name', 'phone', 'url', 'description', 'about',
+                        'start_date', 'hascertification', 'status', 'category', 'slug'],
+        "properties": {
+            "id": {"type": "integer"},
+            "name": {"type": "string", "minLength": 8, "maxLength": 100},
+            "slug": {"type": "string"},
+            "category": {"type": "integer", "minimum": 1},
+            "phone": {"type": "string", "pattern": "[0-9]"},
+            "url": {"type": "string", "format": "url"},
+            "description": {"type": "string"},
+            "about": {"type": "string"},
+            "start_date": {"type": "string", "format": "date"},
+            "hascertification": {"type": "boolean"},
+            "status": {"type": "boolean"}
+          }
+        }
+
 
 
 def course_load(request):
-
     if request.method == 'POST':
         # recover JSON
         description_param = request.POST.get('description_file')
@@ -29,34 +48,57 @@ def course_load(request):
         fileJSON = CourseUpload()
         fileJSON.description = description_param
         fileJSON.file = file_up
-        fileJSON.save()
+        fileJSON.save()  # save: register at base and file at directory
         # load JSON
-        pathJSON = f'{settings.MEDIA_ROOT}/courses/json/{file_up}'
+        if fileJSON:
+            # pathJSON = os.path.join(settings.MEDIA_URL, str(fileJSON.file.url))
+            pathJSON = f'{settings.BASE_DIR}{fileJSON.file.url}'
         with open(pathJSON) as file_handler:
-            data = json.load(file_handler)
-            for course in data['results']:
-                Course(id=course['id'],
-                    name=course['name'],
-                    phone=course['phone'],
-                    url=course['url'],
-                    description=course['description'],
-                    about=course['about'],
-                    start_date=course['start_date'],
-                    image='courses/images/None/no-img.jpg',
-                    created_at=datetime.now(),
-                    updated_at=datetime.now(),
-                    hascertification=course['hascertification'],
-                    status=course['status'],
-                    views=0,
-                    category_id=course['category'],
-                    qualification=0,
-                    slug=course['slug']).save()
-        if load_courses_Json:
-            message = _('JSON load was success.')
-            messages.success(request, message)
-        else:
-            message = _('Sorry fail importation. Please, check your JSON for fix some error')
-            messages.success(request, message)
+            try:
+                data = json.load(file_handler)
+            except ValueError:
+                message = _('Decoding JSON has failed. Please, check if the file is a JSON file')
+                messages.success(request, message)
+            else:
+                fields = ['id', 'name', 'phone', 'url', 'description', 'about',
+                          'start_date', 'hascertification', 'status', 'category', 'slug']
+                start = True
+                for field in fields:
+                    if not field in data['results'][0].keys():
+                        message = _('Decoding JSON has failed. Please, check if the structure JSON file is valid')
+                        messages.error(request, message)
+                        start = False
+                        break
+                if start:
+                    for course in data['results']:
+                        try:
+                            validate(instance=course, schema=schema)
+                        except exceptions.ValidationError as e:
+                            message = _('Please check course id:') + f"{course['id']}" + ". " + _('Error') + ":" \
+                                      + f"{e.message}"
+                            messages.error(request, message)
+                            start = False
+                            break
+                        else:
+                            Course(id=course['id'],
+                                name=course['name'],
+                                phone=course['phone'],
+                                url=course['url'],
+                                description=course['description'],
+                                about=course['about'],
+                                start_date=course['start_date'],
+                                image='courses/images/None/no-img.jpg',
+                                created_at=datetime.now(),
+                                updated_at=datetime.now(),
+                                hascertification=course['hascertification'],
+                                status=course['status'],
+                                views=0,
+                                category_id=course['category'],
+                                qualification=0,
+                                slug=course['slug']).save()
+                    if load_courses_Json and start:
+                        message = _('JSON load was success.')
+                        messages.success(request, message)
     template = 'courses/course_load.html'
     return render(request, template)
 
@@ -68,13 +110,10 @@ def incharge(request, slug):
         course = get_object_or_404(Course, slug=slug)
     except KeyError:
         messages.info(request, _("No selection."))
-        #return render(request, "error.html", {"message": "No selection."})
     except Course.DoesNotExist:
         messages.info(request, _("No course."))
-        #return render(request, "error.html", {"message": "No course."})
     except Course.DoesNotExist:
         messages.info(request, _("No teacher."))
-        #return render(request, "error.html", {"message": "No teacher."})
     teacher.course.add(course)
     return HttpResponseRedirect(reverse('courses:course_details', args=(slug,)))
 
@@ -228,8 +267,8 @@ def category_list(request):
     categories = Category.objects.order_by('name')
     if not categories:
         # messages.info(request, _('No category at moment'))
-        categories = {}
-        courses_category = {}
+        context['categories'] = {}
+        context['courses_category'] = {}
     else:
         context['category'] = categories[0]
         context['cats'] = categories
@@ -245,7 +284,6 @@ def category_list(request):
 def category_details(request, pkSlug):
     # Create a context dictionary which we can pass to the template rendering engine.
     context = {}
-
     categories = Category.objects.order_by('name')
     context = {'cats': categories}
 

@@ -1,0 +1,46 @@
+{
+  "count":3,
+  "next":null,
+  "previous":null,
+  "results":[
+    {
+      "id":15,
+      "name":"Course15A",
+      "slug":"course15A",
+      "category":1,
+      "phone":"34444444",
+      "url":"http:\/\/127.0.0.1:8000\/admin\/courses",
+      "description":"description Course",
+      "about":"about Course",
+      "start_date":"2018-07-01",
+      "hascertification":true,
+      "status":true
+    },
+    {
+      "id":16,
+      "name":"Course16A",
+      "slug":"course16A",
+      "category":"1",
+      "phone":"34444444",
+      "url":"http:\/\/127.0.0.1:8000\/admin\/courses",
+      "description":"description Course",
+      "about":"about Course",
+      "start_date":"2018-08-15",
+      "hascertification":true,
+      "status":true
+    },
+    {
+      "id":17,
+      "name":"Course17A",
+      "slug":"course17A",
+      "category":1,
+      "phone":"34A4444",
+      "url":"http:\/\/127.0.0.1:8000\/admin\/courses",
+      "description":"description Course",
+      "about":"about Course",
+      "start_date":"2018-08-15",
+      "hascertification":true,
+      "status":true
+    }
+  ]
+}
