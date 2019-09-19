@@ -4,7 +4,7 @@ python:
 install:
   - pip install -r requirements.txt
 before_script:
-  - cp contrib/.env.travis .env
+  - cp envs/.env.travis .env
   - python manage.py makemigrations
   - python manage.py migrate
 script:

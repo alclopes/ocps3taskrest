@@ -13,7 +13,7 @@ from datetime import datetime
 @shared_task()
 def course_delete_set_task(one_ago):
     # Started task, after 900 seconds / 15 min...
-    time.sleep(5)
+    time.sleep(900)
     populate_date = config('POPULATE_DATE').strip()
     if populate_date == "":
         time_finish = timezone.now() - timezone.timedelta(seconds=3)
@@ -31,7 +31,7 @@ def course_delete_set_task(one_ago):
 @shared_task()
 def category_delete_set_task(one_ago):
     # Started task, after 900 seconds / 15 min...
-    time.sleep(5)
+    time.sleep(900)
     populate_date = config('POPULATE_DATE').strip()
     if populate_date == "":
         time_finish = timezone.now() - timezone.timedelta(seconds=3)
