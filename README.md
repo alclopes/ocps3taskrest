@@ -27,6 +27,13 @@
 * Puppet / Ansible (machine provisioning server preparation scripts, machine provisioning).
 * Awaiting
 
+### Fix Menu Forum - Links
+* Fix left menu Forum - Links don't work when the page is showing details forum.
+* Awaiting
+
+### Fix Counter Forum - Filter More Recently
+* Fix counter Forum to Filter More Recently - Counter is counting if you only see the register.
+* Awaiting
 
 [Back to top](#top)
 
@@ -34,6 +41,10 @@
 <div id = 'done' />
 
 ## Completed Activities - Done
+
+### Fix Redix - Heroku
+* Update Redix config to Heroku
+* DONE - by Andre Carvalho
 
 ### Deploy - Git + Travis + Heroku
 * Travis (task manager) using for testing automation to start deploy
@@ -114,15 +125,12 @@ and when accessing this material, the system ignored the attachment showing only
 ### Attribute Name from Lesson and Material tabs set to UNIQUE **)
 * DONE - by Andre Carvalho
 
-### Attribute Name from Lesson and Material tabs set to UNIQUE **)
-* DONE - by Andre Carvalho
-
 ### Inclusion of Teachers for Courses (List **)
 * DONE - by Andre Carvalho
 * A teacher can work in several courses.
 * A course can have multiple teachers.
 
-### Inclusion of Course Categories (List 1 *)
+### Inclusion of Course Categories (List 1*)
 * DONE - by Andre Carvalho
 * One category will define the characteristic of several courses.
 * Examples of categories: Information Technology, Business Management, Project Management ...

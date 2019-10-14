@@ -27,10 +27,13 @@ if not USE_S3:
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-
-
-
-
+# # ########################## Heroku Redis
+CACHES = {
+    "default": {
+         "BACKEND": "redis_cache.RedisCache",
+         "LOCATION": os.environ.get('REDIS_URL'),
+    }
+}
 
 
 
