@@ -23,6 +23,8 @@ class ForumFilter(ListView):
         order = self.request.GET.get('order', '')
         if order == 'views':
             queryset = queryset.order_by('-views')
+        elif order == 'created':
+            queryset = queryset.order_by('-created')
         elif order == 'answers':
             queryset = queryset.order_by('-answers')
         #/Importante: Como esta view é acessada por duas URLs diferentes

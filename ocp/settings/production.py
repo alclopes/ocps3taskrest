@@ -1,8 +1,9 @@
 from .common import *
 from decouple import config, Csv
-
-# Heroku
 import dj_database_url
+import redis
+
+
 
 # ############## Servidores autorizados
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
@@ -29,6 +30,8 @@ if not USE_S3:
 
 
 # # ########################## Heroku Redis
+r = redis.from_url(os.environ.get("REDIS_URL"))
+
 CACHES = {
     "default": {
          "BACKEND": "redis_cache.RedisCache",

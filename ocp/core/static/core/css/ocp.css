@@ -2,7 +2,7 @@
 /* Gerais  */
 
 html, body {
-    background-color:#d3d3d3;
+    background-color:#CECEF6;
 	margin-top: 0px;
 	height:100%;
 }
@@ -191,8 +191,6 @@ input[type=submit]:hover {
 
 /* ######################################################################################################### */
 /* Usado em tabelas */
-
-
 
 table {
   border-collapse: collapse;

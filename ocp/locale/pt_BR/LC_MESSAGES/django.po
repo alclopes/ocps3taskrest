@@ -373,8 +373,8 @@ msgid "Error"
 msgstr "Erro"
 
 #: .\ocp\core\templates\home.html:14
-msgid "Course Platform is read!"
-msgstr "A plataforma do curso é lida!"
+msgid "Course Platform is ready!"
+msgstr "A plataforma do curso esta pronta!"
 
 #: .\ocp\core\templates\home.html:16
 msgid "Welcome to Course Platform!"

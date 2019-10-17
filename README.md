@@ -27,20 +27,23 @@
 * Puppet / Ansible (machine provisioning server preparation scripts, machine provisioning).
 * Awaiting
 
-### Fix Menu Forum - Links
-* Fix left menu Forum - Links don't work when the page is showing details forum.
-* Awaiting
-
-### Fix Counter Forum - Filter More Recently
-* Fix counter Forum to Filter More Recently - Counter is counting if you only see the register.
+### shopping cart
+Add ways to pay the enrollment in the course.
 * Awaiting
 
 [Back to top](#top)
 
-
 <div id = 'done' />
 
 ## Completed Activities - Done
+
+### 191017a - Fix Menu Forum - Links
+* Remove left menu Forum if page is showing details forum.
+* DONE - by Andre Carvalho
+
+### 191017b - Fix Counter Forum - Filter More Recently
+* Fix counter Forum to Filter More Recently - Counter is counting if you only see the register.
+* DONE - by Andre Carvalho
 
 ### Fix Redix - Heroku
 * Update Redix config to Heroku

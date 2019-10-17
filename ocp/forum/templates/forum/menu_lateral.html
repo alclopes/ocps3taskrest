@@ -4,7 +4,7 @@
 {% block col_one %}
     <div class="columns">
         <ul class="column_topic">
-            <li><a href="?order="><span class="glyphicon glyphicon-plane" aria-hidden="true"></span> {% trans 'More Recently' %}</a></li>
+            <li><a href="?order=created"><span class="glyphicon glyphicon-plane" aria-hidden="true"></span> {% trans 'More Recently' %}</a></li>
             <li><a href="?order=views"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> {% trans 'More Views' %}</a></li>
             <li><a href="?order=answers"><span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span> {% trans 'More Comments' %}</a></li>
             <li><a href="{% url 'forum:index' %}"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> {% trans 'Remove Filters' %}</a></li>
