@@ -2,9 +2,8 @@
 from __future__ import absolute_import, unicode_literals
 import os
 from django.utils.translation import ugettext_lazy as _
-from decouple import config, Csv
-import dj_database_url
-
+from decouple import config
+import redis
 
 # ############## BASE_DIR (manage.py)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -152,6 +151,8 @@ if USE_S3:
 
 # ########################## REDIS
 CELERY_BROKER_URL = config('CELERY_BROKER_URL')
+r = redis.from_url(os.environ.get("REDIS_URL"))
+
 
 # Configurando Celery para rodar em paralelo (True => para testes)
 CELERY_TASK_ALWAYS_EAGER = config('CELERY_TASK_ALWAYS_EAGER_DESENV', default=False, cast=bool)
