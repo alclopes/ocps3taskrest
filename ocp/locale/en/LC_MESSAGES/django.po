@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-17 18:58+0100\n"
+"POT-Creation-Date: 2019-10-17 16:46+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -234,7 +234,7 @@ msgstr ""
 #: .\ocp\core\templates\core\contact.html:46
 #: .\ocp\courses\templates\courses\announcement_detail.html:57
 #: .\ocp\courses\templates\courses\course_details.html:114
-#: .\ocp\forum\templates\forum\thread.html:64
+#: .\ocp\forum\templates\forum\thread.html:65
 msgid "Send"
 msgstr ""
 
@@ -262,6 +262,10 @@ msgstr ""
 
 #: .\ocp\accounts\templates\accounts\register.html:10
 msgid "Your Informations"
+msgstr ""
+
+#: .\ocp\accounts\templates\accounts\register.html:16
+msgid "Fill your informations"
 msgstr ""
 
 #: .\ocp\accounts\views.py:91
@@ -356,7 +360,7 @@ msgstr ""
 msgid "Message"
 msgstr ""
 
-#: .\ocp\core\templates\error.html:5
+#: .\ocp\core\templates\error.html:5 .\ocp\courses\views.py:77
 msgid "Error"
 msgstr ""
 
@@ -410,11 +414,11 @@ msgstr ""
 msgid "Speak with Us"
 msgstr ""
 
-#: .\ocp\core\views.py:23 .\ocp\courses\views.py:340
+#: .\ocp\core\views.py:23 .\ocp\courses\views.py:378
 msgid "Your message was sended with success"
 msgstr ""
 
-#: .\ocp\core\views.py:26 .\ocp\courses\views.py:344
+#: .\ocp\core\views.py:26 .\ocp\courses\views.py:382
 msgid ""
 "Sorry your message not be sended. Please, Try again or choice other type of "
 "contact"
@@ -903,63 +907,72 @@ msgstr ""
 msgid "No courses found"
 msgstr ""
 
-#: .\ocp\courses\views.py:55
+#: .\ocp\courses\views.py:60
+msgid "Decoding JSON has failed. Please, check if the file is a JSON file"
+msgstr ""
+
+#: .\ocp\courses\views.py:68
+msgid ""
+"Decoding JSON has failed. Please, check if the structure JSON file is valid"
+msgstr ""
+
+#: .\ocp\courses\views.py:77
+msgid "Please check course id:"
+msgstr ""
+
+#: .\ocp\courses\views.py:100
 msgid "JSON load was success."
 msgstr ""
 
-#: .\ocp\courses\views.py:58
-msgid "Sorry fail importation. Please, check your JSON for fix some error"
-msgstr ""
-
-#: .\ocp\courses\views.py:70
+#: .\ocp\courses\views.py:112
 msgid "No selection."
 msgstr ""
 
-#: .\ocp\courses\views.py:73
+#: .\ocp\courses\views.py:114
 msgid "No course."
 msgstr ""
 
-#: .\ocp\courses\views.py:76
+#: .\ocp\courses\views.py:116
 msgid "No teacher."
 msgstr ""
 
-#: .\ocp\courses\views.py:91
+#: .\ocp\courses\views.py:130
 msgid "You was enrolled in course with success"
 msgstr ""
 
-#: .\ocp\courses\views.py:93
+#: .\ocp\courses\views.py:132
 msgid "You have been enrolled in course"
 msgstr ""
 
-#: .\ocp\courses\views.py:106
+#: .\ocp\courses\views.py:145
 msgid "Your subscription was successfully canceled"
 msgstr ""
 
-#: .\ocp\courses\views.py:142
+#: .\ocp\courses\views.py:181
 msgid "Your comment was sended with success"
 msgstr ""
 
-#: .\ocp\courses\views.py:175
+#: .\ocp\courses\views.py:214
 msgid "This class is not available"
 msgstr ""
 
-#: .\ocp\courses\views.py:193
+#: .\ocp\courses\views.py:232
 msgid "This material is not available."
 msgstr ""
 
-#: .\ocp\courses\views.py:214
+#: .\ocp\courses\views.py:253
 msgid "No Video."
 msgstr ""
 
-#: .\ocp\courses\views.py:219
+#: .\ocp\courses\views.py:258
 msgid "Id doesnt exists."
 msgstr ""
 
-#: .\ocp\courses\views.py:292
+#: .\ocp\courses\views.py:330
 msgid "That category not exist"
 msgstr ""
 
-#: .\ocp\courses\views.py:303
+#: .\ocp\courses\views.py:341
 msgid "Course created with success"
 msgstr ""
 
@@ -993,7 +1006,7 @@ msgid "Forum of Questions"
 msgstr ""
 
 #: .\ocp\forum\templates\forum\index.html:24
-#: .\ocp\forum\templates\forum\thread.html:19
+#: .\ocp\forum\templates\forum\thread.html:20
 msgid "Create by"
 msgstr ""
 
@@ -1006,8 +1019,8 @@ msgid "Update at "
 msgstr ""
 
 #: .\ocp\forum\templates\forum\index.html:32
-#: .\ocp\forum\templates\forum\thread.html:20
-#: .\ocp\forum\templates\forum\thread.html:34
+#: .\ocp\forum\templates\forum\thread.html:21
+#: .\ocp\forum\templates\forum\thread.html:35
 msgid "ago"
 msgstr ""
 
@@ -1039,44 +1052,44 @@ msgstr ""
 msgid "Forum-Thread"
 msgstr ""
 
-#: .\ocp\forum\templates\forum\thread.html:20
+#: .\ocp\forum\templates\forum\thread.html:21
 msgid "Create at "
 msgstr ""
 
-#: .\ocp\forum\templates\forum\thread.html:23
+#: .\ocp\forum\templates\forum\thread.html:24
 msgid "Give Your Answer"
 msgstr ""
 
-#: .\ocp\forum\templates\forum\thread.html:25
+#: .\ocp\forum\templates\forum\thread.html:26
 msgid "Login to Give Your Answer"
 msgstr ""
 
-#: .\ocp\forum\templates\forum\thread.html:34
+#: .\ocp\forum\templates\forum\thread.html:35
 msgid "answered at "
 msgstr ""
 
-#: .\ocp\forum\templates\forum\thread.html:39
+#: .\ocp\forum\templates\forum\thread.html:40
 msgid "Cancel Right Answer"
 msgstr ""
 
-#: .\ocp\forum\templates\forum\thread.html:40
+#: .\ocp\forum\templates\forum\thread.html:41
 msgid "Right Answer"
 msgstr ""
 
-#: .\ocp\forum\templates\forum\thread.html:41
-#: .\ocp\forum\templates\forum\thread.html:44
+#: .\ocp\forum\templates\forum\thread.html:42
+#: .\ocp\forum\templates\forum\thread.html:45
 msgid "Answer flagged by the owner"
 msgstr ""
 
-#: .\ocp\forum\views.py:72
+#: .\ocp\forum\views.py:74
 msgid "To reply to the topic you must be logged in"
 msgstr ""
 
-#: .\ocp\forum\views.py:87
+#: .\ocp\forum\views.py:89
 msgid "Your answer was sended with success"
 msgstr ""
 
-#: .\ocp\forum\views.py:104
+#: .\ocp\forum\views.py:106
 msgid "Answer updated with success"
 msgstr ""
 
@@ -1093,20 +1106,32 @@ msgid "Choose your language"
 msgstr ""
 
 #: .\ocp\languages\templates\languages\index.html:17
-#: .\ocp\settings\common.py:111
+#: .\ocp\settings\common.py:108
 msgid "English"
 msgstr ""
 
 #: .\ocp\languages\templates\languages\index.html:18
-#: .\ocp\settings\common.py:112
+#: .\ocp\settings\common.py:109
 msgid "Portuguese"
 msgstr ""
 
 #: .\ocp\languages\templates\languages\index.html:19
-#: .\ocp\settings\common.py:113
+#: .\ocp\settings\common.py:110
 msgid "Spanish"
 msgstr ""
 
 #: .\ocp\languages\templates\languages\index.html:27
 msgid "Your Current Language Settings:"
+msgstr ""
+
+#: .\ocp\languages\templates\languages\index.html:30
+msgid "Language code:"
+msgstr ""
+
+#: .\ocp\languages\templates\languages\index.html:31
+msgid "Name of language:"
+msgstr ""
+
+#: .\ocp\languages\templates\languages\index.html:32
+msgid "Name in English:"
 msgstr ""

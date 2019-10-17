@@ -22,8 +22,19 @@ TEMPLATE_DEBUG = config('DEBUG_DESENV', default=True, cast=bool)
 
 # ############## WSGI
 
-# ##############  Databases
-DATABASES = {'default': dj_database_url.config(default=config('DATABASE_URL_DESENV'))}
+# ##############  Databases Sqlite
+# DATABASES = {'default': dj_database_url.config(default=config('DATABASE_URL_DESENV'))}
+
+DATABASES = {
+    'default': {
+        'ENGINE': config('DB_ENGINE_POSTGRES'),
+        'NAME': config('DB_NAME_POSTGRES'),
+        'USER': config('DB_USER_POSTGRES'),
+        'PASSWORD': config('DB_PASSWORD_POSTGRES'),
+        'HOST': config('DB_HOST_POSTGRES'),
+        'PORT': config('DB_PORT_POSTGRES'),
+    }
+}
 
 # ########################### Password validation
 

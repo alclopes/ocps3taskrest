@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-17 18:59+0100\n"
+"POT-Creation-Date: 2019-10-17 16:46+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -244,7 +244,7 @@ msgstr ""
 #: .\ocp\core\templates\core\contact.html:46
 #: .\ocp\courses\templates\courses\announcement_detail.html:57
 #: .\ocp\courses\templates\courses\course_details.html:114
-#: .\ocp\forum\templates\forum\thread.html:64
+#: .\ocp\forum\templates\forum\thread.html:65
 msgid "Send"
 msgstr "Enviar"
 
@@ -273,6 +273,10 @@ msgstr "Registrarse"
 #: .\ocp\accounts\templates\accounts\register.html:10
 msgid "Your Informations"
 msgstr "Sus informaciones"
+
+#: .\ocp\accounts\templates\accounts\register.html:16
+msgid "Fill your informations"
+msgstr "Rellene sus informaciones"
 
 #: .\ocp\accounts\views.py:91
 msgid "Your datas was updated with success"
@@ -368,7 +372,7 @@ msgstr "Contáctanos y te responderemos en 24 horas."
 msgid "Message"
 msgstr "Mensaje"
 
-#: .\ocp\core\templates\error.html:5
+#: .\ocp\core\templates\error.html:5 .\ocp\courses\views.py:77
 msgid "Error"
 msgstr "Error"
 
@@ -424,11 +428,11 @@ msgstr "Profesores experimentados"
 msgid "Speak with Us"
 msgstr "Habla con nosotros"
 
-#: .\ocp\core\views.py:23 .\ocp\courses\views.py:340
+#: .\ocp\core\views.py:23 .\ocp\courses\views.py:378
 msgid "Your message was sended with success"
 msgstr "Su mensaje se envió con éxito"
 
-#: .\ocp\core\views.py:26 .\ocp\courses\views.py:344
+#: .\ocp\core\views.py:26 .\ocp\courses\views.py:382
 msgid ""
 "Sorry your message not be sended. Please, Try again or choice other type of "
 "contact"
@@ -951,69 +955,78 @@ msgstr "No hay curso"
 msgid "No courses found"
 msgstr "No hay curso"
 
-#: .\ocp\courses\views.py:55
+#: .\ocp\courses\views.py:60
+msgid "Decoding JSON has failed. Please, check if the file is a JSON file"
+msgstr ""
+
+#: .\ocp\courses\views.py:68
+msgid ""
+"Decoding JSON has failed. Please, check if the structure JSON file is valid"
+msgstr ""
+
+#: .\ocp\courses\views.py:77
+msgid "Please check course id:"
+msgstr ""
+
+#: .\ocp\courses\views.py:100
 msgid "JSON load was success."
 msgstr "La carga JSON fue un éxito."
 
-#: .\ocp\courses\views.py:58
-msgid "Sorry fail importation. Please, check your JSON for fix some error"
-msgstr "Disculpe la importación. Por favor, revise su JSON para corregir algún error"
-
-#: .\ocp\courses\views.py:70
+#: .\ocp\courses\views.py:112
 msgid "No selection."
 msgstr "Sin selección"
 
-#: .\ocp\courses\views.py:73
+#: .\ocp\courses\views.py:114
 msgid "No course."
 msgstr "No hay curso"
 
-#: .\ocp\courses\views.py:76
+#: .\ocp\courses\views.py:116
 msgid "No teacher."
 msgstr "Sin profesor"
 
-#: .\ocp\courses\views.py:91
+#: .\ocp\courses\views.py:130
 msgid "You was enrolled in course with success"
 msgstr "Te inscribiste en el curso con éxito"
 
-#: .\ocp\courses\views.py:93
+#: .\ocp\courses\views.py:132
 msgid "You have been enrolled in course"
 msgstr "Te has matriculado en el curso"
 
-#: .\ocp\courses\views.py:106
+#: .\ocp\courses\views.py:145
 msgid "Your subscription was successfully canceled"
 msgstr "Sua inscrição foi cancelada com sucesso"
 
-#: .\ocp\courses\views.py:142
+#: .\ocp\courses\views.py:181
 msgid "Your comment was sended with success"
 msgstr "Su comentario se envió con éxito"
 
-#: .\ocp\courses\views.py:175
+#: .\ocp\courses\views.py:214
 #, fuzzy
 #| msgid "Esta aula não está disponIvel"
 msgid "This class is not available"
 msgstr "Esta página no está disponible"
 
-#: .\ocp\courses\views.py:193
+#: .\ocp\courses\views.py:232
 #, fuzzy
 #| msgid "Este material não está disponIvel"
 msgid "This material is not available."
 msgstr "Este material no está disponible"
 
-#: .\ocp\courses\views.py:214
+#: .\ocp\courses\views.py:253
 msgid "No Video."
 msgstr "No hay video."
 
-#: .\ocp\courses\views.py:219
+#: .\ocp\courses\views.py:258
 msgid "Id doesnt exists."
 msgstr "Id no existe."
 
-#: .\ocp\courses\views.py:292
+#: .\ocp\courses\views.py:330
 #, fuzzy
 #| msgid "There are no category present."
 msgid "That category not exist"
 msgstr "No hay ninguna categoria presente"
 
-#: .\ocp\courses\views.py:303
+#: .\ocp\courses\views.py:341
 #, fuzzy
 #| msgid "Answer updated with success"
 msgid "Course created with success"
@@ -1049,7 +1062,7 @@ msgid "Forum of Questions"
 msgstr "Foro de preguntas"
 
 #: .\ocp\forum\templates\forum\index.html:24
-#: .\ocp\forum\templates\forum\thread.html:19
+#: .\ocp\forum\templates\forum\thread.html:20
 msgid "Create by"
 msgstr "Crear por"
 
@@ -1062,8 +1075,8 @@ msgid "Update at "
 msgstr "Actualizar en"
 
 #: .\ocp\forum\templates\forum\index.html:32
-#: .\ocp\forum\templates\forum\thread.html:20
-#: .\ocp\forum\templates\forum\thread.html:34
+#: .\ocp\forum\templates\forum\thread.html:21
+#: .\ocp\forum\templates\forum\thread.html:35
 msgid "ago"
 msgstr "hace"
 
@@ -1099,46 +1112,46 @@ msgstr "Eliminar filtros"
 msgid "Forum-Thread"
 msgstr "Foro-Hilo"
 
-#: .\ocp\forum\templates\forum\thread.html:20
+#: .\ocp\forum\templates\forum\thread.html:21
 msgid "Create at "
 msgstr "Crear en"
 
-#: .\ocp\forum\templates\forum\thread.html:23
+#: .\ocp\forum\templates\forum\thread.html:24
 msgid "Give Your Answer"
 msgstr "Da tu respuesta"
 
-#: .\ocp\forum\templates\forum\thread.html:25
+#: .\ocp\forum\templates\forum\thread.html:26
 #, fuzzy
 #| msgid "Give Your Answer"
 msgid "Login to Give Your Answer"
 msgstr "Da tu respuesta"
 
-#: .\ocp\forum\templates\forum\thread.html:34
+#: .\ocp\forum\templates\forum\thread.html:35
 msgid "answered at "
 msgstr "respondió a las"
 
-#: .\ocp\forum\templates\forum\thread.html:39
+#: .\ocp\forum\templates\forum\thread.html:40
 msgid "Cancel Right Answer"
 msgstr "Cancelar respuesta correcta"
 
-#: .\ocp\forum\templates\forum\thread.html:40
+#: .\ocp\forum\templates\forum\thread.html:41
 msgid "Right Answer"
 msgstr "Respuesta correcta"
 
-#: .\ocp\forum\templates\forum\thread.html:41
-#: .\ocp\forum\templates\forum\thread.html:44
+#: .\ocp\forum\templates\forum\thread.html:42
+#: .\ocp\forum\templates\forum\thread.html:45
 msgid "Answer flagged by the owner"
 msgstr "Respuesta marcada por el propietario"
 
-#: .\ocp\forum\views.py:72
+#: .\ocp\forum\views.py:74
 msgid "To reply to the topic you must be logged in"
 msgstr "Para responder ao tópico es necesario estar logado"
 
-#: .\ocp\forum\views.py:87
+#: .\ocp\forum\views.py:89
 msgid "Your answer was sended with success"
 msgstr "Su respuesta se envió con éxito"
 
-#: .\ocp\forum\views.py:104
+#: .\ocp\forum\views.py:106
 msgid "Answer updated with success"
 msgstr "Respuesta actualizada con éxito"
 
@@ -1155,17 +1168,17 @@ msgid "Choose your language"
 msgstr "Elige tu idioma"
 
 #: .\ocp\languages\templates\languages\index.html:17
-#: .\ocp\settings\common.py:111
+#: .\ocp\settings\common.py:108
 msgid "English"
 msgstr "inglés"
 
 #: .\ocp\languages\templates\languages\index.html:18
-#: .\ocp\settings\common.py:112
+#: .\ocp\settings\common.py:109
 msgid "Portuguese"
 msgstr "portugués"
 
 #: .\ocp\languages\templates\languages\index.html:19
-#: .\ocp\settings\common.py:113
+#: .\ocp\settings\common.py:110
 msgid "Spanish"
 msgstr "español"
 
@@ -1173,8 +1186,28 @@ msgstr "español"
 msgid "Your Current Language Settings:"
 msgstr "Su configuración de idioma actual:"
 
-#~ msgid "Fill your informations"
-#~ msgstr "Rellene sus informaciones"
+#: .\ocp\languages\templates\languages\index.html:30
+#, fuzzy
+#| msgid "Language"
+msgid "Language code:"
+msgstr "Idioma"
+
+#: .\ocp\languages\templates\languages\index.html:31
+#, fuzzy
+#| msgid "Choose your language"
+msgid "Name of language:"
+msgstr "Elige tu idioma"
+
+#: .\ocp\languages\templates\languages\index.html:32
+#, fuzzy
+#| msgid "English"
+msgid "Name in English:"
+msgstr "inglés"
+
+#~ msgid "Sorry fail importation. Please, check your JSON for fix some error"
+#~ msgstr ""
+#~ "Disculpe la importación. Por favor, revise su JSON para corregir algún "
+#~ "error"
 
 #~ msgid "accounts-register"
 #~ msgstr "registro de cuentas"

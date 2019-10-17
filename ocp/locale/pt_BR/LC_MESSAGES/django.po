@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-17 18:58+0100\n"
+"POT-Creation-Date: 2019-10-17 16:46+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -244,7 +244,7 @@ msgstr ""
 #: .\ocp\core\templates\core\contact.html:46
 #: .\ocp\courses\templates\courses\announcement_detail.html:57
 #: .\ocp\courses\templates\courses\course_details.html:114
-#: .\ocp\forum\templates\forum\thread.html:64
+#: .\ocp\forum\templates\forum\thread.html:65
 msgid "Send"
 msgstr "Enviar"
 
@@ -273,6 +273,10 @@ msgstr "Registrar"
 #: .\ocp\accounts\templates\accounts\register.html:10
 msgid "Your Informations"
 msgstr "Suas informações"
+
+#: .\ocp\accounts\templates\accounts\register.html:16
+msgid "Fill your informations"
+msgstr "Preencha suas informações"
 
 #: .\ocp\accounts\views.py:91
 msgid "Your datas was updated with success"
@@ -368,7 +372,7 @@ msgstr "Entre em contato e retornaremos o seu contato em até 24 horas."
 msgid "Message"
 msgstr "Mensagem"
 
-#: .\ocp\core\templates\error.html:5
+#: .\ocp\core\templates\error.html:5 .\ocp\courses\views.py:77
 msgid "Error"
 msgstr "Erro"
 
@@ -424,11 +428,11 @@ msgstr "Professores experientes"
 msgid "Speak with Us"
 msgstr "Fale Conosco"
 
-#: .\ocp\core\views.py:23 .\ocp\courses\views.py:340
+#: .\ocp\core\views.py:23 .\ocp\courses\views.py:378
 msgid "Your message was sended with success"
 msgstr "Sua mensagem foi enviada com sucesso"
 
-#: .\ocp\core\views.py:26 .\ocp\courses\views.py:344
+#: .\ocp\core\views.py:26 .\ocp\courses\views.py:382
 msgid ""
 "Sorry your message not be sended. Please, Try again or choice other type of "
 "contact"
@@ -943,65 +947,74 @@ msgstr "Não é claro."
 msgid "No courses found"
 msgstr "Nenhum curso encontrado"
 
-#: .\ocp\courses\views.py:55
+#: .\ocp\courses\views.py:60
+msgid "Decoding JSON has failed. Please, check if the file is a JSON file"
+msgstr ""
+
+#: .\ocp\courses\views.py:68
+msgid ""
+"Decoding JSON has failed. Please, check if the structure JSON file is valid"
+msgstr ""
+
+#: .\ocp\courses\views.py:77
+msgid "Please check course id:"
+msgstr ""
+
+#: .\ocp\courses\views.py:100
 msgid "JSON load was success."
 msgstr "A carga JSON foi um sucesso."
 
-#: .\ocp\courses\views.py:58
-msgid "Sorry fail importation. Please, check your JSON for fix some error"
-msgstr "Desculpe falha na importação. Por favor, verifique seu JSON para corrigir algum erro"
-
-#: .\ocp\courses\views.py:70
+#: .\ocp\courses\views.py:112
 msgid "No selection."
 msgstr "Nenhuma seleção."
 
-#: .\ocp\courses\views.py:73
+#: .\ocp\courses\views.py:114
 msgid "No course."
 msgstr "Não é claro."
 
-#: .\ocp\courses\views.py:76
+#: .\ocp\courses\views.py:116
 msgid "No teacher."
 msgstr "Nenhum professor."
 
-#: .\ocp\courses\views.py:91
+#: .\ocp\courses\views.py:130
 msgid "You was enrolled in course with success"
 msgstr "Você foi matriculado no curso com sucesso"
 
-#: .\ocp\courses\views.py:93
+#: .\ocp\courses\views.py:132
 msgid "You have been enrolled in course"
 msgstr "Você foi inscrito no curso"
 
-#: .\ocp\courses\views.py:106
+#: .\ocp\courses\views.py:145
 msgid "Your subscription was successfully canceled"
 msgstr "Sua inscrição foi cancelada com sucesso"
 
-#: .\ocp\courses\views.py:142
+#: .\ocp\courses\views.py:181
 msgid "Your comment was sended with success"
 msgstr "Seu comentário foi enviado com sucesso"
 
-#: .\ocp\courses\views.py:175
+#: .\ocp\courses\views.py:214
 msgid "This class is not available"
 msgstr "Esta aula não está disponível"
 
-#: .\ocp\courses\views.py:193
+#: .\ocp\courses\views.py:232
 msgid "This material is not available."
 msgstr "Este material não está disponível"
 
-#: .\ocp\courses\views.py:214
+#: .\ocp\courses\views.py:253
 msgid "No Video."
 msgstr "Nenhum vídeo"
 
-#: .\ocp\courses\views.py:219
+#: .\ocp\courses\views.py:258
 msgid "Id doesnt exists."
 msgstr "Identificador não existe"
 
-#: .\ocp\courses\views.py:292
+#: .\ocp\courses\views.py:330
 #, fuzzy
 #| msgid "There are no category present."
 msgid "That category not exist"
 msgstr "Não há nenhuma categoria presente."
 
-#: .\ocp\courses\views.py:303
+#: .\ocp\courses\views.py:341
 #, fuzzy
 #| msgid "Answer updated with success"
 msgid "Course created with success"
@@ -1037,7 +1050,7 @@ msgid "Forum of Questions"
 msgstr "Fórum de perguntas"
 
 #: .\ocp\forum\templates\forum\index.html:24
-#: .\ocp\forum\templates\forum\thread.html:19
+#: .\ocp\forum\templates\forum\thread.html:20
 msgid "Create by"
 msgstr "Criado por"
 
@@ -1050,8 +1063,8 @@ msgid "Update at "
 msgstr "Atualizar em"
 
 #: .\ocp\forum\templates\forum\index.html:32
-#: .\ocp\forum\templates\forum\thread.html:20
-#: .\ocp\forum\templates\forum\thread.html:34
+#: .\ocp\forum\templates\forum\thread.html:21
+#: .\ocp\forum\templates\forum\thread.html:35
 msgid "ago"
 msgstr "atrás"
 
@@ -1087,46 +1100,46 @@ msgstr "Remover filtros"
 msgid "Forum-Thread"
 msgstr "Fórum-Thread"
 
-#: .\ocp\forum\templates\forum\thread.html:20
+#: .\ocp\forum\templates\forum\thread.html:21
 msgid "Create at "
 msgstr "Criado em"
 
-#: .\ocp\forum\templates\forum\thread.html:23
+#: .\ocp\forum\templates\forum\thread.html:24
 msgid "Give Your Answer"
 msgstr "Dê sua resposta"
 
-#: .\ocp\forum\templates\forum\thread.html:25
+#: .\ocp\forum\templates\forum\thread.html:26
 #, fuzzy
 #| msgid "Give Your Answer"
 msgid "Login to Give Your Answer"
 msgstr "Dê sua resposta"
 
-#: .\ocp\forum\templates\forum\thread.html:34
+#: .\ocp\forum\templates\forum\thread.html:35
 msgid "answered at "
 msgstr "respondido em"
 
-#: .\ocp\forum\templates\forum\thread.html:39
+#: .\ocp\forum\templates\forum\thread.html:40
 msgid "Cancel Right Answer"
 msgstr "Cancelar resposta correta"
 
-#: .\ocp\forum\templates\forum\thread.html:40
+#: .\ocp\forum\templates\forum\thread.html:41
 msgid "Right Answer"
 msgstr "Resposta certa"
 
-#: .\ocp\forum\templates\forum\thread.html:41
-#: .\ocp\forum\templates\forum\thread.html:44
+#: .\ocp\forum\templates\forum\thread.html:42
+#: .\ocp\forum\templates\forum\thread.html:45
 msgid "Answer flagged by the owner"
 msgstr "Resposta sinalizada pelo dono"
 
-#: .\ocp\forum\views.py:72
+#: .\ocp\forum\views.py:74
 msgid "To reply to the topic you must be logged in"
 msgstr "Para responder ao tópico é necessário estar logado"
 
-#: .\ocp\forum\views.py:87
+#: .\ocp\forum\views.py:89
 msgid "Your answer was sended with success"
 msgstr "Sua resposta foi enviada com sucesso"
 
-#: .\ocp\forum\views.py:104
+#: .\ocp\forum\views.py:106
 msgid "Answer updated with success"
 msgstr "Resposta atualizada com sucesso"
 
@@ -1143,17 +1156,17 @@ msgid "Choose your language"
 msgstr "Escolha seu idioma"
 
 #: .\ocp\languages\templates\languages\index.html:17
-#: .\ocp\settings\common.py:111
+#: .\ocp\settings\common.py:108
 msgid "English"
 msgstr "Inglês"
 
 #: .\ocp\languages\templates\languages\index.html:18
-#: .\ocp\settings\common.py:112
+#: .\ocp\settings\common.py:109
 msgid "Portuguese"
 msgstr "Português"
 
 #: .\ocp\languages\templates\languages\index.html:19
-#: .\ocp\settings\common.py:113
+#: .\ocp\settings\common.py:110
 msgid "Spanish"
 msgstr "Espanhol"
 
@@ -1161,8 +1174,28 @@ msgstr "Espanhol"
 msgid "Your Current Language Settings:"
 msgstr "Suas configurações atuais de idioma:"
 
-#~ msgid "Fill your informations"
-#~ msgstr "Preencha suas informações"
+#: .\ocp\languages\templates\languages\index.html:30
+#, fuzzy
+#| msgid "Language"
+msgid "Language code:"
+msgstr "Idioma"
+
+#: .\ocp\languages\templates\languages\index.html:31
+#, fuzzy
+#| msgid "Choose your language"
+msgid "Name of language:"
+msgstr "Escolha seu idioma"
+
+#: .\ocp\languages\templates\languages\index.html:32
+#, fuzzy
+#| msgid "English"
+msgid "Name in English:"
+msgstr "Inglês"
+
+#~ msgid "Sorry fail importation. Please, check your JSON for fix some error"
+#~ msgstr ""
+#~ "Desculpe falha na importação. Por favor, verifique seu JSON para corrigir "
+#~ "algum erro"
 
 #~ msgid "accounts-register"
 #~ msgstr "registro de contas"

@@ -37,6 +37,10 @@ Add ways to pay the enrollment in the course.
 
 ## Completed Activities - Done
 
+### 191017c - Fix words Internationalization 
+* Fix some portuguese words not translated.
+* DONE - by Andre Carvalho
+
 ### 191017a - Fix Menu Forum - Links
 * Remove left menu Forum if page is showing details forum.
 * DONE - by Andre Carvalho
