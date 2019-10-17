@@ -221,19 +221,21 @@ e ao acessar este material, o sistema ignorava o anexo mostrando apenas o texto 
 
 ##  Lista de Tabelas e funcionalidades do projeto  
 
-| Module | Model | Administration     |  API/Rest   | 
-| --- | --- | --- | --- |
-|  Accounts   |   User  |  Admin  |  yes    | 
-|  Courses    |  Advertisements |  Admin, App |     | 
-|  Courses    |  Categories |  Admin, App |  yes    | 
-|  Courses    |  Comments   |  Admin, App |     | 
-|  Courses    |  Courses    |  Admin, App |  yes    | 
-|  Courses    |  Enrollments    |  Admin, App |     | 
-|  Courses    |  Lessons    |  Admin  |     | 
-|  Courses    |  Materials  |  Admin, App |     | 
-|  Courses    |  Teachers   |  Admin  |  yes    | 
-|  Forum  |  Anwers |  Admin, App |     | 
-|  Forum  |  Topic  |  Admin  |     | 
+| Module | Model | Administration     |  API/Rest   |  Detalhe/Principais informações |
+| --- | --- | --- | --- | --- |
+|  Accounts   |   User  |  Admin  |  yes    | Ultimo Login, Usuario, Senha, Data Joined | 
+|  Courses    |  Categories |  Admin, App |  yes    | Categoria de Cursos |
+|  Courses    |  Courses    |  Admin, App |  yes    | Nome Curso |
+|  Courses    |  Teachers   |  Admin  |  yes    | Usuario Vinculado |
+|  Courses    |  Teacher_course   |  Admin  |  yes    | Vinculo de professor e curso |
+|  Courses    |  Lessons    |  Admin  |     |  Lições do curso, Curso Vinculado |
+|  Courses    |  Materials  |  Admin, App |     | Material do curso, Lição Vinculada |
+|  Courses    |  Enrollments    |  Admin, App |     | Matricula de Usuario ao Curso |
+|  Courses    |  Announcement    |  Admin, App |     | Advertisements, Avisos do Curso, Curso Vinculado |
+|  Courses    |  Comments   |  Admin, App |     | Discusão (Announcement), Usuario Vinculado |
+|  Forum  |  Forum_reply |  Admin, App |     | Respostas do Forum, Pergunta do Forum Vinculada, Usuário Vinculado |
+|  Forum  |  Forum_thread  |  Admin  |     | Tópico do Forum, Usuário Vinculado |
+|  Courses  |  Courseupload  |  Admin  |     | Carga Json de cursos |
 
 
 | Module | Func |

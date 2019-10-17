@@ -38,6 +38,57 @@ def populate():
         # ############################ Start creates
 
         print(".", end="")
+        # User
+        User(id='1', password='pbkdf2_sha256$20000$GDG2ExejLdID$+jZqG9jb9QQPASguwBlIxiWLH09h/DldlB5+SCvoa40=',
+             last_login='2019-08-06 17:16:57.015753', is_superuser='1', email='admin@ocpplus.com', name='Admin',
+             phone='900004674', is_active='1', is_staff='1', date_joined='2019-07-29 08:12:08.986190',
+             username='admin').save()
+        User(id='2', password='pbkdf2_sha256$20000$zqU1gSN1lM8L$qC1r5BL/5wWktffKMGXcu0P+URhxp9l6Y3ff05rUiMA=',
+             last_login='2019-08-05 08:00:31.032668', is_superuser='0', email='user01@user.com', name='User01',
+             phone='900004674', is_active='1', is_staff='0', date_joined='2019-07-31 09:01:57.362757',
+             username='user01').save()
+        User(id='3', password='pbkdf2_sha256$20000$nx0FkSP8DmTb$bBsSIR5Sr9flhp5E5QJNmbTuDMBBJlDsbkYJG/00Mc4=',
+             last_login='2019-08-03 13:11:10.939870', is_superuser='0', email='teacher01@ocpplus.com', name='Teacher01',
+             phone='900004674', is_active='1', is_staff='0', date_joined='2019-07-31 09:18:47.450824',
+             username='teacher01').save()
+        User(id='4', password='pbkdf2_sha256$20000$zqU1gSN1lM8L$qC1r5BL/5wWktffKMGXcu0P+URhxp9l6Y3ff05rUiMA=',
+             last_login='2019-08-02 13:38:34.332377', is_superuser='0', email='user02@user.com', name='User02',
+             phone='900004674', is_active='1', is_staff='0', date_joined='2019-07-31 15:43:39.712962',
+             username='user02').save()
+        User(id='10', password='pbkdf2_sha256$20000$zqU1gSN1lM8L$qC1r5BL/5wWktffKMGXcu0P+URhxp9l6Y3ff05rUiMA=',
+             last_login='2019-07-31 15:43:40.228602', is_superuser='0', email='user03@user.com', name='User03',
+             phone='900014181', is_active='1', is_staff='0', date_joined='2019-07-31 15:43:39.712962',
+             username='user03').save()
+        User(id='11', password='pbkdf2_sha256$20000$zqU1gSN1lM8L$qC1r5BL/5wWktffKMGXcu0P+URhxp9l6Y3ff05rUiMA=',
+             last_login='2019-07-31 15:43:40.228602', is_superuser='0', email='user04@user.com', name='User04',
+             phone='900004674', is_active='1', is_staff='0', date_joined='2019-07-31 15:43:39.712962',
+             username='user04').save()
+        User(id='12', password='pbkdf2_sha256$20000$zqU1gSN1lM8L$qC1r5BL/5wWktffKMGXcu0P+URhxp9l6Y3ff05rUiMA=',
+             last_login='2019-07-31 15:43:40.228602', is_superuser='0', email='user05@user.com', name='User05',
+             phone='900022380', is_active='1', is_staff='0', date_joined='2019-07-31 15:43:39.712962',
+             username='user05').save()
+        User(id='13', password='pbkdf2_sha256$20000$zqU1gSN1lM8L$qC1r5BL/5wWktffKMGXcu0P+URhxp9l6Y3ff05rUiMA=',
+             last_login='2019-07-31 15:43:40.228602', is_superuser='0', email='user06@user.com', name='User06',
+             phone='900030349', is_active='1', is_staff='0', date_joined='2019-07-31 15:43:39.712962',
+             username='user06').save()
+        User(id='14', password='pbkdf2_sha256$20000$zqU1gSN1lM8L$qC1r5BL/5wWktffKMGXcu0P+URhxp9l6Y3ff05rUiMA=',
+             last_login='2019-07-31 15:43:40.228602', is_superuser='0', email='user07@user.com', name='User07',
+             phone='900018698', is_active='1', is_staff='0', date_joined='2019-07-31 15:43:39.712962',
+             username='user07').save()
+        User(id='15', password='pbkdf2_sha256$20000$ymlpXTezDSCp$znXWxn3eHNUI9DvGYI9MakPpnTyt4rybrC0MC2P2WUE=',
+             last_login='2019-07-31 15:43:40.228602', is_superuser='0', email='teacher02@ocpplus.com', name='teacher02',
+             phone='900029467', is_active='1', is_staff='0', date_joined='2019-07-31 15:43:39.712962',
+             username='teacher02').save()
+        User(id='16', password='pbkdf2_sha256$20000$ymlpXTezDSCp$znXWxn3eHNUI9DvGYI9MakPpnTyt4rybrC0MC2P2WUE=',
+             last_login='2019-07-31 15:43:40.228602', is_superuser='0', email='teacher03@ocpplus.com', name='teacher03',
+             phone='900014781', is_active='1', is_staff='0', date_joined='2019-07-31 15:43:39.712962',
+             username='teacher03').save()
+        User(id='17', password='pbkdf2_sha256$20000$ymlpXTezDSCp$znXWxn3eHNUI9DvGYI9MakPpnTyt4rybrC0MC2P2WUE=',
+             last_login='2019-07-31 15:43:40.228602', is_superuser='0', email='teacher04@ocpplus.com', name='teacher04',
+             phone='900003986', is_active='1', is_staff='0', date_joined='2019-07-31 15:43:39.712962',
+             username='teacher04').save()
+
+        print(".", end="")
         # Category
         Category(id='1', name='Category01', description='Description Category01', slug='category01', status='1',
                  created_at='2019-07-29 09:49:41.696960', updated_at='2019-07-29 09:49:41.696960').save()
@@ -136,21 +187,6 @@ def populate():
         Announcement(id='9', title='a', content='Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement ', created_at='2019-08-01 14:55:23.083186', updated_at='2019-08-01 14:55:23.083186', course_id='6').save()
         Announcement(id='10', title='d', content='Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement ', created_at='2019-08-01 14:55:30.739174', updated_at='2019-08-01 14:55:30.739174', course_id='4').save()
         Announcement(id='11', title='ert', content='Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement Coment Advertisement ', created_at='2019-08-01 14:55:41.379436', updated_at='2019-08-01 14:55:41.379436', course_id='5').save()
-
-        print(".", end="")
-        # User
-        User(id='1', password='pbkdf2_sha256$20000$GDG2ExejLdID$+jZqG9jb9QQPASguwBlIxiWLH09h/DldlB5+SCvoa40=', last_login='2019-08-06 17:16:57.015753', is_superuser='1', email='admin@ocpplus.com', name='Admin', phone='900004674', is_active='1', is_staff='1', date_joined='2019-07-29 08:12:08.986190', username='admin').save()
-        User(id='2', password='pbkdf2_sha256$20000$zqU1gSN1lM8L$qC1r5BL/5wWktffKMGXcu0P+URhxp9l6Y3ff05rUiMA=', last_login='2019-08-05 08:00:31.032668', is_superuser='0', email='user01@user.com', name='User01', phone='900004674', is_active='1', is_staff='0', date_joined='2019-07-31 09:01:57.362757', username='user01').save()
-        User(id='3', password='pbkdf2_sha256$20000$nx0FkSP8DmTb$bBsSIR5Sr9flhp5E5QJNmbTuDMBBJlDsbkYJG/00Mc4=', last_login='2019-08-03 13:11:10.939870', is_superuser='0', email='teacher01@ocpplus.com', name='Teacher01', phone='900004674', is_active='1', is_staff='0', date_joined='2019-07-31 09:18:47.450824', username='teacher01').save()
-        User(id='4', password='pbkdf2_sha256$20000$zqU1gSN1lM8L$qC1r5BL/5wWktffKMGXcu0P+URhxp9l6Y3ff05rUiMA=', last_login='2019-08-02 13:38:34.332377', is_superuser='0', email='user02@user.com', name='User02', phone='900004674', is_active='1', is_staff='0', date_joined='2019-07-31 15:43:39.712962', username='user02').save()
-        User(id='10', password='pbkdf2_sha256$20000$zqU1gSN1lM8L$qC1r5BL/5wWktffKMGXcu0P+URhxp9l6Y3ff05rUiMA=', last_login='2019-07-31 15:43:40.228602', is_superuser='0', email='user03@user.com', name='User03', phone='900014181', is_active='1', is_staff='0', date_joined='2019-07-31 15:43:39.712962', username='user03').save()
-        User(id='11', password='pbkdf2_sha256$20000$zqU1gSN1lM8L$qC1r5BL/5wWktffKMGXcu0P+URhxp9l6Y3ff05rUiMA=', last_login='2019-07-31 15:43:40.228602', is_superuser='0', email='user04@user.com', name='User04', phone='900004674', is_active='1', is_staff='0', date_joined='2019-07-31 15:43:39.712962', username='user04').save()
-        User(id='12', password='pbkdf2_sha256$20000$zqU1gSN1lM8L$qC1r5BL/5wWktffKMGXcu0P+URhxp9l6Y3ff05rUiMA=', last_login='2019-07-31 15:43:40.228602', is_superuser='0', email='user05@user.com', name='User05', phone='900022380', is_active='1', is_staff='0', date_joined='2019-07-31 15:43:39.712962', username='user05').save()
-        User(id='13', password='pbkdf2_sha256$20000$zqU1gSN1lM8L$qC1r5BL/5wWktffKMGXcu0P+URhxp9l6Y3ff05rUiMA=', last_login='2019-07-31 15:43:40.228602', is_superuser='0', email='user06@user.com', name='User06', phone='900030349', is_active='1', is_staff='0', date_joined='2019-07-31 15:43:39.712962', username='user06').save()
-        User(id='14', password='pbkdf2_sha256$20000$zqU1gSN1lM8L$qC1r5BL/5wWktffKMGXcu0P+URhxp9l6Y3ff05rUiMA=', last_login='2019-07-31 15:43:40.228602', is_superuser='0', email='user07@user.com', name='User07', phone='900018698', is_active='1', is_staff='0', date_joined='2019-07-31 15:43:39.712962', username='user07').save()
-        User(id='15', password='pbkdf2_sha256$20000$ymlpXTezDSCp$znXWxn3eHNUI9DvGYI9MakPpnTyt4rybrC0MC2P2WUE=', last_login='2019-07-31 15:43:40.228602', is_superuser='0', email='teacher02@ocpplus.com', name='teacher02', phone='900029467', is_active='1', is_staff='0', date_joined='2019-07-31 15:43:39.712962', username='teacher02').save()
-        User(id='16', password='pbkdf2_sha256$20000$ymlpXTezDSCp$znXWxn3eHNUI9DvGYI9MakPpnTyt4rybrC0MC2P2WUE=', last_login='2019-07-31 15:43:40.228602', is_superuser='0', email='teacher03@ocpplus.com', name='teacher03', phone='900014781', is_active='1', is_staff='0', date_joined='2019-07-31 15:43:39.712962', username='teacher03').save()
-        User(id='17', password='pbkdf2_sha256$20000$ymlpXTezDSCp$znXWxn3eHNUI9DvGYI9MakPpnTyt4rybrC0MC2P2WUE=', last_login='2019-07-31 15:43:40.228602', is_superuser='0', email='teacher04@ocpplus.com', name='teacher04', phone='900003986', is_active='1', is_staff='0', date_joined='2019-07-31 15:43:39.712962', username='teacher04').save()
 
         print(".", end="")
         # Teacher
