@@ -174,7 +174,7 @@ LOGOUT_URL = 'accounts:logout'
 AUTH_USER_MODEL = 'accounts.User'  # AUTH_USER_MODEL muda do modelUserAdmin para o configurado
 
 # ########################## Email
-EMAIL_BACKEND = config('EMAIL_BACKEND')
+EMAIL_BACKEND = config('EMAIL_BACKEND', default='django.core.mail.backends.smtp.EmailBackend')
 EMAIL_USE_TLS = config('EMAIL_USE_TLS', default='True')
 EMAIL_HOST = config('EMAIL_HOST', default='')
 EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
