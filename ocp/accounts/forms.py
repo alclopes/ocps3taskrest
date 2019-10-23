@@ -3,7 +3,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import get_user_model
 from ocp.core.mail import send_mail_template
 from ocp.core.utils import generate_hash_key
-from django.utils.translation import ugettext as _
+from django.utils.translation import gettext_lazy as _
+# from django.utils.translation import ugettext as _
 from .models import PasswordReset
 
 # Aqui informamos ao form que o usuário que iremos utilizar
@@ -50,7 +51,7 @@ class RegisterForm(forms.ModelForm):
         password1 = self.cleaned_data.get("password1")
         password2 = self.cleaned_data.get("password2")
         if password1 and password2 and password1 != password2:
-            raise forms.ValidationError(_('The Confirm is wrong'))
+            raise forms.ValidationError(_l('The Confirm is wrong'))
         return password2
 
     def save(self, commit=True):

@@ -104,6 +104,9 @@ TIME_ZONE = 'Europe/Madrid'   # UTC é o padrão de hora mundial
 USE_I18N = True     # Provide a lists of languages which your site supports.
 USE_L10N = True     # True=> Time Zone respeitará sua localização (default=>False)
 USE_TZ = False   # False => não usa internacionalização / True=> Tradução respeitará sua localização
+
+
+# Locale name => pt_BR / Language code => pt-br
 LANGUAGES = [
     ('en', _('English')),
     ('pt-br', _('Portuguese')),
@@ -112,11 +115,6 @@ LANGUAGES = [
 BASE_LOC = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LOCALE_PATHS = (
     os.path.join(BASE_LOC, "locale/"),
-    os.path.join(BASE_LOC, "accounts/locale/"),
-    os.path.join(BASE_LOC, "core/locale/"),
-    os.path.join(BASE_LOC, "courses/locale/"),
-    os.path.join(BASE_LOC, "forum/locale/"),
-    os.path.join(BASE_LOC, "languages/locale"),
 )
 
 # ########################## AWS S3

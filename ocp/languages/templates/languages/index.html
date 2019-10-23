@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load static %}
+
 
 {% block head %}
-    <title>{% trans 'Languages-Index' %}</title>
+    <title>Languages-Index</title>
 {% endblock %}
 
 {% block breadcrumb %}
@@ -23,13 +25,13 @@
 {% endblock %}
 
 {% block col_two %}
+    {% get_language_info for LANGUAGE_CODE as lang %}
     <ul>
-        <h5>{% trans 'Your Current Language Settings:' %}</h5>
-        {% get_language_info for LANGUAGE_CODE as lang %}
+        <h5>{% trans 'Your Current Language Settings' %}:</h5>
         <ul>
-            <li><span style="margin-left:1em">{% trans 'Language code:' %} {{ lang.code }}</span></li>
-            <li><span style="margin-left:1em">{% trans 'Name of language:' %} {{ lang.name_local }}</span></li>
-            <li><span style="margin-left:1em">{% trans 'Name in English:' %} {{ lang.name }}</span></li>
+            <li>{% trans 'Language code' %}: {{ lang.code }}</li>
+            <li>{% trans 'Name of language' %}: {{ lang.name_local }}</li>
+            <li>{% trans 'Name in English' %}: {{ lang.name }}</li>
         </ul>
     </ul>
 {% endblock %}

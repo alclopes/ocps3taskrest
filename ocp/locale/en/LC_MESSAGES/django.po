@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-17 16:46+0100\n"
+"POT-Creation-Date: 2019-10-23 11:03+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,24 +17,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .\ocp\accounts\forms.py:24
+#: .\ocp\accounts\forms.py:25
 msgid "There isnt user with this email"
 msgstr ""
 
-#: .\ocp\accounts\forms.py:32
+#: .\ocp\accounts\forms.py:33
 msgid "Change your password"
 msgstr ""
 
-#: .\ocp\accounts\forms.py:42
+#: .\ocp\accounts\forms.py:43
 msgid "Password"
 msgstr ""
 
-#: .\ocp\accounts\forms.py:44
+#: .\ocp\accounts\forms.py:45
 msgid "Confirm your password"
-msgstr ""
-
-#: .\ocp\accounts\forms.py:53
-msgid "The Confirm is wrong"
 msgstr ""
 
 #: .\ocp\accounts\models.py:22
@@ -673,11 +669,11 @@ msgstr ""
 
 #: .\ocp\courses\templates\courses\announcements.html:10
 #: .\ocp\courses\templates\courses\course_dashboard.html:18
-msgid "Advertise"
+msgid "Notices"
 msgstr ""
 
 #: .\ocp\courses\templates\courses\announcements.html:34
-msgid "No announcement for that course"
+msgid "No notice for that course"
 msgstr ""
 
 #: .\ocp\courses\templates\courses\category_add.html:5
@@ -1106,32 +1102,32 @@ msgid "Choose your language"
 msgstr ""
 
 #: .\ocp\languages\templates\languages\index.html:17
-#: .\ocp\settings\common.py:108
+#: .\ocp\settings\common.py:111
 msgid "English"
 msgstr ""
 
 #: .\ocp\languages\templates\languages\index.html:18
-#: .\ocp\settings\common.py:109
+#: .\ocp\settings\common.py:112
 msgid "Portuguese"
 msgstr ""
 
 #: .\ocp\languages\templates\languages\index.html:19
-#: .\ocp\settings\common.py:110
+#: .\ocp\settings\common.py:113
 msgid "Spanish"
 msgstr ""
 
 #: .\ocp\languages\templates\languages\index.html:27
-msgid "Your Current Language Settings:"
+msgid "Your Current Language Settings"
 msgstr ""
 
 #: .\ocp\languages\templates\languages\index.html:30
-msgid "Language code:"
+msgid "Language code"
 msgstr ""
 
 #: .\ocp\languages\templates\languages\index.html:31
-msgid "Name of language:"
+msgid "Name of language"
 msgstr ""
 
 #: .\ocp\languages\templates\languages\index.html:32
-msgid "Name in English:"
+msgid "Name in English"
 msgstr ""

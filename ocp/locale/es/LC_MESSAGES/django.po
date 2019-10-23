@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-17 16:46+0100\n"
+"POT-Creation-Date: 2019-10-23 11:03+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,31 +17,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .\ocp\accounts\forms.py:24
+#: .\ocp\accounts\forms.py:25
 msgid "There isnt user with this email"
 msgstr "No hay usuario con este correo electrónico"
 
-#: .\ocp\accounts\forms.py:32
+#: .\ocp\accounts\forms.py:33
 #, fuzzy
 #| msgid "Change Password"
 msgid "Change your password"
 msgstr "Cambiar contraseña"
 
-#: .\ocp\accounts\forms.py:42
-#, fuzzy
-#| msgid "New Password"
+#: .\ocp\accounts\forms.py:43
 msgid "Password"
 msgstr "Nueva contraseña"
 
-#: .\ocp\accounts\forms.py:44
-#, fuzzy
-#| msgid "Did you forget your password? "
+#: .\ocp\accounts\forms.py:45
 msgid "Confirm your password"
-msgstr "¿Olvidó su contraseña?"
-
-#: .\ocp\accounts\forms.py:53
-msgid "The Confirm is wrong"
-msgstr "La confirmación está mal"
+msgstr "Confirmar la contraseña"
 
 #: .\ocp\accounts\models.py:22
 msgid "User Name"
@@ -699,12 +691,12 @@ msgstr "Cursos-Anuncios"
 
 #: .\ocp\courses\templates\courses\announcements.html:10
 #: .\ocp\courses\templates\courses\course_dashboard.html:18
-msgid "Advertise"
-msgstr "Publicidad"
+msgid "Notices"
+msgstr "Avisos"
 
 #: .\ocp\courses\templates\courses\announcements.html:34
-msgid "No announcement for that course"
-msgstr "No hay anuncio para ese curso"
+msgid "No notice for that course"
+msgstr "No hay aviso para ese curso"
 
 #: .\ocp\courses\templates\courses\category_add.html:5
 msgid "Course-AddCategory"
@@ -958,15 +950,19 @@ msgstr "No hay curso"
 #: .\ocp\courses\views.py:60
 msgid "Decoding JSON has failed. Please, check if the file is a JSON file"
 msgstr ""
+"La decodificación de JSON ha fallado. Por favor, verifique si el archivo es "
+"un archivo JSON"
 
 #: .\ocp\courses\views.py:68
 msgid ""
 "Decoding JSON has failed. Please, check if the structure JSON file is valid"
 msgstr ""
+"La decodificación de JSON ha fallado. Por favor, verifique si el archivo "
+"JSON de estructura es válido"
 
 #: .\ocp\courses\views.py:77
 msgid "Please check course id:"
-msgstr ""
+msgstr "Por favor verifique la identificación del curso:"
 
 #: .\ocp\courses\views.py:100
 msgid "JSON load was success."
@@ -1168,55 +1164,33 @@ msgid "Choose your language"
 msgstr "Elige tu idioma"
 
 #: .\ocp\languages\templates\languages\index.html:17
-#: .\ocp\settings\common.py:108
+#: .\ocp\settings\common.py:111
 msgid "English"
 msgstr "inglés"
 
 #: .\ocp\languages\templates\languages\index.html:18
-#: .\ocp\settings\common.py:109
+#: .\ocp\settings\common.py:112
 msgid "Portuguese"
 msgstr "portugués"
 
 #: .\ocp\languages\templates\languages\index.html:19
-#: .\ocp\settings\common.py:110
+#: .\ocp\settings\common.py:113
 msgid "Spanish"
 msgstr "español"
 
 #: .\ocp\languages\templates\languages\index.html:27
-msgid "Your Current Language Settings:"
-msgstr "Su configuración de idioma actual:"
+msgid "Your Current Language Settings"
+msgstr "Su configuración de idioma actual"
 
 #: .\ocp\languages\templates\languages\index.html:30
-#, fuzzy
-#| msgid "Language"
-msgid "Language code:"
-msgstr "Idioma"
+msgid "Language code"
+msgstr "Código de lenguaje"
 
 #: .\ocp\languages\templates\languages\index.html:31
-#, fuzzy
-#| msgid "Choose your language"
-msgid "Name of language:"
-msgstr "Elige tu idioma"
+msgid "Name of language"
+msgstr "Nombre del idioma"
 
 #: .\ocp\languages\templates\languages\index.html:32
-#, fuzzy
-#| msgid "English"
-msgid "Name in English:"
-msgstr "inglés"
+msgid "Name in English"
+msgstr "Nombre en ingles"
 
-#~ msgid "Sorry fail importation. Please, check your JSON for fix some error"
-#~ msgstr ""
-#~ "Disculpe la importación. Por favor, revise su JSON para corregir algún "
-#~ "error"
-
-#~ msgid "accounts-register"
-#~ msgstr "registro de cuentas"
-
-#~ msgid "Download"
-#~ msgstr "Descargar"
-
-#~ msgid "Inglês"
-#~ msgstr "Inglés"
-
-#~ msgid "Brasil"
-#~ msgstr "Brasil"

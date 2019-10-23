@@ -122,7 +122,7 @@ and when accessing this material, the system ignored the attachment showing only
 3. User has questions about course content. (DONE)
     => Uses in the body of the email and how to email the user data provided in the HTML page
     => Command: send_mail_template (subject, template_name, context, [settings.CONTACT_EMAIL] / Module: Account
-4. User launched an advertisement in the course.
+4. User launched an notice in the course.
     => Uses to extend the machine user (DONE)
     => Command: send_mail_template (subject, template_name, context, recipient_list) / Module: Account
 

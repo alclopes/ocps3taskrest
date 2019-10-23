@@ -54,7 +54,7 @@ class ThreadView(DetailView):
     # uma vez pelo mesmo usuario, se for controlado pela sessão é mais confiável.
     def get(self, request, *args, **kwargs):
         response = super(ThreadView, self).get(request, *args, **kwargs)
-        if self.request.user.is_authenticated:
+        if self.request.user.is_authenticated: # //Important
             if self.object.author != self.request.user:
                 self.object.views = self.object.views + 1
                 self.object.save()
@@ -70,7 +70,7 @@ class ThreadView(DetailView):
     # O detail não implementa post, mas precisamos incluir para encaminhar a resposta para
     # este topico.
     def post(self, request, *args, **kwargs):
-        if not self.request.user.is_authenticated():
+        if not self.request.user.is_authenticated:  # //Important
             messages.error(self.request, _('To reply to the topic you must be logged in'))
             # Redirecionando a pagina para a URL atual, passando pelo get
             # não é necessario nenhum outro parametro pois todos estão no request atual.

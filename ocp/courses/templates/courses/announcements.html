@@ -7,7 +7,7 @@
 
 {% block breadcrumb %}
         {{ block.super }}
-        <li><a href="{% url 'courses:announcements' course.slug %}">{% trans 'Advertise' %}</a></li>
+        <li><a href="{% url 'courses:announcements' course.slug %}">{% trans 'Notices' %}</a></li>
 {% endblock  %}
 
 {% block dashboard_content %}
@@ -31,7 +31,7 @@
         </div>
     {% empty %}
         <div class="well">
-            <h2>{% trans 'No announcement for that course' %}</h2>
+            <h2>{% trans 'No notice for that course' %}</h2>
         </div>
     {% endfor %}
 {% endblock %}

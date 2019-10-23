@@ -16,3 +16,4 @@ django-filter==2.2.0
 djangorestframework==3.10.0
 tablib==0.13.0
 jsonschema==2.6.0
+python-gettext==4.0

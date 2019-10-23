@@ -15,7 +15,7 @@
         <div class="columns">
             <ul class="column_topic">
                 <li class="header">{{ course }}</li>
-                <li><a href="{% url 'courses:announcements' course.slug %}"><i class="fa fa-eye"></i>{% trans 'Advertise' %}</a></li>
+                <li><a href="{% url 'courses:announcements' course.slug %}"><i class="fa fa-eye"></i>{% trans 'Notices' %}</a></li>
                 <li><a href="{% url 'courses:lesson_list' course.slug %}"><i class="fa fa-refresh"></i>{% trans 'Lessons and Materials' %}</a></li>
                 <li><a href="{% url 'forum:index' %}"><i class="fa fa-comments-o"></i>{% trans 'Forum' %}</a></li>
             </ul>

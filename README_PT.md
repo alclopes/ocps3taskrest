@@ -245,8 +245,8 @@ e ao acessar este material, o sistema ignorava o anexo mostrando apenas o texto 
 |  Access |  Change Language    | 
 |  Access |  Register new user  | 
 |  Contact    |  Speak with us (geral)  | 
-|  Courses    |  List advertisement | 
-|  Courses    |  Comment advertisement  | 
+|  Courses    |  List of notices | 
+|  Courses    |  Comment, notices, advertisement  | 
 |  Courses    |  View course's details  | 
 |  Courses    |  Make your enrollment   | 
 |  Courses    |  Speak with us (courses)    | 
