@@ -1,6 +1,6 @@
 celery==4.3.0
 Django==2.2.4
-setuptools==41.2.0
+setuptools==65.5.1
 redis==3.3.8
 Pillow==6.2.1
 model-mommy==1.6.0
